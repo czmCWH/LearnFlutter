@@ -2,6 +2,11 @@
 
 [pub.dev flutter 插件平台](https://pub-web.flutter-io.cn/)
 
+https://pub-web.flutter-io.cn/
+
+https://github.com/simplezhli/flutter_deer
+
+
 
 ## 封装 Flutter 常用代码
 
