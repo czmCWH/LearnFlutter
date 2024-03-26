@@ -17,8 +17,15 @@
 [W3Cschool * Flutter 中文文档](https://www.w3cschool.cn/evilg/)
 
 
+
 ## 个人笔记博客
 
+<http://www.toly1994.com/page/2/>，张风捷特烈
+可以关注 [掘金 * iOShuyang](https://juejin.cn/user/1732486056406046) 的动态，他关注了很多 Flutter 优秀博主，如：[掘金 * 张风捷特烈](https://juejin.cn/user/149189281194766/posts)、[掘金 * wendux|字节|Flutter中文网发起人](https://juejin.cn/user/1556564164217784/posts)
+
+[优质 flutter 课程 https://ducafecat.com](https://github.com/ducafecat)，独立开发者_猫哥。
+
+[shaoting0730/Flutter_learn_demo](https://github.com/shaoting0730/Flutter_learn_demo)，177，Flutter_learn_demo Flutter学习历程。[zhoushaoting](https://zhoushaoting.com/)
 
 [掘金 * 艾伦oy](https://juejin.cn/user/4037062426901405/posts)
 
@@ -32,7 +39,7 @@ Flutter_learn_demo Flutter学习历程：<https://github.com/pheromone/Flutter_l
 
 [github * Flutter中国开源项目](https://github.com/flutterchina)
 
-[toly1994328/FlutterUnit](https://github.com/toly1994328/FlutterUnit)，5k，【Flutter 集录指南 App】The unity of flutter, The unity of coder.
+[toly1994328/FlutterUnit](https://github.com/toly1994328/FlutterUnit)，5k，【Flutter集录指南App】flutter的统一，coder的统一。⚠️非常好
 
 [iotjin/jh_flutter_demo](https://github.com/iotjin/jh_flutter_demo)，420，flutter项目- 实现一些常用效果、封装通用组件和工具类。
 
@@ -83,8 +90,8 @@ https://github.com/google/flutter-desktop-embedding
 
 [天南 * github](https://github.com/CrazyCoderShi)，哈啰出行
 
+[SunshineBrother/FlutterDemo](https://github.com/SunshineBrother/FlutterDemo)，flutter初学项目
 
-可以关注 [掘金 * iOShuyang](https://juejin.cn/user/1732486056406046) 的动态，他关注了很多 Flutter 优秀博主，如：[掘金 * 张风捷特烈](https://juejin.cn/user/149189281194766/posts)、[掘金 * wendux|字节|Flutter中文网发起人](https://juejin.cn/user/1556564164217784/posts)
 
 ### 微信公众号
 
@@ -130,6 +137,7 @@ https://github.com/google/flutter-desktop-embedding
 
 [pedromassango/my_flutter_challenges](https://github.com/pedromassango/my_flutter_challenges)，693，Flutter 项目包含我所有的 Flutter UI 挑战
 
+[lyming99/wenznote](https://github.com/lyming99/wenznote)，276，一款由 flutter 开发的笔记软件，支持电脑端和手机端。
 
 [LinXunFeng/flutter_demo](https://github.com/LinXunFeng/flutter_demo)
 
