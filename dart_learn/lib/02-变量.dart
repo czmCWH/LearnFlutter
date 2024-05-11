@@ -15,13 +15,17 @@ void testPrint(int num) {
 }
 
 /* 2、定义变量
+ * 变量仅存储对象的引用。
+ * 由于类型推断，`Dart` 建议局部变量用 `var` 声明。
+ * `runtimeType`：用于获取变量当前类型。
  */
 void testVar() {
   // 使用 var 定义变量，Dart 会进行类型推断。
   // name 变量包含一个值为 "Bob" 的 String 对象的引用。
   var name = 'Bob';
+  print("获取当前变量的类型：${name.runtimeType}");
 
-  // 通过类型注释，显式声明变量将要被推断的类型
+  // 通过类型注释，显式声明将要推断的类型
   double antennaDiameter = 3.7;
 
   // 不必在声明变量时初始化变量，但在使用之前需要为其赋值。
@@ -74,26 +78,45 @@ late String name = "可能是通过方法返回值获取";
 
 
 /* 5、终值 (final) 和常量 (const)
- *  如果不打算更改一个变量，可以使用 final 或 const 修饰它，而不是使用 var 或作为类型附加。
- * 一个 final 变量只能设置一次，const 变量是编译时常量。（const 常量隐式包含了 final。）
+ *  如果不打算更改一个变量，可以使用 final 或 const 替代 var 修饰它，或放在类型注释的后面。
+ * 一个 final 变量只能设置一次，const 变量是 compile-time constants(编译时常量)。const 常量隐式包含了 final。
+ * 
  * 实例变量 可以是 final 但不能是 const。
+ * 如果 const 变量位于类级别，请将其标记为 static const（静态常量）。
+ * 
+ * const 关键字不仅用于声明常量，还可以使用它来创建 常量值，该常量值可以赋予给任何变量。
+ * 
+ * 还可以声明 创建(create) 常量值的构造函数，这种类型的构造函数创建的对象是不可改变的。
  */
 
 void testFixVar() {
 
   final name = 'Bob'; 
 
-  // const 修饰 编译时常量 的变量。如果 const 变量位于类级别，请将其标记为 static const（静态常量）
+  // const 修饰 编译时常量 的变量。
   final String nickname = '小哈';
 
-  // const 可以用于创建常量 值(values)，以及声明 创建(create) 常量值的构造函数。
+  const Object i = 3;
+
+  /*
+    `const` : 必须赋值，接收一个常量值（即编译期间就需要确定的值）
+    `final` : 可以通过计算/函数动态获取值（即运行时能确定的值）
+  */
+  final myName = getName();
+// const myName = getName(); // 报错
+
   
   // foo 变量拥有一个常量值，但是 foo 依然可以被修改。
-  var foo = const [];
+  var foo1 = const [12];
+  final foo2 = const [12];
 
   // final 变量bar拥有常量值
   final bar = const [];
   
   // 可以省略以 const 声明中的值的 const 修饰
-  const baz = [];
+  const baz = [2];   // 等价于 const [2]
+}
+
+String getName() {
+  return 'lxf';
 }

@@ -7,5 +7,7 @@ void main(List<String> arguments) {
   dart_02.testPrint(20);
   dart_02.testVar();
   dart_02.testNull();
+  dart_02.testLate();
+  dart_02.testFixVar();
 
 }
