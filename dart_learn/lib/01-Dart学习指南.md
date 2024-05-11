@@ -14,6 +14,8 @@ Dart 的类型系统也很灵活，允许结合使用 dynamic 类型与运行时
 Dart 内置了 健全的空值安全，这意味着只有你声明值可以为空的情况下，值才可以为空；
 Dart 拥有 丰富的核心库，为许多日常编程任务提供了必要工具；
 
+* 学习视频：https://ducafecat.com/course/dart-learn
+
 # 二、安装 Dart
 
 要使用 Dart，可以直接下载 Dart SDK（如下所述），也可以下载 Flutter SDK，其中包含完整的 Dart SDK。
