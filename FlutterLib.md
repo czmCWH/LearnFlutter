@@ -66,3 +66,8 @@ https://github.com/simplezhli/flutter_deer
 ## 网络请求
 
 [flutterchina/dio](https://github.com/flutterchina/dio)，9.3k，Dart的功能强大的Http客户端，它支持拦截器，FormData，请求取消，文件下载，超时等。
+
+## 弹窗处理
+
+[josercc/flutter_app_dialog_stack](https://github.com/josercc/flutter_app_dialog_stack)，Flutter管理App进行顺序弹框的栈。
+
