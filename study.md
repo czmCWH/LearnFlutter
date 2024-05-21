@@ -6,14 +6,11 @@
 
 flutter.dev * 英文文档 <https://flutter.dev/>
 
-Flutter 文档中文版 <https://flutter.cn>
+Flutter 文档中文版 <https://flutter.cn>；实用教程 <https://docs.flutter.cn/cookbook>
 
 Flutter中文开发者社区 * 开源电子书｜《Flutter实战·第二版》<https://flutterchina.club/>
 
 [W3Cschool * Flutter 中文文档](https://www.w3cschool.cn/evilg/)
-
-
-
 
 
 ## Flutter学习 视频/文档集
@@ -53,6 +50,8 @@ Flutter中文开发者社区 * 开源电子书｜《Flutter实战·第二版》<
 
 
 ## Flutter 项目
+
+* <https://github.com/shang1219178163/flutter_templet_project>，个人模板项目, 包含组件使用示例、自定义组件封装、代码优化封装技巧。
 
 * flutter初学项目 <https://github.com/SunshineBrother/FlutterDemo><https://juejin.cn/user/4037062427418439/posts>
 
