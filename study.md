@@ -1,4 +1,25 @@
-# 学习资源
+# 一、Flutter学习目录
+
+掘金 * 麦客奥德彪 <https://juejin.cn/post/7371256712106754085>
+
+Flutter的重要技术主要有这几种，
+
+1、Dart 语言 Dart语言对于会java活着kotlin 或者任意其他语言的人来说 难度极低；
+2、需要了解常用的widget，以及自定义Widget（高级），但是使用还是不够的，我们需要知道Widget到底是什么？他的背后又是什么？（Widget-Elemetnt-RenderObject 当然这是原理部分了）；
+3、状态管理，Flutter 的就是根据状态类构建和更新页面的，so, 状态管理的重要性也不言而喻；
+4、Flutter framework， 这个就是高级技术了，那为什么是必须项呢？因为我们平时业务是需要它的，比如动画、事件分发、线程模型、网络请求等等
+5、为了构建高质量的应用，需要掌握一些高级技术和开发中的最佳实践，
+
+
+* 路由和导航：Navigator、Router、命名路由等。
+* 本地存储：shared_preferences、sqflite 等。
+* 国际化和本地化：Flutter 国际化支持、多语言切换。
+* 测试：Widget 测试、集成测试、单元测试。
+* 性能优化：Flutter 性能分析、减少重绘、优化构建方法。
+
+
+
+# 二、学习资源
 
 本文档记录用于 `Flutter` 的学习资源、面试题，开源框架、开源项目等。
 
@@ -47,6 +68,7 @@ Flutter中文开发者社区 * 开源电子书｜《Flutter实战·第二版》<
 * Flutter开发实战详解作者 Shuyu Guo<https://github.com/CarGuo>
 
 * [vandadnp/flutter-tips-and-tricks](https://github.com/vandadnp/flutter-tips-and-tricks)，5.1k，Flutter 和 Dart 技巧和窍门合集。
+
 
 
 ## Flutter 项目
