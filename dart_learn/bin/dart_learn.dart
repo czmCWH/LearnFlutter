@@ -2,10 +2,15 @@ import 'package:dart_learn/02-变量.dart' as dart_02;
 import 'package:dart_learn/03-常量.dart' as dart_03;
 import 'package:dart_learn/04-空安全和默认值.dart' as dart_04;
 import 'package:dart_learn/05-基本数据类型.dart' as dart_05;
-import 'package:dart_learn/06-Records类型.dart' as dart_06;
+import 'package:dart_learn/06-Records类型.dart' as dart_Records;
 import 'package:dart_learn/07-collections/01-集合类型-List.dart' as dart_List;
 import 'package:dart_learn/07-collections/02-集合类型-Set.dart' as dart_Set;
 import 'package:dart_learn/07-collections/03-集合类型-Map.dart' as dart_Map;
+import 'package:dart_learn/07-collections/04-枚举-enum.dart' as dart_Enum;
+import 'package:dart_learn/08-泛型-Generics.dart' as dart_Generics;
+import 'package:dart_learn/09-运算符.dart' as dart_Operators;
+import 'package:dart_learn/10-流程控制语句.dart' as dart_Controls;
+
 
 
 // `main` 一个特殊且 必须的 顶级函数，即程序的入口函数，`Dart` 应用程序总是会从该函数开始执行。
@@ -31,8 +36,8 @@ void main(List<String> arguments) {
   dart_05.textBooleans();
 
   print("---👇👇👇: 06-基本数据类型: 记录(Records)");
-  dart_06.testRecords();
-  dart_06.testUseRecords();
+  dart_Records.testRecords();
+  dart_Records.testUseRecords();
 
   print("---👇👇👇: List 列表");
   dart_List.testList();
@@ -48,6 +53,28 @@ void main(List<String> arguments) {
 
   print("---👇👇👇: Map 字典");
   dart_Map.testMap();
+  dart_Map.testOperatorsMap();
 
+  print("---👇👇👇: Enum 枚举");
+  dart_Enum.testEnum();
+
+  print("---👇👇👇: Generics 泛型");
+  dart_Generics.testGenerics();
+  dart_Generics.testCollectGenerics();
+
+  print("---👇👇👇: Operators运算符");
+  dart_Operators.testMathOperators();
+  dart_Operators.testRelationalOperators();
+  dart_Operators.testTypeOperators();
+  dart_Operators.testAssignmentOperators();
+  dart_Operators.testLogicalOperators();
+  dart_Operators.testConditionalExpr();
+  dart_Operators.testCascadeOperations();
+  dart_Operators.testSpreadOperations();
+  dart_Operators.testOtherOperations();
+
+  print("---👇👇👇: 流程控制语句");
+
+  dart_Controls.testLoops();
 
 }
