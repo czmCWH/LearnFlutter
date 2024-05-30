@@ -16,6 +16,11 @@
 */
 
 void testNumbers() {
+  /*
+   * 如果 num 及其子类型没有您要查找的内容，则 dart:math 库可能有。
+   * import 'dart:math';
+   */
+
   print('使用 Dart 数字类型: int 和 double');
   
   // 没有小数点的数字类型是 int。整数值不大于64位，具体取值范围 依赖于不同的平台。整数就是不带小数点的数字，如下：
