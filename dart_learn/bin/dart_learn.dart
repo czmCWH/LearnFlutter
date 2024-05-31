@@ -92,8 +92,11 @@ void main(List<String> arguments) {
   // dart_Pattern
 
   print("---👇👇👇: 函数");
-  // dart_func
-
-
-
+  dart_func.foo();
+  dart_func.useTestNamedParam();
+  dart_func.useTestOptionalPositionParam();
+  dart_func.UsePrintForItem();
+  dart_func.useAnonymous();
+  dart_func.testClosure();
+  dart_func.usSyncGenerator();
 }
