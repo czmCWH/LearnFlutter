@@ -1,22 +1,35 @@
-# 本文档用于记录 Flutter 相关的开源库
+本文档用于记录 Flutter 相关的开源库
+
+# 脚手架
+[tec8297729/flutter_flexible](https://github.com/tec8297729/flutter_flexible)，235，flutter脚手架，让你更专注UI层。
+
+# 组件库
+
+[LianjiaTech/bruno](https://github.com/LianjiaTech/bruno)，3.1k，Bruno 是基于一整套设计体系的 Flutter 组件库。
+
+[mpflutter/mpflutter](https://github.com/mpflutter/mpflutter)，1.8k，MPFlutter 是一个跨平台 Flutter 开发框架，可用于微信小程序以及 Web 应用开发。
+
+[wuba/Fair](https://github.com/wuba/fair)，2.5k，Fair提供一整套Flutter动态化解决方案。
+
+# Flutter项目案例
+
+[simplezhli/flutter_deer](https://github.com/simplezhli/flutter_deer)，7.7k，Flutter 练习项目(包括集成测试、可访问性测试)。内含完整UI设计图，更贴近真实项目的练习。
+
+
+
+# Flutter 插件
 
 [pub.dev flutter 插件平台](https://pub-web.flutter-io.cn/)
 
-https://pub-web.flutter-io.cn/
-
-https://github.com/simplezhli/flutter_deer
+[Solido/awesome-flutter](https://github.com/Solido/awesome-flutter)，34.7k，一个Flutter的插件列表，精选了最好的Flutter库，工具，教程，文章等。
 
 ## 开源框架
-
-[Solido/awesome-flutter](https://github.com/Solido/awesome-flutter)，34.7k，一个Flutter的插件列表，精选了最好的Flutter库，工具，教程，文章等。
 
 [bytedance/RealRichText](https://github.com/bytedance/RealRichText)，623，在Flutter中实现内嵌图像中文字功能的棘手解决方案。
 
 [leoafarias/fvm](https://github.com/leoafarias/fvm)，1.3k，Flutter版本管理：一个简单的CLI，用于管理Flutter SDK版本。
 
 [tekartik/sqflite](https://github.com/tekartik/sqflite)，2.1k，SQLite Flutter插件
-
-[sensorsdata/sensors_analytics_flutter_plugin](https://github.com/sensorsdata/sensors_analytics_flutter_plugin)，神策 Flutter 插件（iOS & Android）
 
 [Flutter如何JSON转Model](https://www.bilibili.com/read/cv9349362)
 
@@ -30,18 +43,9 @@ https://github.com/simplezhli/flutter_deer
 [awesome-flutter-cn](https://github.com/crazycodeboy/awesome-flutter-cn)，1.9k，一个很棒的Flutter学习资源，官方教程，插件，工具，文章，App，视频教程等的资源列表。
 
 
-## Flutter 组件库
-
-[mpflutter/mpflutter](https://github.com/mpflutter/mpflutter)，1.8k，MPFlutter 是一个跨平台 Flutter 开发框架，可用于微信小程序以及 Web 应用开发。
-
-[wuba/Fair](https://github.com/wuba/fair)，2.5k，Fair提供一整套Flutter动态化解决方案。
-
-
 ## 封装 Flutter 常用代码
 
 [iotjin/jh_flutter_demo](https://github.com/iotjin/jh_flutter_demo)，593，flutter项目- 实现一些常用效果、封装通用组件和工具类。
-
-
 
 ## Flutter 图表库
 
