@@ -1,0 +1,155 @@
+/* https://dart.cn/language/classes
+ * 
+ * Dart 是一种面向对象的语言，具有类和基于 mixin 的继承。
+ * 
+ * Dart 类的特点：
+ *  每个对象都是一个类的实例，除了Null以外的所有类都继承自object。
+ *  基于 Mixin 的继承 意味着尽管每个类（顶级类 Object 除外）都只有一个超类，但类主体可以在多个类层次结构中重复使用。
+ *  Extension methods 是一种在不改变类或创建子类的情况下向类添加功能的方法。
+ *  Class modifiers 允许您控制库如何对类进行子类型化。
+ * 
+ */
+
+
+/* 1、类的成员
+ * 
+ */
+
+import 'dart:async';
+import 'dart:convert';
+
+class VarClass {
+  
+  /* 1、声明实例变量
+   * nullable type 类型声明的未初始化实例变量的值为 null。
+   * 不可为 null 的实例变量必须在声明时初始化。
+   */
+  String name = '';
+  double? a;
+  int b = 0;
+
+  // 2、late 实例变量的初始化器中可以访问 this
+  late double? z = this.a;
+
+  /* 3、实例变量可以是 final，它们必须只设置一次。
+   * 在声明时，使用构造函数的参数初始化final 变量。
+   * 
+   * 如果需要在构造函数主体启动后分配最终实例变量的值，可以使用以下方法之一：   
+   *    使用工厂构造函数;
+   *    使用 late final，但要小心：没有初始化器的 late final 会向 API 添加 setter。
+   */
+  final String idTag;
+  final DateTime start = DateTime.now();
+
+
+
+
+  /* 1、Generative constructor 生成构造函数
+   * 生成构造函数：通过创建一个与类同名的函数来声明构造函数。
+   * 
+   * Dart通过 初始化形式参数 用来简化将构造函数参数赋值给实例变量的常见模式。
+   * 初始化形式参数 可以初始化 non-nullable 或 final 实例变量。
+   * this 表示当前实例。仅在存在名称冲突时使用 this，否则，Dart风格会省略this。
+   *  
+   */
+  VarClass(this.a, this.b, this.idTag);
+
+  /* 
+   * 如果不声明构造函数，则 Dart 提供默认构造函数。默认构造函数没有参数，并调用父类中的无参数构造函数。
+   * 子类不会从其超类继承构造函数。没有声明构造函数的子类只有默认的（没有参数，没有名称）构造函数。
+   * 如果您需要执行一些无法在初始化列表中表示的逻辑，请使用该逻辑创建一个工厂构造函数(或静态方法)，然后将计算值传递给普通构造函数。
+   */
+
+  /* 2、Named constructors 命名构造函数
+   * 
+   * 命名构造函数可为一个类实现多个构造函数，也可以更清晰的表明函数意图。
+   * 注意：构造函数不可继承。
+   */
+  VarClass.origin()
+    : a = 100,
+      idTag = '命名构造函数';
+
+  /* 3、Redirecting constructors 重定向构造函数
+   * 
+   * 有时构造函数的唯一目的是重定向到同一类中的另一个构造函数。
+   * 重定向构造函数的主体为空，在冒号之后使用 this 调用构造函数。
+   */  
+  VarClass.fromA(double a) : this(a, 100, '重定向构造函数');
+
+
+
+  /* 1、实例方法
+   * 对象的实例方法可以访问 实例变量 和 this。
+   */
+  void doSome() {
+    print('--- 实例方法：${this.a ?? 1.23}');
+  }
+
+  /* 2、getter 和 setter 方法
+   * 每个实例变量都有一个隐式的 getter，如果为非 final 属性的话还会有一个 setter。 
+   * 可以通过使用 get 和 set 关键字实现 getter 和 setter 来创建其他属性。
+   * 
+   * 
+   */
+  Map<String, String> get introduce {
+    return {"name": this.name, "a": (this.a ?? 1.22).toString()};
+  }
+
+  set introduce(Map<String, String> value) {
+    this.name = value["name"] ?? '实例变量 introduce 的 setter 方法赋值。';
+    this.a = double.parse(value["a"] ?? '0.11');
+  }
+
+  double get realA => this.a ?? 1.23;
+
+  /* 3、Operators
+   * Operators 是具有特殊名称的实例方法。
+   */
+  VarClass operator +(VarClass v) => VarClass((a ?? 0) + (v.a ?? 0), b + v.b, '加法后的对象');
+
+
+  /* 1、类变量和类方法
+   * 使用 static 关键字声明 类变量 或 类方法。
+   * 
+   * 1.1、类变量
+   * 类变量常用于声明类范围内所属的状态变量和常量。
+   * 类变量在使用之前不会被初始化。
+   *
+   * 1.2、类方法
+   * 类方法不对实例进行操作，因此不能访问实例 this。
+   * 类方法中可以访问类变量。
+   * 对于常见或广泛使用的实用程序和功能，请考虑使用顶级函数，而不是静态方法。
+   */
+  
+  static var total = 16;
+  static const initialName = '类常量';
+
+  static String classDesc() {
+    return '类方法：total = $total, $initialName';
+  }
+  
+}
+
+
+void testUseClass() {
+  
+  print('obj1:');
+  var obj1 = VarClass(null, 111, '生成构造函数实例化对象');
+  print('a = ${obj1.a}, b = ${obj1.b}, idTag = ${obj1.idTag}');
+
+  print('obj2:');
+  var obj2 = VarClass.origin();
+  print('a = ${obj2.a}, b = ${obj2.b}, idTag = ${obj2.idTag}');
+
+  print('obj3:');
+  var obj3 = VarClass.fromA(222);
+  print('a = ${obj3.a}, b = ${obj3.b}, idTag = ${obj3.idTag}');
+
+  
+  /* 1、获取对象的类型
+   * 
+   * 可以使用 object 属性runtimeType 来 获取对象的类型。
+   * 在生产环境中，使用 object is Type 比 runtimeType 更稳定。
+   */
+
+}
