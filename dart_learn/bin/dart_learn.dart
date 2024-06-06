@@ -19,6 +19,8 @@ import 'package:dart_learn/07-函数和异常/01-函数.dart' as dart_func;
 import 'package:dart_learn/07-函数和异常/02-错误处理.dart' as dart_error;
 
 import 'package:dart_learn/08-类/01-类的基本使用.dart' as dart_baseCalss;
+import 'package:dart_learn/08-类/03-继承.dart' as dart_extends;
+import 'package:dart_learn/08-类/03-接口.dart' as dart_interface;
 
 
 // `main` 一个特殊且 必须的 顶级函数，即程序的入口函数，`Dart` 应用程序总是会从该函数开始执行。
@@ -111,7 +113,12 @@ void main(List<String> arguments) {
   
   print("---👇👇👇: 类的基本使用");
   dart_baseCalss.testUseClass();
+  
+  print("---👇👇👇: 类的继承：");
+  dart_extends.testExtensClass();
 
+  print("---👇👇👇: 接口：");
+  dart_interface.testImplicitInterface();
 
 
 }

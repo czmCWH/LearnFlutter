@@ -82,57 +82,6 @@ teachTest(p);
 
 ## 扩展类（继承）
 
-使用 `extends` 创建一个子类，并使用 `super` 来引用父类：
-
-子类可以覆盖实例方法(包括运算符)、`getter`和`setter`。可以使用 `@override` 批注指示您有意覆盖成员
-
-定一个 `Animal` 子类：
-
-```Dart
-class Animal {
-  String type;
-  int age;
-  
-  Animal(this.type, this.age);
-  
-  void eat(String food) {
-    print('eat $food');
-  }
-  
-  void sport(String name) {
-    print('sport $name');
-  }
-}
-```
-
-`Person`类继承自 `Animal`：
-
-```Dart
-class Person extends Animal {
-  
-  // 重写属性
-  String get type => '高级动物';
-  
-  String name = '';
-  
-  // 构造函数
-  Person(String name, String type, int age): super(type, age) {
-    this.name = name;
-  }
-  
-  // super 关键字引用一个父类
-  void eat(String food) {
-    super.eat(food);
-    print('干饭人！');
-  }
-  
-  // 重写方法
-  @override
-  void sport(String name) {
-    print('我喜欢 $name 运动！');
-  }
-}
-```
 
 ### noSuchMethod() 方法
 

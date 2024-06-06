@@ -15,9 +15,6 @@
  * 
  */
 
-import 'dart:async';
-import 'dart:convert';
-
 class VarClass {
   
   /* 1、声明实例变量
@@ -42,37 +39,43 @@ class VarClass {
   final DateTime start = DateTime.now();
 
 
-
+  //  注意：构造函数不可继承。
 
   /* 1、Generative constructor 生成构造函数
-   * 生成构造函数：通过创建一个与类同名的函数来声明构造函数。
+   * 生成构造函数：与类同名的函数，用来创建类新的实例，并初始化形式参数来实例化任何实例变量。
    * 
-   * Dart通过 初始化形式参数 用来简化将构造函数参数赋值给实例变量的常见模式。
+   * Initializing formal parameters 初始化形式参数 
+   *    是 Dart 用来简化将构造函数参数赋值给实例变量的常见模式。
+   *    在构造函数声明中使用 this.propertyName 来省略函数体。
+   * 
    * 初始化形式参数 可以初始化 non-nullable 或 final 实例变量。
    * this 表示当前实例。仅在存在名称冲突时使用 this，否则，Dart风格会省略this。
-   *  
    */
   VarClass(this.a, this.b, this.idTag);
 
-  /* 
-   * 如果不声明构造函数，则 Dart 提供默认构造函数。默认构造函数没有参数，并调用父类中的无参数构造函数。
-   * 子类不会从其超类继承构造函数。没有声明构造函数的子类只有默认的（没有参数，没有名称）构造函数。
-   * 如果您需要执行一些无法在初始化列表中表示的逻辑，请使用该逻辑创建一个工厂构造函数(或静态方法)，然后将计算值传递给普通构造函数。
-   */
+   /* 2、Initializer list(初始化列表)
+    * 
+    * 可以在构造函数体运行之前初始化实例变量。
+    * 初始化声明右侧无权访问 this。
+    * 如果需要执行一些无法在 初始化列表 中表示的逻辑，请使用该逻辑创建一个工厂构造函数(或静态方法)，然后将计算值传递给普通构造函数。 
+    */
+  VarClass.fromJSON(Map<String, double> json)
+          : a = json['a'],
+            b = json['b']!.toInt(),
+            idTag = '通过初始化列表创建对象' {
+    print('$idTag, a = $a, b = $b');
+  }
 
-  /* 2、Named constructors 命名构造函数
-   * 
-   * 命名构造函数可为一个类实现多个构造函数，也可以更清晰的表明函数意图。
-   * 注意：构造函数不可继承。
+  /* 3、Named constructors 命名构造函数
+   * 用来为一个类实现多个构造函数，也可以更清晰的表明函数意图。
    */
   VarClass.origin()
     : a = 100,
       idTag = '命名构造函数';
 
-  /* 3、Redirecting constructors 重定向构造函数
-   * 
-   * 有时构造函数的唯一目的是重定向到同一类中的另一个构造函数。
-   * 重定向构造函数的主体为空，在冒号之后使用 this 调用构造函数。
+  /* 4、Redirecting constructors 重定向构造函数
+   *  用于重定向到同一类中的另一个构造函数。
+   *  重定向构造函数的主体为空，在冒号之后使用 this 调用构造函数。
    */  
   VarClass.fromA(double a) : this(a, 100, '重定向构造函数');
 
@@ -86,10 +89,8 @@ class VarClass {
   }
 
   /* 2、getter 和 setter 方法
-   * 每个实例变量都有一个隐式的 getter，如果为非 final 属性的话还会有一个 setter。 
-   * 可以通过使用 get 和 set 关键字实现 getter 和 setter 来创建其他属性。
-   * 
-   * 
+   *    每个实例变量都有一个隐式的 getter，如果为非 final 属性的话还会有一个 setter。 
+   *    可以通过使用 get 和 set 关键字实现 getter 和 setter 来创建其他属性。
    */
   Map<String, String> get introduce {
     return {"name": this.name, "a": (this.a ?? 1.22).toString()};
@@ -106,6 +107,7 @@ class VarClass {
    * Operators 是具有特殊名称的实例方法。
    */
   VarClass operator +(VarClass v) => VarClass((a ?? 0) + (v.a ?? 0), b + v.b, '加法后的对象');
+
 
 
   /* 1、类变量和类方法
@@ -136,6 +138,8 @@ void testUseClass() {
   print('obj1:');
   var obj1 = VarClass(null, 111, '生成构造函数实例化对象');
   print('a = ${obj1.a}, b = ${obj1.b}, idTag = ${obj1.idTag}');
+
+  var objList = VarClass.fromJSON({'a': 100.0, 'b': 200.0});
 
   print('obj2:');
   var obj2 = VarClass.origin();
