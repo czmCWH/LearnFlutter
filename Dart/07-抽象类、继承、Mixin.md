@@ -2,37 +2,8 @@
 # 抽象类、继承、Mixin
 
 
-### `Abstract classes` 抽象类
 
-使用 `abstract` 修饰符定义一个`abstract class`(抽象类) --- 抽象类无法实例化。 
 
-抽象类常用于声明接口方法、有时也会有具体的方法实现。如果希望抽象类能够被实例化，请定义一个`factory constructor`(工厂构造函数)。
-
-抽象类通常具有抽象方法。下面是一个声明具有抽象方法的抽象类的示例： 
-
-```Dart
-abstract class Dog {
-  String speak();
-}
-```
-
-#### 抽象方法
-
-实例方法、`getter`和`setter`方法都可以是抽象的，只定义接口不进行实现，而是留给其他类去实现。抽象方法只能存在于 `abstract classes`(抽象类)中。
-
-定义一个抽象函数，使用分号 (;) 来代替函数体：
-
-```Dart
-abstract class Doer {
-  void doSomething(); // 定义一个抽象方法。
-}
-
-class EffectiveDoer extends Doer {
-  void doSomething() {
-    // 提供方法实现，所以这里的方法就不是抽象方法了...
-  }
-}
-```
 
 ### 隐式接口
 
@@ -198,5 +169,3 @@ var c = Cc();
 c.build();
 // 打印：begin test     begin build
 ```
-
->  mixin 关键字在 Dart 2.1 中被引用支持。 早期版本中的代码通常使用 abstract class 代替。 

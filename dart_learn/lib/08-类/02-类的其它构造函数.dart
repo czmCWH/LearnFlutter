@@ -1,4 +1,6 @@
-/* 4、Factory constructors 工厂构造函数
+/* 
+* https://dart.cn/language/constructors#invoking-a-non-default-superclass-constructors
+* 4、Factory constructors 工厂构造函数
 * 
 * 在实现构造函数时使用 factory 关键字，该构造函数并不总是创建其类的新实例。
 * 例如，工厂构造函数可能从缓存返回一个实例，也可能返回一个子类型的实例。

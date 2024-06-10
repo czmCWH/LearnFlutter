@@ -66,6 +66,11 @@ class VarClass {
     print('$idTag, a = $a, b = $b');
   }
 
+  VarClass.from(double a, int b, String idTag): a = a, b = b, idTag = idTag {
+    print('初始化列表');
+  }
+
+
   /* 3、Named constructors 命名构造函数
    * 用来为一个类实现多个构造函数，也可以更清晰的表明函数意图。
    */
