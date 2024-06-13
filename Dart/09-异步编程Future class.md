@@ -1,78 +1,10 @@
 ## 异步支持
-
-`Dart`库中有大量返回 `Future` 或 `Stream` 对象 的函数，这些函数是异步的，它们会在耗时操作（比如I/O）执行完毕前直接返回而不会等待耗时操作执行完毕。
-
-
 ## 声明异步函数
 
-异步函数 是函数体由 `async` 关键字标记的函数，通常异步函数返回一个 `Future` 对象。
 
-如果异步函数没有返回有效值， 需要设置其返回类型为 `Future<void>`。
 
-```Dart
-Future<String> lookUpVersion() async {
-  return '1.0.0';
-}
 
-Future<String> textPrint(String str) async {
-  
-  return Future.delayed(
-    const Duration(seconds: 2),
-    () {
-      return str;
-    },
-  );
-}
-```
 
-## 处理 Future
-
-可以通过下面两种方式，获得 `Future` 执行完成的结果：
-
-* 使用 `async` 和 `await`。
-* 使用 [Future API](https://dart.cn/guides/libraries/library-tour#future)。
-
-### 使用 `async` 和 `await`
-
-异步函数在处理耗时操作时，它不会等待这些耗时操作完成，当其遇到第一个 `await` 表达式（代码行）时返回一个 `Future` 对象，然后等待 `await` 表达式执行完毕后继续执行。
-
-* 必须在带有 `async` 关键字的 异步函数 中使用 `await`。可以在异步函数中多次使用 `await` 关键字。
-
-* 使用 `async` 和 `await` 的代码是异步的，但是看起来有点像同步代码。 `await` 等待异步函数的执行结果。
-
-* 在直接使用 `Future API` 前，首先应该考虑 `await` 来替代。代码中使用 `await` 表达式会比直接使用 `Future API` 更容易理解。
-
-```Dart
-Future<String> textPrint(String text) async {
-  return text;
-}
-
-void main() async {
-  
-  var text = await textPrint("李四");
-  print("text = ${text}");    // 打印：text = 李四
-  
-  // 拿到返回的 text 后才继续执行.....
-  
-  var text1 = textPrint("张三");
-  print("text1 = ${text1}");    // 打印：text1 = Instance of '_Future<String>'
-  
-}
-```
-
-* 使用 `try`， `catch`， 和 `finally` 来处理代码中使用 `await` 导致的异常错误。
-
-```Dart
-void main() async {
-  try {
-    var text = await textPrint("张三");
-  } catch (e) {
-    print(e);
-  }
-}
-```
-
-`await` 表达式的返回值通常是一个 `Future` 对象；如果不是的话也会自动将其包裹在一个 `Future` 对象里。 `Future` 对象代表一个“承诺”， `await` 表达式会阻塞直到需要的对象返回。
 
 ### 使用 Future API
 
