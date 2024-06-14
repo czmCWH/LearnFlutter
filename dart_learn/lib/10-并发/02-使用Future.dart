@@ -70,7 +70,7 @@ Future<String> asyncErrorFunc(int num) async {
       if (num%2 == 0) {
         throw Exception('参数不能为偶数');
       } else {
-        return '参数为偶数: $num';
+        return '参数为奇数: $num';
       }
     },
   );
@@ -130,6 +130,21 @@ void catchAsyncFuncError() async {
  * 
  * import 'dart:async';
  * 
+ * 1、.then() 和 catchError()
+ * 
+ * .then() 用来调度在 Future 完成时运行的代码。
+ * .catchError(e) 处理 Future 对象可能抛出的任何错误或异常。
+ * 
+ * 确保在 then() 的结果上调用 catchError()，而不是在原始 Future 的结果上调用。
+ * 否则，catchError() 只能处理来自原始 Future 计算的错误，而不能处理来自 then() 注册的处理程序的错误。
+ * 
+ * then().catchError() 模式是 try-catch 的异步版本。
+ * 
+ * 2、链接多个异步方法
+ * then() 方法返回一个Future，这样就提供了一个非常好的方式让多个异步方法按顺序依次执行。
+ * 如果用 then() 注册的回调返回一个 Future ，那么 then() 返回一个等价的 Future 。
+ * 如果回调返回任何其他类型的值，那么 then() 会创建一个以该值完成的新 Future 。
+ * 
  */
 
 void testFutureAPI() async {
@@ -137,6 +152,7 @@ void testFutureAPI() async {
   // 使用 Future API 获取异步函数的结果
 
   var res = await readContent('1').then((value) {
+    // 异步函数 readContent('1') 执行完成时，会调用此处代码
     return readContent('$value, 2');
   }).then((value) {
     return readContent('$value, 3');
@@ -158,6 +174,50 @@ void testFutureAPI() async {
   }).catchError((e) {
     print('--- catch e = $e');
   });
+
+  /* 3、等待多个 Future
+   * 
+   * Future.wait() 静态方法管理多个 Future 并等待它们完成：
+   *  多个 Future 都完成时，如果全部成功，则返回结果；如果任何 Future 失败则返回 error
+   */
+
+  var mutRes = await Future.wait([
+    asyncErrorFunc(1),
+    asyncErrorFunc(3),
+    asyncErrorFunc(5),
+  ]);
+  print('--- mutRes = $mutRes');  // 打印：--- mutRes = [参数为奇数: 1, 参数为奇数: 3, 参数为奇数: 5]
+
+  /* 4、处理多个 future 的错误
+   */
+
+  // 方式1: 等待所有 Future 完成，如果所有 Future 完成结果都成功，则执行 try；否则执行 catch。
+  try {
+    // 
+    var results = await [asyncErrorFunc(2), asyncErrorFunc(3), asyncErrorFunc(4)].wait;
+    print('---- try mut error res = $results');
+
+    } on ParallelWaitError catch (e) {
+      print('--- 打印成功 Future 的值，如果为值为 null, 则表示结果为 error');
+      print(e.values[0]);    
+      print(e.values[1]);    
+      print(e.values[2]);   
+
+      print('--- 打印 Future error 的值，如果值为 null, 则 Future 结果成功。');
+      print(e.errors[0]);    
+      print(e.errors[1]);   
+      print(e.errors[2]);  
+  }
+
+  // 方式2: 
+  try {    
+
+    (String, String, String) result = await (asyncErrorFunc(2), asyncErrorFunc(3), asyncErrorFunc(4)).wait;
+    print('---- 方式2, result = $result');
+    
+  } on ParallelWaitError catch (e) {
+      print('方式2, error : $e');
+    }
 
 }
 
