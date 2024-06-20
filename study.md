@@ -48,6 +48,11 @@ Flutter中文开发者社区 * 开源电子书｜《Flutter实战·第二版》<
 
 * [alibaba/flutter-go](https://github.com/alibaba/flutter-go)，flutter 开发者帮助 APP，包含 flutter 常用 140+ 组件的demo 演示与中文文档。
 
+* [Solido/awesome-flutter](https://github.com/Solido/awesome-flutter)，34.7k，一个Flutter的插件列表，精选了最好的Flutter库，工具，教程，文章等。
+  [awesome-flutter-cn](https://github.com/crazycodeboy/awesome-flutter-cn)，1.9k，一个很棒的Flutter学习资源，官方教程，插件，工具，文章，App，视频教程等的资源列表。
+
+
+
 
 ## 博客笔记
 

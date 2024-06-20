@@ -16,12 +16,9 @@
 [simplezhli/flutter_deer](https://github.com/simplezhli/flutter_deer)，7.7k，Flutter 练习项目(包括集成测试、可访问性测试)。内含完整UI设计图，更贴近真实项目的练习。
 
 
-
 # Flutter 插件
 
 [pub.dev flutter 插件平台](https://pub-web.flutter-io.cn/)
-
-[Solido/awesome-flutter](https://github.com/Solido/awesome-flutter)，34.7k，一个Flutter的插件列表，精选了最好的Flutter库，工具，教程，文章等。
 
 ## 开源框架
 
@@ -34,13 +31,6 @@
 [Flutter如何JSON转Model](https://www.bilibili.com/read/cv9349362)
 
 [alibaba/flutter_boost](https://github.com/alibaba/flutter_boost)，FlutterBoost是Flutter插件，它可以以最少的工作量将Flutter混合集成到您现有的本机应用程序中
-
-## Flutter 特殊效果
-
-
-[iotjin/jh_flutter_demo](https://github.com/iotjin/jh_flutter_demo)，420，flutter项目- 实现一些常用效果、封装通用组件和工具类。
-
-[awesome-flutter-cn](https://github.com/crazycodeboy/awesome-flutter-cn)，1.9k，一个很棒的Flutter学习资源，官方教程，插件，工具，文章，App，视频教程等的资源列表。
 
 
 ## 封装 Flutter 常用代码
