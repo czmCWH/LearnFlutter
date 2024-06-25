@@ -21,12 +21,15 @@ Flutter 附带了一套强大的基本 widget，其中常用的有以下几个�
 * `Container`，用于创建矩形视觉元素。`container`可以使用[BoxDecoration](https://api.flutter.dev/flutter/painting/BoxDecoration-class.html)进行装饰，如背景，边框或阴影。`container`还可以对其大小设置边距（`margins`）、内边距(`padding`)和约束。另外，可以使用矩阵在三维空间中变换`container`。
 
 
-# 三、Material 组件
+# 三、Material 设计
 
-<https://api.flutter-io.cn/flutter/material/MaterialApp-class.html>
+<https://docs.flutter.cn/ui/design/material>
 <https://docs.flutter.cn/ui/widgets/material>
+<https://api.flutter-io.cn/flutter/material/material-library.html>
 
 `Flutter`提供了许多小部件，可帮助您构建遵循 `Material Design` 的应用程序。
+
+从 `Flutter 3.16` 版本开始， Material 3 是 Flutter 的默认主题。
 
 许多 `Material Design widgets` 需要位于 `MaterialApp` 内部才能正确显示。
 一个 `Material App` 从 `MaterialApp` widget 开始，它在你的 App 的根处构建了许多有用的 `widget`，包括一个 `Navigator`，它管理一堆由字符串标识的 widgets，也称为 `routes`路由。`Navigator` 允许您在 App 的屏幕之间平滑地切换。

@@ -12,11 +12,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // 一个 Material App 从 MaterialApp widget 开始
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('好好学习，天天向上'),
-        ),
-      ),
+      // 设置 / route 
+      home: Text('你好世界'),
+      // 禁止显示调试横幅
+      debugShowCheckedModeBanner: false,   
     );
   }
 }
