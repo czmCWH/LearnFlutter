@@ -278,6 +278,16 @@ GridView.builder(
 );
 ```
 
+
+
+
+### 根据用户输入改变 widgets
+
+`StatelessWidget` 从其父 `widget` 接收参数，并将其存储在 `final` 成员变量中。当 `widget` 被要求构建时，它使用这些存储的值作为参数来构建 `widget`。
+
+`StatefulWidgets` 通过生成 `State` 对象来保持状态。
+
+
 ## 参考博客
 
 [Widgets 目录](https://flutterchina.club/widgets/)

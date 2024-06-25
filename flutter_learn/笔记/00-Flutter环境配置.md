@@ -59,8 +59,10 @@ $ flutter pub outdated
 // 查看 Flutter 安装到的目录
 $ which flutter
 
-// 检查出需要安装什么依赖项就及时安装，然后再通过此命令验证
+// 检查 macOS 完整的 Flutter 开发环境的所有组件
 $ flutter doctor
+// flutter doctor 返回错误时，使用此命令获取错误详细信息 
+$ flutter doctor -v
 
 // 查看flutter版本号
 $ flutter --version
@@ -70,8 +72,21 @@ $ open -a Simulator
 $ flutter run
 ```
 
+## 三、调试 Flutter 项目常用快捷键
+
 快捷键
 * r 键：点击后热加载，也就算是重新加载吧。
+* R 键：热重启。
 * p 键：显示网格，这个可以很好的掌握布局情况，工作中很有用。
+* c 键：清理屏幕
 * o 键：切换android和ios的预览模式。
-* q 键：退出调试预览模式。
+* q 键：终止 App 运行。
+* d 键：分离，终止 `flutter run`，保持 App 运行。
+* h 键：列出所有可用的交互命令。
+
+
+## 四、格式化 Flutter 代码
+
+<https://doc.flutterchina.club/formatting/#自动格式化VS Code中的代码>
+
+* 在 VS Code 中【右键】> 【格式化代码】

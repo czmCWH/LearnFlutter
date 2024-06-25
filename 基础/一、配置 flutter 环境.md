@@ -1,7 +1,5 @@
 # 一、配置 flutter 环境
 
-
-
 ## 平台配置
 安装 Android studio
 
