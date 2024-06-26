@@ -1,20 +1,25 @@
+/* 
+Input widgets <https://docs.flutter.cn/ui/widgets/input>
+
+ */
+
 import 'package:flutter/material.dart';
 
 
-class MyButton extends StatelessWidget {
+class MyInput extends StatelessWidget {
   
-  const MyButton({super.key});
+  const MyInput({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Button 的使用'),
+        title: const Text('导航栏'),
       ),
       body: const Center(
         child: Column(
           children: <Widget>[
-          
+            
           ],
         ),
       ),

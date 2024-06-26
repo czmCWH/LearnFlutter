@@ -34,7 +34,6 @@ Flutter中文开发者社区: <https://flutterchina.club/> --- 【Flutter实战 
 
 [W3Cschool * Flutter 中文文档](https://www.w3cschool.cn/evilg/)
 
-
 ## Flutter学习 视频/文档集
 
 * 猫哥课堂视频【基础免费，项目收费】：<https://ducafecat.com/>，<https://github.com/ducafecat>
