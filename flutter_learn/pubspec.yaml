@@ -23,4 +23,8 @@ flutter:
           - asset: fonts/PlaywriteMX-Thin.ttf
           - asset: fonts/PlaywriteMX-ExtraLight.ttf
           - asset: fonts/PlaywriteMX-Light.ttf
+  assets:
+    - images/PurpleFlower.jpg
+    - images/WhiteFlower.jpg
+    - images/bluePlace.png
   uses-material-design: true

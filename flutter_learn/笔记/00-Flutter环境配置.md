@@ -70,6 +70,9 @@ $ flutter --version
 // 终端运行 flutter 项目，注意：运行前必须先启动一个模拟器
 $ open -a Simulator
 $ flutter run
+
+// 清理缓存
+$ flutter clean
 ```
 
 ## 三、调试 Flutter 项目常用快捷键

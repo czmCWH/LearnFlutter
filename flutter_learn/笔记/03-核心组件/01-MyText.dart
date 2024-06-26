@@ -37,7 +37,7 @@ class MyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('导航栏'),
+        title: const Text('Text 的使用'),
       ),
       body: Center(
         child: Column(
