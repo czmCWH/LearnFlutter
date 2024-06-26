@@ -14,6 +14,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
+  
 flutter:
+  fonts:
+      - family: PlaywriteMX
+        fonts:
+          - asset: fonts/PlaywriteMX-Regular.ttf
+          - asset: fonts/PlaywriteMX-Thin.ttf
+          - asset: fonts/PlaywriteMX-ExtraLight.ttf
+          - asset: fonts/PlaywriteMX-Light.ttf
   uses-material-design: true
