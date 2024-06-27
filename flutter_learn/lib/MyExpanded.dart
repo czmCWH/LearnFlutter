@@ -1,11 +1,15 @@
-/* 
+/*
 https://book.flutterchina.club/chapter4/row_and_column.html
 
-线性布局
+-------- 弹性布局
 
-👉 1、
+👉 1、Expanded
 
 
+👉 2、Flexible
+
+
+👉 3、Spacer
 
 
  */
@@ -13,15 +17,15 @@ https://book.flutterchina.club/chapter4/row_and_column.html
 import 'package:flutter/material.dart';
 
 
-class MyAxisBox extends StatelessWidget {
+class MyExpanded extends StatelessWidget {
   
-  const MyAxisBox({super.key});
+  const MyExpanded({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('线性布局'),
+        title: const Text('导航栏'),
       ),
       body: const Center(
         child: Text(

@@ -1,7 +1,7 @@
 /*
 <https://docs.flutter.cn/ui/widgets/layout>
 
-约束类布局容器
+-------- 约束类布局容器
 
 👉 1、ConstrainedBox
 ConstrainedBox 用于对其子组件添加约束。即约束最大最小宽高。
