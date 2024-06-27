@@ -27,4 +27,7 @@ flutter:
     - images/PurpleFlower.jpg
     - images/WhiteFlower.jpg
     - images/bluePlace.png
+    - images/phone.png
+
+
   uses-material-design: true
