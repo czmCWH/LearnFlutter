@@ -20,6 +20,8 @@
 
 [pub.dev flutter 插件平台](https://pub-web.flutter-io.cn/)
 
+[jahnli/awesome-flutter-plugins](https://github.com/jahnli/awesome-flutter-plugins)，1.4k，收集好用的Flutter插件以便更效率的开发。
+
 ## 开源框架
 
 [bytedance/RealRichText](https://github.com/bytedance/RealRichText)，623，在Flutter中实现内嵌图像中文字功能的棘手解决方案。
