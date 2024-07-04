@@ -54,6 +54,8 @@ Flutter中文开发者社区: <https://flutterchina.club/> --- 【Flutter实战 
 
 ## 博客笔记
 
+* [博客园 * haidragon](https://www.cnblogs.com/haidragon/category/2241526.html)
+
 * 掘金 * 张风捷特烈](https://juejin.cn/user/149189281194766/posts) 
 [toly1994328/FlutterUnit](https://github.com/toly1994328/FlutterUnit)【Flutter集录指南App】flutter的统一，coder的统一。⚠️非常好。
  <http://www.toly1994.com/categories/>
