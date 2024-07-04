@@ -1,9 +1,5 @@
 ## GridView
 
-[GridView](https://api.flutter-io.cn/flutter/widgets/GridView-class.html) 可滚动的二维小部件数组。
-
-`GridView` 的 `main axis`(主轴)方向是它滚动的方向。
-
 要控制滚动视图的初始滚动偏移量，提供一个 `controller` 及其 `ScrollController.initialScrollOffset` 属性。
 
 最常用的网格布局是：
