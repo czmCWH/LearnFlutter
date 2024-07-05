@@ -1,5 +1,6 @@
 /*
 <https://docs.flutter.cn/ui/widgets/layout>
+<https://api.flutter-io.cn/flutter/widgets/BoxScrollView-class.html>
 
 ---- 滚动列表
 
@@ -48,7 +49,7 @@ class _MyListView1 extends State<MyListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ListView'),
+        title: const Text('ListView 默认构造函数'),
       ),
       body: ListView(
         scrollDirection: Axis.vertical,   // 滚动方向
@@ -94,7 +95,7 @@ class _MyListView2 extends State<MyListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ListView 滚动列表'),
+        title: const Text('ListView.builder 构造函数'),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
@@ -125,7 +126,7 @@ class _MyListView3 extends State<MyListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ListView'),
+        title: const Text('ListView.separated 构造函数'),
       ),
       body: ListView.separated(
         itemBuilder: (BuildContext context, int index) {
@@ -155,7 +156,7 @@ class _MyListView4 extends State<MyListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ListView'),
+        title: const Text('ListView 滚动列表'),
       ),
       body: ListView.custom(
         childrenDelegate: SliverChildListDelegate(
