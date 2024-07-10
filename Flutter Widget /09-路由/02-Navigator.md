@@ -393,4 +393,4 @@ class DetailTwoScreen extends StatelessWidget {
 
 [路由和导航](https://flutter.cn/docs/development/ui/navigation)
 
-[Cookbook / 导航 (Navigation)](https://flutter.cn/docs/cookbook/navigation)
+[Cookbook / 导航 (Navigation)]()

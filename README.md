@@ -84,7 +84,7 @@ Flutter中文开发者社区: <https://flutterchina.club/> --- 【Flutter实战 
 
 * flutter初学项目 <https://github.com/SunshineBrother/FlutterDemo><https://juejin.cn/user/4037062427418439/posts>
 
-* [zeqinjie/flutter_review](https://github.com/zeqinjie/flutter_review)，flutter 复习项目
+* [zeqinjie/flutter_review](https://github.com/zeqinjie/flutter_review)，flutter 复习项目（挺复杂）
 
 * [CarGuo/gsy_flutter_demo](https://github.com/CarGuo/gsy_flutter_demo)，1.9k，Flutter 不同于 GSYGithubAppFlutter 完整项目，本项目将逐步完善各种 Flutter 独立例子，方便新手学习上手和小问题方案解决。
 
