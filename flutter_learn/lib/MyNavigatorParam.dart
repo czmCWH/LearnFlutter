@@ -1,3 +1,10 @@
+/*
+<https://api.flutter-io.cn/flutter/widgets/Navigator-class.html>
+
+------ Navigator 跳转参数
+
+ 
+ */
 import 'package:flutter/material.dart';
 
 class MainApp extends StatelessWidget {
@@ -8,18 +15,25 @@ class MainApp extends StatelessWidget {
     // 一个 Material App 从 MaterialApp widget 开始
     return const MaterialApp(
       // 设置 / route 
-      home: MyStatelessScaffold(),
+      home: MyNavigatorParam(),
       // 禁止显示调试横幅
       debugShowCheckedModeBanner: false,   
     );
   }
 }
 
-class MyStatelessScaffold extends StatelessWidget {
-  
-  const MyStatelessScaffold({super.key, this.tipStr});
+class MyNavigatorParam extends StatefulWidget {
+  // 定义常量构造函数
+  const MyNavigatorParam({ super.key });
 
-  final String? tipStr;
+  // 存储可变状态
+  @override
+  State<MyNavigatorParam> createState() {
+    return _MyNavigatorParam();
+  }
+}
+
+class _MyNavigatorParam extends State<MyNavigatorParam> {
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +41,7 @@ class MyStatelessScaffold extends StatelessWidget {
       appBar: AppBar(
         title: const Text('导航栏'),
       ),
-      body: Center(
-        child: Text(
-          tipStr ?? '默认显示，好好学习',
-          style: const TextStyle(fontSize: 24),
-        ),
-      ),
+      body: const  Text('123')
     );
   }
 }
