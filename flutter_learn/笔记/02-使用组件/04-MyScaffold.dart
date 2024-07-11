@@ -39,6 +39,10 @@ Scaffold.floatingActionButton 通过使用 Curves.easeIn 的动画缩小，并�
 
 一旦 bottom sheet 被向下拖动以覆盖 Scaffold 的 70% 以下，scrim 就会消失，Scaffold.floatingActionButton 会动画回到其正常大小。
 
+ 👉 5、学习博客
+ https://juejin.cn/post/7159034806859202567
+ https://juejin.cn/post/7159034806859202567
+
  */
 
 
@@ -131,7 +135,7 @@ class _MyScaffold extends State<MyScaffold> with SingleTickerProviderStateMixin 
       ),
 
       drawer: const _MyDrawer(),  // 抽屉
-      bottomNavigationBar: BottomNavigationBar( // 底部导航
+      bottomNavigationBar: BottomNavigationBar( // 底部导航条
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: '首页'),
           BottomNavigationBarItem(icon: Icon(Icons.business), label: '商品'),
@@ -155,7 +159,7 @@ class _MyScaffold extends State<MyScaffold> with SingleTickerProviderStateMixin 
       _selectedIndex = index;
     });
   }
-
+  
 }
 
 

@@ -1,25 +1,5 @@
 ## Navigator
 
-[Navigator](https://api.flutter.dev/flutter/widgets/Navigator-class.html) 管理一组具有堆栈规则的子小部件的小部件。
-
-`App` 通常通过称为 `screens` 或 `pages` 的全屏元素显示其内容。在 `Flutter` 中，这些元素称为 `route`(路由)，它们由 `Navigator` 管理。
-
-* `Navigator` 管理 `Route` 对象的堆栈，并提供两种管理堆栈的方式，声明式API `Navigator.pages` 或 命令式API `Navigator.push` 和 `Navigator.pop`。
-
-默认情况下，`Navigator` 将使用 [DefaultTransitionDelegate](https://api.flutter-io.cn/flutter/widgets/DefaultTransitionDelegate-class.html) 来决定路由如何过渡到屏幕或从屏幕过渡。要对其进行自定义，请定义一个 `TransitionDelegate` 子类并将其提供给 `Navigator.transitionDelegate`。
-
-### Navigator.pages
-
-如果提供了 `Navigator.pages`，则 `Navigator` 会将其转换为 一个 `Routes`堆栈。`Navigator.pages` 的更改将触发 `Routes` 堆栈的更新。`Navigator` 将更新其 `routes`，以匹配其 `Navigator.pages` 的新配置。
-
-要使用这个`Navigator.pages API`，可以创建一个 `Page` 子类，并为 `Navigator.pages` 定义一个 `Pages` 列表。还需要一个 `Navigator.onPopPage` 回调，以便在出现 `pop` 时正确清理输入页面。
-
-### 使用 MaterialApp 创建 Navigator
-
-虽然可以直接的创建 `Navigator`，但是最常见的是使用 `Router` 来创建 `Navigator`，该`navigator` 本身由 `WidgetsApp` 或 `MaterialApp` 小部件创建和配置。可以使用 `Navigator.of` 引用该 `navigator`。
-
-`MaterialApp` 是最简单的设置方式。 `MaterialApp` 的 `home` 成为 `Navigator` 堆栈底部的路由。这是在启动App时看到的内容。
-
 #### Navigator.push
 
 要在堆栈上推送新 `route`，可以使用构建器函数创建 `MaterialPageRoute` 的实例，该构建器函数创建你希望在屏幕上显示的任何内容。

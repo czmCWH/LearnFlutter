@@ -27,7 +27,7 @@ MaterialApp 会自动创建一个 DefaultSelectionStyle。如果 ThemeData.textS
  */
 
 import 'package:flutter/material.dart';
-import '04-MyAppBar.dart';
+import '04-MyScaffold.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -37,7 +37,7 @@ class MainApp extends StatelessWidget {
     // 一个 Material App 从 MaterialApp widget 开始
     return const MaterialApp(
       // 设置 / route 
-      home: MyAppBar(),
+      home: MyScaffold(),
       // 禁止显示调试横幅
       debugShowCheckedModeBanner: false,   
     );
