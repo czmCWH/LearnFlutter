@@ -28,6 +28,7 @@ Flutter的重要技术主要有这几种，
 flutter.dev * 英文文档 <https://flutter.dev/>
 
 Flutter 文档中文版 <https://flutter.cn>
+Flutter 中文社区教程 <https://docs.flutter.cn/community/tutorials>
 
 Flutter 中文网: <https://doc.flutterchina.club/> --- 【Flutter实战 * 第一版】
 Flutter中文开发者社区: <https://flutterchina.club/> --- 【Flutter实战 * 第二版】
