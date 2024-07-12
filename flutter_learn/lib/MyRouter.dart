@@ -37,3 +37,49 @@ Routergenerate 接口也是 Listable; 通知意味着路由器需要重新构建
 
 
  */
+
+import 'package:flutter/material.dart';
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // 一个 Material App 从 MaterialApp widget 开始
+    return const MaterialApp(
+      // 设置 / route 
+      home: MyRouter(),
+      // 禁止显示调试横幅
+      debugShowCheckedModeBanner: false,   
+    );
+  }
+}
+
+class MyRouter extends StatefulWidget {
+
+  const MyRouter({ Key? key }) : super(key: key);
+
+  @override
+  State<MyRouter> createState() {
+    return _MyRouter();
+  }
+}
+
+class _MyRouter extends State<MyRouter> {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('导航栏'),
+      ),
+      body: const Center(
+        child: Column(
+          children: <Widget>[
+
+          ],
+        ),
+      )
+    );
+  }
+}
