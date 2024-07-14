@@ -48,3 +48,6 @@ flutter:
 > 要创建以 `ios` 为中心的设计，请查看 [Cupertino components](https://docs.flutter.cn/ui/widgets/cupertino)，其中有自己的 `CupertinoApp` 和 `CupertinoNavigationBar` 版本
 
 
+# 四、搭建 Flutter 项目
+
+GetX+Bruno

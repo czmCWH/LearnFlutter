@@ -1,6 +1,8 @@
 /*
+<https://docs.flutter.cn/ui/navigation#using-the-router>
 <https://api.flutter-io.cn/flutter/widgets/Router-class.html>
-Flutter 中文社区教程: <https://docs.flutter.cn/community/tutorials>
+Flutter 中文社区教程 Flutter Navigator 2.0 指南与原理解析: <https://docs.flutter.cn/community/tutorials>，需要仔细阅读
+<https://flutterchina.club/>
 
 👉 1、Router
 Router 是打开和关闭 App 页面的调度器。
