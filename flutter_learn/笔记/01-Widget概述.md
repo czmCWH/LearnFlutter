@@ -50,4 +50,4 @@ flutter:
 
 # 四、搭建 Flutter 项目
 
-GetX+Bruno
+脚手架工具：GetX+Bruno
