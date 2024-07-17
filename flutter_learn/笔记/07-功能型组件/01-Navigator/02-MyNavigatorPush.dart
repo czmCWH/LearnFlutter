@@ -11,12 +11,14 @@ Navigator 是管理一组具有堆栈规则的子 Widget。
 
 👉 2、使用 Pages API
 
-如果提供了 Navigator.page，则 Navigator 会将其转换为 一个 Routes 堆栈。
-Navigator.pages 中的更改将触发对 Routes 堆栈的更新。Navigator 将更新其 routes，以匹配其 Navigator.pages 的新配置。
-要使用这个 API，可以创建 Page 子类，并定义 Navigator.Pages 的 Pages 列表。还需要一个 Navigator.onPopPage 回调，以便在弹出时正确清理输入页面。
+如果提供了 Navigator.page，Navigator 将把它的 Navigator.page 转换成一个 Routes 堆栈。
+Navigator.pages 中的更改将触发对 Routes 堆栈的更新。Navigator 将更新其 routes 以匹配其 Navigator.pages 的新配置。
+要使用这个 API，可以创建 Page 子类并为 Navigator.Pages 定义 Pages 列表。还需要一个 Navigator.onPopPage 回调，以便在 pop 时正确清理输入页面。
 
 默认情况下，Navigator 将使用 DefaultTrantionGenerate 来决定 routes 如何在屏幕内或屏幕外过渡。
 要对其进行定制，请定义一个 Trantiongenerate 子类，并将其提供给 Navigator.trantiongenerate。
+
+有关使用 Page API 更多信息，可参考 Router Widget.
 
 👉 3、使用 Navigator API
 

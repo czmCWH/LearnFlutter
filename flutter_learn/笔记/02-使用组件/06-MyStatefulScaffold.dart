@@ -51,7 +51,7 @@ class _MyStatefulScaffold extends State<MyStatefulScaffold> {
   // 在构建小部件的第一次调用initState()之后，也可以立即调用它。
   @override
   void didChangeDependencies() {
-    debugPrint('didChangeDependencies');
+    debugPrint('--- didChangeDependencies');
     super.didChangeDependencies();
   }
 
@@ -68,7 +68,7 @@ class _MyStatefulScaffold extends State<MyStatefulScaffold> {
   // 当小部件暂时从小部件树中移除时，将调用此方法。
   @override
   void deactivate() {
-    debugPrint('deactivate');
+    debugPrint('--- deactivate');
     super.deactivate();
   }
 
@@ -91,8 +91,8 @@ class _MyStatefulScaffold extends State<MyStatefulScaffold> {
         onTap: grow,
         child: Container(
           color: widget.color,
-          child: widget.child,
           transform: Matrix4.diagonal3Values(_size, _size, 1.0),
+          child: widget.child,
         ),
       ),
     );

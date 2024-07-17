@@ -93,3 +93,12 @@ $ flutter clean
 <https://doc.flutterchina.club/formatting/#自动格式化VS Code中的代码>
 
 * 在 VS Code 中【右键】> 【格式化代码】
+
+
+## 五、VS Code 快捷键
+
+1、`option + 上下键` ：上下移动代码
+
+2、`cmd + .` ：快速修复（包装、提取、移除 Widget；导入文件；切换 StatefulWidget 与 StatelessWidget）
+
+3、`cmd + p` ：通过名称搜索文件

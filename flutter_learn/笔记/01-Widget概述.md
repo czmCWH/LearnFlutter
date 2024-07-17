@@ -1,6 +1,8 @@
 # 一、Widget 概述
 
 <https://docs.flutter.cn/ui>
+<https://flutterchina.club/>
+
 
 `Flutter widgets` 是使用现代框架构建的，它的灵感来自于 `React`，其中心思想是用 `widgets` 构建`UI`。
  `Widget` 描述了在当前的配置和 `state`(状态) 下视图所应该呈现的样子。简单来说，`widget` 是声明和构建 UI 的方法。 
@@ -51,3 +53,8 @@ flutter:
 # 四、搭建 Flutter 项目
 
 脚手架工具：GetX+Bruno
+
+
+
+# 五、Flutter 与其它跨平台对比
+https://juejin.cn/post/7329144189001515048?searchId=2024051110482073DE2668163869A23155
