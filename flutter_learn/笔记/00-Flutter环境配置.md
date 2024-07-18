@@ -87,6 +87,8 @@ $ flutter clean
 * d 键：分离，终止 `flutter run`，保持 App 运行。
 * h 键：列出所有可用的交互命令。
 
+ Android Studio 中如何调试项目：<https://developer.android.google.cn/studio/intro?hl=zh-cn>
+
 
 ## 四、格式化 Flutter 代码
 
@@ -102,3 +104,7 @@ $ flutter clean
 2、`cmd + .` ：快速修复（包装、提取、移除 Widget；导入文件；切换 StatefulWidget 与 StatelessWidget）
 
 3、`cmd + p` ：通过名称搜索文件
+
+4、`stl` 快速创建 StatelessWidget
+
+4、`stlf` 快速创建 StatefulWidget

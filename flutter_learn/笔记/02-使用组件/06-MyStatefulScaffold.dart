@@ -59,7 +59,7 @@ class _MyStatefulScaffold extends State<MyStatefulScaffold> {
   // 这个用于取消订阅在initState()中订阅的旧对象，
   // 并在更新的小部件配置需要替换对象时订阅新对象。
   @override
-  void didUpdateWidget(covariant CounterWidget oldWidget) {
+  void didUpdateWidget(covariant MyStatefulScaffold oldWidget) {
     super.didUpdateWidget(oldWidget);
     debugPrint('didUpdateWidget');
   }

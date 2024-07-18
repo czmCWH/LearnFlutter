@@ -50,7 +50,11 @@ flutter:
 > 要创建以 `ios` 为中心的设计，请查看 [Cupertino components](https://docs.flutter.cn/ui/widgets/cupertino)，其中有自己的 `CupertinoApp` 和 `CupertinoNavigationBar` 版本
 
 
-# 四、搭建 Flutter 项目
+# 四、脚手架搭建 Flutter 
+
+<https://docs.flutter.cn/get-started/test-drive> 在 VS code 创建空项目。
+
+<https://www.insist.life/index.php/2024/04/17/%e5%a5%bd%e7%94%a8%e7%9a%84%e8%84%9a%e6%89%8b%e6%9e%b6%e6%8e%a8%e8%8d%90/>
 
 脚手架工具：GetX+Bruno
 
