@@ -1,25 +1,25 @@
 /* https://dart.cn/language/mixins
- *
- *  mixin类声明要求 Dart3.0+。 早期版本中的代码通常使用 abstract class 代替。 
- * 
- * 1、mixins 混入
- * mixin 是定义可以在多个类层次结构中重用代码的一种方式。它们旨在提供成员集体实现。
- * 
- * 要定义 mixin，请使用 mixin 声明。在需要同时定义 mixin 和 类的极少数情况下，可以使用 mixin class 声明。
- * 要使用 mixin，使用 with 关键字，后跟一个或多个 mixin 名称。
- * 
- * mixin 和 mixin class 不能有 extends子句，也不能声明任何生成构造函数。
- * 
- * 2、指定mixin可以调用自己的成员
- * 
- * 3、mixin 中实现 interface
- * 与声明 mixin抽象 类似，在 mixin 上放置 implements子句，而不实际实现接口，也将确保为 mixin 定义任何成员依赖。
- * 
- * 4、使用on子句声明 mixin 父类
- * on子句 的存在是为了定义解析超调用的类型。所以，只有当你需要在 mixin 中有一个 super 调用时，你才应该使用它。
- * 
- * on子句 强制任何使用mixin的类也成为 on子句 中类型的子类。
- * 
+
+mixin类声明要求 Dart3.0+。 早期版本中的代码通常使用 abstract class 代替。 
+ 
+ 1、mixins 混入
+ mixin 是定义可以在多个类层次结构中重用代码的一种方式。它们旨在提供成员集体实现。
+ 
+ 要定义 mixin，请使用 mixin 声明。在需要同时定义 mixin 和 类的极少数情况下，可以使用 mixin class 声明。
+ 要使用 mixin，使用 with 关键字，后跟一个或多个 mixin 名称。
+ 
+ 注意：mixin 和 mixin class 不能有 extends子句，也不能声明任何生成构造函数。
+ 
+ 2、指定mixin可以调用自己的成员
+ 
+ 3、mixin 中实现 interface
+ 与声明 mixin抽象 类似，在 mixin 上放置 implements子句，而不实际实现接口，也将确保为 mixin 定义任何成员依赖。
+ 
+ 4、使用on子句声明 mixin 父类
+ on子句 的存在是为了定义解析超调用的类型。所以，只有当你需要在 mixin 中有一个 super 调用时，你才应该使用它。
+ 
+ on子句 强制任何使用mixin的类也成为 on子句 中类型的子类。
+ 
  */
 
 abstract interface class Dog {

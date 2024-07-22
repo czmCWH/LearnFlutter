@@ -62,8 +62,8 @@ class MonekyHou extends Animals {
    * 子类中调用父类的构造函数中不能访问this。
    */
 
-  MonekyHou(int sex, String species, int age, Map<String, String> info) : super(species, age, info) {
-    this.sex = sex;
+  MonekyHou(int sex, String species, int age, Map<String, String> info) : sex = sex + 2, super(species, age, info) {
+    print('构造函数的方法体可以省略, 也可以初始化一些东西');
   }
 
 

@@ -5,6 +5,15 @@
  * Dart 对 maps 提供 map literals 和 map type 的支持。 
  * 
  */
+
+
+import 'package:dart_learn/10-%E5%B9%B6%E5%8F%91/02-%E4%BD%BF%E7%94%A8Future.dart';
+
+void main() {
+  // testNumbers();
+  loopMap();
+}
+
 void testMap() {
   // 1、使用字面量方式创建 map
   var mp1 = {"s1": 1, "s2": 3};
@@ -26,10 +35,18 @@ void testMap() {
   print('判断 Map中是否存在某个key的值: ${saMp2['b'] == null}');    // 打印： true
   print('获取Map中键值对的数量: ${saMp2.length}');    // 打印：1
 
+  Map saMp3 = {};
+  saMp3['a'] = 1;
+  print(saMp3);
+
+
   // 3、创建常量Map
   // 在 map literal 前面加 const 来创建 compile-time constant 的 map
   final constantMap = const {'s1': 10, 's2': 20};
   // constantMap[s1] = 100;     // 修改常量的值会报错。
+
+
+
 }
 
 void testOperatorsMap() {
@@ -48,4 +65,27 @@ void testOperatorsMap() {
   const res = true;
   var mp3 = {"23": "aa", if (res) "33": "bbb"};
   print(mp3);     // 打印：{23: aa, 33: bbb}
+}
+
+// 遍历 Map
+void loopMap() {
+  
+  print('使用 forEach 遍历: ');
+  Map ages = {'zhangsan': 17, 'lisi': 18};
+  ages.forEach((key, value) {
+    print('key = $key, value = $value');
+  });
+
+  print('使用 for 遍历: ');
+  for (var key in ages.keys) {
+    print('key = $key, value = ${ages[key]}');
+  }
+
+  // 遍历 Map 生成另一个 Map 
+  Map newMp = ages.map((key, value) {
+    return MapEntry(key + '1', value + 2);
+  });
+  print('newMp = $newMp');    // 打印： newMp = {zhangsan1: 19, lisi1: 20}
+
+
 }

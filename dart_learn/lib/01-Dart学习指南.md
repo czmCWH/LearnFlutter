@@ -50,3 +50,8 @@ $ dart run
 * 一个主要的 Dart 源文件，`bin/dart_learn.dart`，该文件包含一个顶层 `main()` 函数。该函数是你应用的入口。
 * 一个额外的 Dart 文件，`lib/xxx.dart`，包含一些功能性的函数方法，这些函数方法将会导入到 `dart_learn.dart` 文件中。
 * 一个 pubspec 文件，pubspec.yaml，包含应用的元数据，包括应用依赖的 package 信息以及所需的版本等。
+
+
+# 四、学习
+
+可以学习高效指南 (Effective Dart) <https://dart.cn/effective-dart/>，提高开发技巧。

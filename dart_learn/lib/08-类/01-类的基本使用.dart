@@ -10,11 +10,14 @@
  * 
  */
 
+void main() {
 
-/* 1、类的成员
- * 
+}
+
+/*
+1、定一个 类
+Dart 的类都继承自 Object。
  */
-
 class VarClass {
   
   /* 1、声明实例变量
@@ -85,6 +88,17 @@ class VarClass {
   VarClass.fromA(double a) : this(a, 100, '重定向构造函数');
 
 
+  /* 5、命名工厂构造方法
+   * 语法：
+   *    factory 类名.方法名
+   * 它可以有返回值，而且不需要将类的 final 变量作为参数，是提供一种灵活获取类对象的方式。
+   */
+
+
+  /* 6、工厂构造方法
+   * 
+   */
+
 
   /* 1、实例方法
    * 对象的实例方法可以访问 实例变量 和 this。
@@ -134,7 +148,13 @@ class VarClass {
   static String classDesc() {
     return '类方法：total = $total, $initialName';
   }
-  
+
+  // 1、重写方法
+  @override
+  String toString() {
+    return 'name = $name';
+  }
+
 }
 
 

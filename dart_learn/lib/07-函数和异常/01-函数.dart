@@ -15,6 +15,7 @@ int addInt(int a, int b) {
   return a + b;
 }
 
+// 当函数返回值类型为 void 时，定义函数时可以省略返回值类型
 foo() {
   print('a + b = ${addInt(1, 2)}');
 }

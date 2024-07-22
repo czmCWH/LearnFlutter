@@ -15,6 +15,11 @@
   `Dart`支持使用`literal`(字面量)创建对象的能力。如，`"a string"`是`string literal`，而`true`是`boolean literal`。
 */
 
+void main() {
+  // testNumbers();
+  testStrings();
+}
+
 void testNumbers() {
   /*
    * 如果 num 及其子类型没有您要查找的内容，则 dart:math 库可能有。
@@ -29,9 +34,12 @@ void testNumbers() {
   print('x = $x, ${x.runtimeType}。hex = $hex, ${hex.runtimeType}');   // 打印：1 15658734
 
   // 如果数字包含小数，则它是 double。
-  var y = 1.1;
+  var y = -1.1;
   var exponents = 1.42e5;
   print('y = $y, ${y.runtimeType} 。 exponents = $exponents, ${exponents.runtimeType}');   // 打印：1.1 , 142000
+
+  print('绝对值：${y.abs()}');
+  print('把 double 转 int : ${y.toInt()}');
 
   // int 和 double 都是 num 的子类型
   // https://dart.cn/guides/language/numbers
@@ -53,6 +61,7 @@ void testNumbers() {
   var dStr = 1.2233.toString();
   var dPonitStr = 1.2233.toStringAsFixed(2);
   print('sInt = $sInt, iStr = $iStr, sDouble = $sDouble, dStr = $dStr, dPonitStr = $dPonitStr \n');
+
 }
 
 void testStrings() {
@@ -110,7 +119,10 @@ void testStrings() {
   var l = '开心😄下雨☔️';
   print('字符串长度, string.length = ${l.length}, .runes.length = ${l.runes.length} \n');   //  string.length = 8, .runes.length = 7
 
-  
+  // 6、字符串截取
+  String rangStr = '你好世界！';
+  print('从索引1开始到索引3的字符: ${rangStr.substring(1, 3)}');    // 打印：好世
+  print('获取指定字符串位置: ${rangStr.indexOf('世界')}');     // 打印：2
 
 }
 

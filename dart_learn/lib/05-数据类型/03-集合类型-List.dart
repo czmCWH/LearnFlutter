@@ -3,6 +3,12 @@
  * List：https://api.dart.cn/stable/3.4.0/dart-core/List-class.html
  */
 
+
+void main() {
+  // testNumbers();
+  testList();
+}
+
 void testList() {
   /**
    * 在Dart中，数组是 List对象，称它为列表。
@@ -12,18 +18,25 @@ void testList() {
    */
 
   // 定义列表变量
-  var ls1 = [1, 2, 3, ];
+  List ls1 = [1, 2, 3, '你好'];
   // 使用类型注释定义列表变量
   List<String> ls2 = [];
   // 创建一个编译时常量(compile-time constant)列表
   var ls3 = const [1, 2, 3, ];
-  print('$ls1, $ls2, $ls3');    // [1, 2, 3], [], [1, 2, 3]
+  print('$ls1, ${ls1.runtimeType}, $ls2, $ls3');    // [1, 2, 3, 你好], List<Object>, [], [1, 2, 3]
   print('${ls1.length}, ${ls2.length}, ${ls3.length}');   // 3, 0, 3
 
   const List ls4 = [1, 2, 3];
    // 如下都报错：Unsupported operation: Cannot modify an unmodifiable list
   // ls3[0] = 10;  
   // ls4[0] = 10;
+
+  ls1.addAll(ls3);
+  print(ls1);
+
+  List ls5 = List.generate(3, (index) => index*3);    // List 生成器创建 List: [0, 3, 6]
+  print('List 生成器创建 List: $ls5');
+
 }
 
 /*  Dart 2.3 对 List 引入的操作符，用于 List 合并
@@ -57,3 +70,25 @@ void testCreateList() {
   print(ls3);   // 打印：[a, +1, +2, +3]    
 }
 
+/**
+ * List 的内置方法：
+ * forEach、remove、insert、sublist、indexOf...
+ * 
+ */
+
+void testElement() {
+  List ls = [];
+  ls.add(0);
+  ls.add('');
+  ls.add(null);
+
+  if (ls[0] == null || ls[0] == '' || ls[0] == 0) {
+    print('1--- ls[0] is empty');
+  }
+
+  // 简化判断元素是否为空
+  if ([null, '', 0].contains(ls[0])) {
+    print('2--- ls[0] is empty');
+  }
+
+}
