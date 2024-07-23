@@ -9,6 +9,7 @@
   * 如果你要存储的键值集合相对较少，则可以用 shared_preferences 插件。不是为存储大量数据而设计的。
   * shared_preferences 插件只能用于基本数据类型： int、double、bool、string 和 List<String>。
   * 不能确保应用重启后数据仍然存在。
+  * 它是异步的
 
 使用：  
     flutter pub add shared_preferences

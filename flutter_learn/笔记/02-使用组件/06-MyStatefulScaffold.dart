@@ -44,15 +44,18 @@ class _MyStatefulScaffold extends State<MyStatefulScaffold> {
   void initState() {
     debugPrint('--- 初始状态数据');
     super.initState();
+    // 可进行 初始状态数据、进行网络请求
     _size = 1.0;
   }
 
-  // 3、当每个依赖项更改此状态时，调用此方法
+  // 3、当每个依赖项更改此状态时调用此方法
   // 在构建小部件的第一次调用initState()之后，也可以立即调用它。
   @override
   void didChangeDependencies() {
     debugPrint('--- didChangeDependencies');
     super.didChangeDependencies();
+
+    // 可进行网络请求
   }
 
   // 4、当小部件重新构建时，将调用此方法。
