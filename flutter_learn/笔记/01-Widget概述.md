@@ -62,6 +62,8 @@ flutter:
 
 脚手架工具：GetX+Bruno
 
+# 五、配置 Flutter 项目 gitignore 文件
+<https://github.com/flutter/flutter/blob/master/.gitignore>
 
 
 # 五、Flutter 与其它跨平台对比
