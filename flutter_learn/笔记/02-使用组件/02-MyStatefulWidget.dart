@@ -1,16 +1,19 @@
 /* https://api.flutter-io.cn/flutter/widgets/StatefulWidget-class.html
 
-二、StatefulWidget 可变状态 widget
+二、StatefulWidget 可变状态 Widget
+
+StatefulWidget 是可变状态的widget。使用setState方法管理StatefulWidget的状态的改变。调用setState告诉Flutter框架，某个状态发生了
+变化，Flutter会重新运行build方法，以便应用程序可以应用最新状态。
 
 👉 1、State 对象 和 StatefulWidget 的关系
 State是指：
-1）在构建`widget`时可以同步读取信息
-2）在`widget`的生命周期中可更改信息。`widget`实现者有责任使用 `State.setState` 确保在状态改变时及时通知`State`。
+1）在构建widget 时可以同步读取信息
+2）在 widget 的生命周期中可更改信息。widget 实现者有责任使用 State.setState 确保在状态改变时及时通 State。
 
 StatefulWidget 实例 本身是不可变的，并将其可变状态存储在由 `createState` 方法创建的单独的 `State` 对象中，
-或者 存储在该 `State` 订阅的对象中，例如 Stream 或 ChangeNotificationer 对象，这些对象的引用存储在 StatefulWidget 本身的 final 字段中。
+或者 存储在该 State 订阅的对象中，例如 Stream 或 ChangeNotificationer 对象，这些对象的引用存储在 StatefulWidget 本身的 final 字段中。
 
-框架每次 inflates(扩充) StatefulWidget 时都会调用 `createState`，这意味着如果该 widget 被插入到树的多个位置，则多个 State 对象可能与同一个 StatefulWidget 相关联。
+框架每次 inflates(扩充) StatefulWidget 时都会调用 createState，这意味着如果该 widget 被插入到树的多个位置，则多个 State 对象可能与同一个 StatefulWidget 相关联。
 同样，如果 StatefulWidget 从树中移除，然后再次插入树中，框架将再次调用 createState 来创建一个新的 State 对象，从而简化 State 对象的生命周期。
 
 👉 2、GlobalKey StatefulWidget
@@ -40,13 +43,13 @@ StatefulWidget 实例 本身是不可变的，并将其可变状态存储在由 
 
 * 如果子树没有更改，则缓存表示该子树的 widget，并在每次可以使用它时重用它。
 
-* 尽可能使用 `const` 小部件。(这相当于缓存一个小部件并重用它。)
+* 尽可能使用 const 小部件。(这相当于缓存一个小部件并重用它。)
 
 * 避免更改任何已创建子树的深度或更改子树中任何小部件的类型。
 
 * 如果由于某种原因必须更改深度，请考虑将子树的公共部分包装在具有 GlobalKey 的 Widget 中，该 widget 在 StatefulWidget 的生命周期内保持一致。
 
-* 当尝试创建可重用的UI时，最好使用 `widget` 而不是 `helper` 方法。
+* 当尝试创建可重用的UI时，最好使用 widget 而不是 helper 方法。
 
 */
 

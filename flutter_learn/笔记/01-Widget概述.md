@@ -5,6 +5,7 @@ Flutter 中文开发者社区：<https://flutterchina.club/>
 Flutter 实用教程：<https://docs.flutter.cn/cookbook>
 Flutter SDK文档：<https://api.flutter-io.cn/index.html>
 Flutter 插件平台： <https://pub-web.flutter-io.cn/>
+Flutter issues：<https://github.com/flutter/flutter/issues>
 
 
 `Flutter widgets` 是使用现代框架构建的，它的灵感来自于 `React`，其中心思想是用 `widgets` 构建`UI`。

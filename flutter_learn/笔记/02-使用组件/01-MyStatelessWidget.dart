@@ -11,10 +11,11 @@
 
 一、StatelessWidget 无状态组件
 
-StatelessWidget 从它们的父 `widget` 接收参数，它们被存储在 `final` 类型的成员变量中。 当它被构建时，它使用这些存储的值作为参数来构建 `widget`。
+StatelessWidget 从它们的父 `widget` 接收参数，它们被存储在 `final` 类型的成员变量中。
+当它被构建时，它使用这些存储的值作为参数来构建 `widget`。它没有要管理的内部状态。
 
 StatelessWidget 的`build`方法通常只在三种情况下调用：
-* `widget` 第一次插入树中时；
+* widget 第一次插入树中时；
 * 当`widget`的父级改变其配置时；
 * 当它依赖于一个[InheritedWidget](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)更改时。
 
