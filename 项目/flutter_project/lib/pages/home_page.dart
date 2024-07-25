@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/api/home_api.dart';
 import 'package:flutter_project/api/login_api.dart';
+import 'package:flutter_project/model/home_model.dart';
 import 'package:flutter_project/widget/banner_widget.dart';
+import 'package:flutter_project/widget/grid_nav_widget.dart';
+import 'package:flutter_project/widget/loading_container.dart';
+import 'package:flutter_project/widget/local_nav_widget.dart';
+import 'package:flutter_project/widget/sales_box_widget.dart';
+import 'package:flutter_project/widget/sub_nav_widget.dart';
 
 class HomePage extends StatefulWidget {
+
+  static Config? configModel;
+
   const HomePage({super.key});
 
   @override
@@ -11,13 +21,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
 
-  final bannerList = [
-    'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-    'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-    'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-  ];
   static const appBarScrollOffset = 100.0;
   double appBarAlpha = 0;
+  List<CommonModel> localNavList = [];
+  List<CommonModel> bannerList = [];
+  List<CommonModel> subNavList = [];
+  GridNav? gridNavModel;
+  SalesBox? salesBoxModel;
+
+  bool _loading = true;
 
   get _logoutBtn => TextButton(
     onPressed: () {
@@ -29,6 +41,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   get _appBar => Opacity(
     opacity: appBarAlpha,
     child: Container(
+      padding: const EdgeInsets.only(top: 20),
       height: 80,
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -45,33 +58,53 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   get _listView => ListView(
     children: [
       BannerWidget(bannerList: bannerList),
+      LocalNavWidget(localNavList: localNavList),
+      if (gridNavModel != null) GridNavWidget(gridNavModel: gridNavModel!),
+      SubNavWidget(subNavList: subNavList,),
+      if (salesBoxModel != null) SalesBoxWidget(salesBox: salesBoxModel!),
       const SizedBox(height: 600,),
     ],
   );
   
+  get _contentView => MediaQuery.removePadding(
+    removeTop: true,  // 移除 ListView 自带顶部刘海的 padding
+    context: context, 
+    child: RefreshIndicator(  // 下拉刷新
+      color: Colors.blue,
+      onRefresh: _handleRefresh,
+      child: NotificationListener( // 添加滚动监听
+      onNotification: (scrollNotification) {
+          // 只监听最外层 Widget 的滚动
+          if (scrollNotification is ScrollUpdateNotification && scrollNotification.depth == 0) {
+            _onScroll(scrollNotification.metrics.pixels);
+          }
+          return false;
+        },
+        child: _listView,
+      ),
+    ),
+  );
+
+
+  @override
+  void initState() {
+    super.initState();
+    _handleRefresh();
+  }
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
 
+    // LoadingContainer
+
     return Scaffold(
-      body: Stack(
-        children: [
-          // 移除 ListView 自带顶部刘海的 padding
-          MediaQuery.removePadding(removeTop: true, context: context, child: 
-            // 添加滚动监听
-            NotificationListener(
-              onNotification: (scrollNotification) {
-                // 只监听最外层 Widget 的滚动
-                if (scrollNotification is ScrollUpdateNotification && scrollNotification.depth == 0) {
-                  _onScroll(scrollNotification.metrics.pixels);
-                }
-                return false;
-              },
-              child: _listView,
-            ),
-          ),
-          _appBar,
-        ],
+      backgroundColor: const Color(0xfff2f2f2),
+      body: LoadingContainer(
+        isLoading: _loading,
+        child: Stack(
+          children: [_contentView, _appBar,],
+        ),
       ),
     );
   }
@@ -94,4 +127,27 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
     debugPrint('--- offSet: $offY, alpha: $alpha');
   }
 
-}
+  /// 获取首页数据
+  Future<void> _handleRefresh() async {
+    try {
+      HomeModel model = await HomeApi.fetch();
+      setState(() {
+        HomePage.configModel = model.config;
+        localNavList = model.localNavList ?? [];
+        subNavList = model.subNavList ?? [];
+        gridNavModel = model.gridNav;
+        salesBoxModel = model.salesBox;
+        bannerList = model.bannerList ?? [];
+         
+        _loading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _loading = false;
+      });
+      debugPrint('--- error = $e');
+    }
+
+  }
+
+} 

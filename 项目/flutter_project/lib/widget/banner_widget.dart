@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_project/model/home_model.dart';
 import 'package:flutter_project/util/navigator_util.dart';
 import 'package:flutter_project/util/screen_adapter_helper.dart';
 
-/// 轮播图
+/// 首页-轮播图
 class BannerWidget extends StatefulWidget {
-  final List<String> bannerList;
+  final List<CommonModel> bannerList;
 
   const BannerWidget({super.key, required this.bannerList});
 
@@ -49,12 +50,12 @@ class _BannerWidgetState extends State<BannerWidget> {
     );
   }
 
-  Widget _tabImage(String imgUrl, double width) {
+  Widget _tabImage(CommonModel model, double width) {
     return GestureDetector(
       onTap: () {
         NavigatorUtil.goToLogin();
       },
-      child: Image.network(imgUrl, width: width, fit: BoxFit.cover,),
+      child: Image.network(model.icon!, width: width, fit: BoxFit.cover,),
     );
   }
 
