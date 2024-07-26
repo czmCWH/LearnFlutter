@@ -33,7 +33,7 @@ class _TabNavigatorState extends State<TabNavigator> {
         physics: const NeverScrollableScrollPhysics(),    // 禁止 PageView 左右滑动手势
         children: const [
           HomePage(),
-          SearchPage(),
+          SearchPage(hideLeft: true,),
           TravelPage(),
         ],
       ),

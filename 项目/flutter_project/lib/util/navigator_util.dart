@@ -45,4 +45,10 @@ class NavigatorUtil {
     }));
   }
 
+  /// 返回上一页
+  static pop(BuildContext context) {
+    if (Navigator.canPop(context)) {
+      Navigator.pop(context);
+    }
+  }
 }

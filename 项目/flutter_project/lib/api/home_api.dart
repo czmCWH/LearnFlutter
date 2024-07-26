@@ -8,7 +8,7 @@ import 'dart:convert';
 /// 首页大接口
 class HomeApi {
 
-  static Future<HomeModel> fetch() async {
+  static Future<HomeModel?> fetch() async {
     var url = Uri.parse('https://api.geekailab.com/uapi/ft/home');
     final response = await http.get(url, headers: hiHeaders());
     Utf8Decoder utf8decoder = const Utf8Decoder();  // 用于解决中文乱码
@@ -20,6 +20,7 @@ class HomeApi {
     } else {
       // if (response.statusCode == 401) {
       //   NavigatorUtil.goToLogin();
+      //   return null;
       // }
       throw Exception(bodyString);
     }
