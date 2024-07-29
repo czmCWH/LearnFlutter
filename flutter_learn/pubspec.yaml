@@ -35,6 +35,7 @@ flutter:
     - images/WhiteFlower.jpg
     - images/bluePlace.png
     - images/phone.png
+    - assets/hiH5/
 
 
   uses-material-design: true
