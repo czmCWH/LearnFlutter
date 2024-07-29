@@ -16,6 +16,7 @@ dependencies:
   transparent_image: ^2.0.1   # 处理图片
   underline_indicator: ^0.0.4   # 处理 TabBar 下划线
   url_launcher: ^6.3.0      # 访问网页URL
+  webview_flutter: ^4.8.0
 
 dev_dependencies:
   flutter_test:

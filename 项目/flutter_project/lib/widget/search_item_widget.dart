@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/model/search_model.dart';
+import 'package:flutter_project/util/navigator_util.dart';
 
 // 图片类型
 const types = [
@@ -82,6 +83,7 @@ class SearchItemWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // 跳转到 h5
+        NavigatorUtil.jumpH5(url: searchItem.url, title: '详情');
       },
       child: _item,
     );

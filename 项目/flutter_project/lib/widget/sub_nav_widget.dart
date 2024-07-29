@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/model/home_model.dart';
+import 'package:flutter_project/util/navigator_util.dart';
 
 /// 首页-活动入口
 class SubNavWidget extends StatelessWidget {
@@ -54,6 +55,11 @@ class SubNavWidget extends StatelessWidget {
     return Expanded(child: GestureDetector(
       onTap: () {
         // 跳转到 h5
+        NavigatorUtil.jumpH5(
+            url: model.url,
+            statusBarColor: model.statusBarColor,
+            title: model.title,
+            hideAppBar: model.hideAppBar);
       },
       child: Column(
         children: [

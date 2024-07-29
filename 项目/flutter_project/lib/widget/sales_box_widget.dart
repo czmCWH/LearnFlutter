@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/model/home_model.dart';
+import 'package:flutter_project/util/navigator_util.dart';
 
 /// 首页 - 底部卡片入口
 class SalesBoxWidget extends StatelessWidget {
@@ -79,6 +80,7 @@ class SalesBoxWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           // 跳转到 h5
+
         },
         child: const Text('更多福利 >', style: TextStyle(fontSize: 12, color: Colors.white),),
       ),
@@ -106,6 +108,7 @@ class SalesBoxWidget extends StatelessWidget {
     return GestureDetector(
       onDoubleTap: () {
         // 跳转到h5
+        NavigatorUtil.jumpH5(url: model.url, statusBarColor: model.statusBarColor, title: model.title, hideAppBar: model.hideAppBar);
       },
       child: Container(
         decoration: BoxDecoration(

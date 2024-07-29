@@ -53,7 +53,8 @@ class _BannerWidgetState extends State<BannerWidget> {
   Widget _tabImage(CommonModel model, double width) {
     return GestureDetector(
       onTap: () {
-        NavigatorUtil.goToLogin();
+        // NavigatorUtil.goToLogin();
+        NavigatorUtil.jumpH5(url: model.url,title: model.title, hideAppBar: model.hideAppBar);
       },
       child: Image.network(model.icon!, width: width, fit: BoxFit.cover,),
     );

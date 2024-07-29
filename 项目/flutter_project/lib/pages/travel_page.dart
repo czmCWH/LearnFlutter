@@ -69,7 +69,6 @@ class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-
     // 获取刘海屏 Top 安全边距
     double top = MediaQuery.of(context).padding.top;
 
@@ -86,4 +85,9 @@ class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
       ),
     );
   }
+  
+  // 缓存此 Widget，避免销毁
+  // @override
+  // bool get wantKeepAlive => true;
+
 }

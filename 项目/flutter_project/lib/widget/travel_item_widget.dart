@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/model/travel_tab_model.dart';
+import 'package:flutter_project/util/navigator_util.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 /// 旅拍 list 的卡片
@@ -74,6 +75,8 @@ class TravelItemWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // 点击卡片，跳转到 h5
+        String? url = _findJumpUrl();
+        NavigatorUtil.jumpH5(url: url, title: '详情');
       },
       child: Card(    // Card 实现底部阴影和圆角效果
         child: PhysicalModel(
@@ -141,6 +144,18 @@ class TravelItemWidget extends StatelessWidget {
 
   String _poiNmae() {
     return item.article?.pois == null || item.article!.pois!.isEmpty ? '未知' : item.article?.pois?[0].poiName ?? '';
+  }
+
+  String? _findJumpUrl() {
+    if (item.article?.urls?.isEmpty ?? false) {
+      return null;
+    }
+    for (var url in item.article!.urls!) {
+      if (url.h5Url != null) {
+        return url.h5Url;
+      }
+    }
+    return null;
   }
 
 }

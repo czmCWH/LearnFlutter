@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/model/home_model.dart';
+import 'package:flutter_project/util/navigator_util.dart';
 
 /// 首页-网格卡片布局
 class GridNavWidget extends StatelessWidget {
@@ -84,7 +85,8 @@ class GridNavWidget extends StatelessWidget {
   Widget _wrapGesture(BuildContext context, Widget widget, CommonModel model) {
     return GestureDetector(
       onTap: () {
-
+        // 跳转到 h5
+        NavigatorUtil.jumpH5(url: model.url, statusBarColor: model.statusBarColor, title: model.title, hideAppBar: model.hideAppBar);
       },
       child: widget,
     );

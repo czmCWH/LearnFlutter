@@ -1,9 +1,11 @@
 # 一、Widget 概述
 
-Flutter 开发文档：<https://docs.flutter.cn/ui>
 Flutter 中文开发者社区：<https://flutterchina.club/>
-Flutter 实用教程：<https://docs.flutter.cn/cookbook>
+Flutter 中文开发文档：<https://docs.flutter.cn>
+Flutter 英文开发文档：<https://docs.flutter.dev/>
+
 Flutter SDK文档：<https://api.flutter-io.cn/index.html>
+
 Flutter 插件平台： <https://pub-web.flutter-io.cn/>
 Flutter issues：<https://github.com/flutter/flutter/issues>
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/model/home_model.dart';
+import 'package:flutter_project/util/navigator_util.dart';
 
 /// 首页-顶部球区导航Item
 class LocalNavWidget extends StatelessWidget {
@@ -38,6 +39,7 @@ class LocalNavWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // 跳转到 h5
+        NavigatorUtil.jumpH5(url: model.url, statusBarColor: model.statusBarColor, title: model.title, hideAppBar: model.hideAppBar);
       },
       child: Column(
         children: [

@@ -3,6 +3,7 @@ import 'package:flutter_project/util/navigator_util.dart';
 import 'package:flutter_project/pages/home_page.dart';
 import 'package:flutter_project/pages/searchPage.dart';
 import 'package:flutter_project/pages/travel_page.dart';
+import 'package:flutter_project/pages/my_page.dart';
 
 class TabNavigator extends StatefulWidget {
   const TabNavigator({super.key});
@@ -35,6 +36,7 @@ class _TabNavigatorState extends State<TabNavigator> {
           HomePage(),
           SearchPage(hideLeft: true,),
           TravelPage(),
+          MyPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -50,7 +52,7 @@ class _TabNavigatorState extends State<TabNavigator> {
           _bottomItem('首页', Icons.home, 0),
           _bottomItem('搜索', Icons.search, 1),
           _bottomItem('旅拍', Icons.camera_alt, 2),
-          // _bottomItem('我的', Icons.account_circle, 3),
+          _bottomItem('我的', Icons.account_circle, 3),
         ],
       ),
     );
