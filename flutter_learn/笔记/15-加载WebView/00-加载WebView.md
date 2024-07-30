@@ -31,6 +31,7 @@
 
 3、loadFile 的方式;
     用于加载手机目录下的 HTML 文件；特点：可以加载H5离线包
+    可通过 path_provider package 访问手机目录；
 
 4、loadFlutterAsset 的方式；
     用于加载 Flutter 项目目录中的HTML 文件；特点需要在 pubspec.yaml 文件中注册html文件目录，html文件会随项目一起打包。

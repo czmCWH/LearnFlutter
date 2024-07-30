@@ -16,6 +16,11 @@
 [simplezhli/flutter_deer](https://github.com/simplezhli/flutter_deer)，7.7k，Flutter 练习项目(包括集成测试、可访问性测试)。内含完整UI设计图，更贴近真实项目的练习。
 
 
+## 封装 Flutter 常用代码
+
+[iotjin/jh_flutter_demo](https://github.com/iotjin/jh_flutter_demo)，593，flutter项目- 实现一些常用效果、封装通用组件和工具类。 
+
+
 # Flutter 插件
 
 [pub.dev flutter 插件平台](https://pub-web.flutter-io.cn/)
@@ -35,9 +40,6 @@
 [alibaba/flutter_boost](https://github.com/alibaba/flutter_boost)，FlutterBoost是Flutter插件，它可以以最少的工作量将Flutter混合集成到您现有的本机应用程序中
 
 
-## 封装 Flutter 常用代码
-
-[iotjin/jh_flutter_demo](https://github.com/iotjin/jh_flutter_demo)，593，flutter项目- 实现一些常用效果、封装通用组件和工具类。
 
 ## Flutter 图表库
 

@@ -110,8 +110,7 @@ class _LoginPageState extends State<LoginPage> {
     } catch (e) {
       debugPrint('--- 登录失败 $e');
     }
-    // NavigatorUtil.goToHome(context);
-    NavigatorUtil.goToTabNavigator(context);
+    NavigatorUtil.goToHome(context);
   }
 
   /// 点击注册

@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       home: FutureBuilder(
-        future: HiCache.preInit(), 
+        future: _doInit(), 
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           // 初始化屏幕适配工具
           ScreenHelper.init(context);
@@ -42,4 +42,15 @@ class MainApp extends StatelessWidget {
       ),
     );
   }
+
+  Future<void> _doInit() async {
+    // 预初始化缓存工具
+    await HiCache.preInit(); 
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      // 通过 flutter_splash_screen 插件 处理关闭 Android 端对应的启动屏幕
+      
+    });
+  }
+
 }

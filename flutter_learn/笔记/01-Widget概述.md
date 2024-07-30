@@ -5,8 +5,6 @@ Flutter 中文开发文档：<https://docs.flutter.cn>
 Flutter 英文开发文档：<https://docs.flutter.dev/>
 
 Flutter SDK文档：<https://api.flutter-io.cn/index.html>
-
-Flutter 插件平台： <https://pub-web.flutter-io.cn/>
 Flutter issues：<https://github.com/flutter/flutter/issues>
 
 

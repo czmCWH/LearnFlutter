@@ -28,7 +28,7 @@ class NavigatorUtil {
   static goToHome(BuildContext context) {
     //  跳转后，不允许返回
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-      return const HomePage();
+      return const TabNavigator();
     }));
   }
 
