@@ -1,9 +1,12 @@
 /*
+<https://docs.flutter.cn/ui/adaptive-responsive/safearea-mediaquery>
 <https://api.flutter.dev/flutter/widgets/SafeArea-class.html>
 
 ---- 安全边距
 
 👉 1、SafeArea
+
+👉 2、MediaQuery
 
 
  */
