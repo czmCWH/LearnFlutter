@@ -1,8 +1,13 @@
-# 一、Flutter 相关文档
+# 一、Flutter 文档
 
-Flutter 中文开发者社区：<https://flutterchina.club/>
-Flutter 中文开发文档：<https://docs.flutter.cn>
-Flutter 英文开发文档：<https://docs.flutter.dev/>
+Flutter 中文开发者网站：<https://flutter.cn>
+  * <https://docs.flutter.cn/posts>：Flutter 中文开发文档
+  * <https://docs.flutter.cn/community/tutorials>：Flutter 中文社区教程
+
+Flutter 英文网站：<https://flutter.dev/>
+
+Flutter 中文社区：<https://flutterchina.club/> --- 【Flutter实战 * 第二版】
+Flutter 中文网: <https://doc.flutterchina.club/> --- 【Flutter实战 * 第一版】
 
 Flutter SDK文档：<https://api.flutter-io.cn/index.html> or <https://api.flutter.dev/index.html>
 Flutter issues：<https://github.com/flutter/flutter/issues>
@@ -38,6 +43,17 @@ flutter:
 <https://docs.flutter.cn/ui/design/material>
 <https://docs.flutter.cn/ui/widgets/material>
 <https://api.flutter-io.cn/flutter/material/material-library.html>
+
+
+## Flutter的重要技术
+
+掘金 * 麦客奥德彪 <https://juejin.cn/post/7371256712106754085>
+
+* 路由和导航：Navigator、Router、命名路由等。
+* 本地存储：shared_preferences、sqflite 等。
+* 国际化和本地化：Flutter 国际化支持、多语言切换。
+* 测试：Widget 测试、集成测试、单元测试。
+* 性能优化：Flutter 性能分析、减少重绘、优化构建方法。
 
 
 # 三、Flutter 与其它跨平台对比

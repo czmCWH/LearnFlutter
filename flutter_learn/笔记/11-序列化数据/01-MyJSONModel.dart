@@ -20,7 +20,7 @@ JSON 字符串转Dart模型：<https://www.geekailab.com/io/tools/json-to-dart/>
 1.2、利用代码生成的 JSON 序列化数据
   利用代码生成的 JSON 序列化数据，意味着可以通过外部的库生成编码模板。在一些初始化设置后，你可以运行文件监听程序，来从你的模型类生成代码。
   例如，
-      json_serializable package：能够通过注解让你的普通类序列化。
+      json_serializable package：能够通过注解让你的普通类序列化。<https://www.bilibili.com/read/cv9349362>
       built_value package：提供了更高层次的方法，让定义为无变化的类也能够被序列化为 JSON。
 
   这种方法适用于大型项目。不需要手动编写模板，并且一些试图去获取不存在的 JSON 字段的笔误，会在编译阶段被发现。
