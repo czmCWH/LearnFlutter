@@ -31,7 +31,7 @@ class MyContainer extends StatelessWidget {
           Container(
             alignment: Alignment.bottomRight,   // 子项在容器内部的对齐方式
             height: 200,
-            decoration: BoxDecoration(   // 在子项背景的装饰，比如：BoxDecoration、ShapeDecoration
+            decoration: BoxDecoration(   // 在子项背景的装饰，如背景，边框或阴影，比如：BoxDecoration、ShapeDecoration
               // color: Colors.red,     // color 会和 image 属性混合
               image: const DecorationImage(
                 image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
@@ -53,8 +53,8 @@ class MyContainer extends StatelessWidget {
           // 2、color、padding、margin
           Container(
             color: Colors.red,    // 背景颜色 color 和 decoration 属性不能共存。
-            padding: const EdgeInsets.all(10),  // 容器内补白
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10), // 容器外补白
+            padding: const EdgeInsets.all(10),  // 内边距：容器内补白
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10), // 外边距：容器外补白
             child: const Text(
               '北冥有鱼，其名为鲲。鲲之大，不知其几千里也；化而为鸟，其名为鹏。',
               style: TextStyle(color: Colors.black, fontSize: 15),
