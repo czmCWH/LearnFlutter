@@ -2,7 +2,7 @@
 
 Flutter 中文开发者网站：<https://flutter.cn>
   * <https://docs.flutter.cn/posts>：Flutter 中文开发文档
-  * <https://docs.flutter.cn/community/tutorials>：Flutter 中文社区教程
+  * <https://docs.flutter.cn/community/tutorials>：Flutter 中文社区教程 👍
 
 Flutter 英文网站：<https://flutter.dev/>
 

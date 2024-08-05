@@ -4,7 +4,7 @@
 ---- 通知
 
 👉 1、Notification
-Notification 可以冒泡到 widget tree 的通知。
+Notification 是一个抽象类，表示可以冒泡到 widget tree 的通知。
 
 * 要监听 subtree 中的通知，请使用 NotificationListener。
 
@@ -51,17 +51,20 @@ class _MyNotification extends State<MyNotification> {
         title: const Text('导航栏'),
       ),
       body: NotificationListener(
-        onNotification: (Notification notification) { 
-          switch (notification.runtimeType){
-            case ScrollStartNotification: debugPrint("开始滚动"); break;
-            case ScrollUpdateNotification: debugPrint("正在滚动"); break;
-            case ScrollEndNotification: debugPrint("滚动停止"); break;
-            case OverscrollNotification: debugPrint("滚动到边界"); break;
+        onNotification: (ScrollNotification notification) { 
+          if (notification is ScrollStartNotification) {
+            debugPrint("开始滚动");
+          } else if (notification is ScrollUpdateNotification) {
+            debugPrint("正在滚动");
+          } else if (notification is ScrollEndNotification) {
+            debugPrint("滚动停止");
+          } else if (notification is OverscrollNotification) {
+            debugPrint("滚动到边界");
           }
           // 当返回 false 则表示通知可以继续向上层节点分发。反之也就意味着通知被截断。
           return false;
         },
-        child: ListView.builder(
+        child: ListView.builder(    // 对于 ListView 滚动的通知还可以通过其 Controller 监听
           itemCount: 100,
           itemBuilder: (context, index) {
             return ListTile(title: Text("$index"),);

@@ -1,13 +1,5 @@
 ## Flutter学习集
 
-* 猫哥课堂视频【基础免费，项目收费】：<https://ducafecat.com/>，<https://github.com/ducafecat>
-
-* 山月行 * flutter入门指南 <https://shanyue.tech/flutter-guide/>
-
-* [Solido/awesome-flutter](https://github.com/Solido/awesome-flutter)，34.7k，一个Flutter的插件列表，精选了最好的Flutter库，工具，教程，文章等。
-  [awesome-flutter-cn](https://github.com/crazycodeboy/awesome-flutter-cn)，1.9k，一个很棒的Flutter学习资源，官方教程，插件，工具，文章，App，视频教程等的资源列表。
-
-
 # Flutter 组件基础
 
 * [博客园 * haidragon](https://www.cnblogs.com/haidragon/category/2241526.html)
@@ -20,6 +12,8 @@
 # 博客
 
 * LinXunFeng * 【全栈行动】 <https://github.com/LinXunFeng>
+
+* 徐宜生 * 《Android群英传》 <https://www.yuque.com/xuyisheng>
 
 * 猫哥学习站 <https://ducafecat.com/blog>
 

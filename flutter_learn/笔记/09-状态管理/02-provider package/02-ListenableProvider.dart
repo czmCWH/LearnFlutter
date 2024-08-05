@@ -2,15 +2,10 @@
 <https://pub-web.flutter-io.cn/packages/provider>
 <https://pub-web.flutter-io.cn/documentation/provider/latest/provider/ChangeNotifierProvider-class.html>
 
----- 监听 ChangeNotifier
-
-👉 1、ChangeNotifierProvider
-
-ChangeNotifierProvider 监听 ChangeNotifier，将其暴露给其后代，并在调用 ChangeNotifier.notifyListeners 时重建依赖项。
-根据您是要创建还是重用ChangeNotifier，您将需要使用不同的构造函数。
-
+---- 监听 ListenableProvider
 
 👉 2、ListenableProvider
+
 ListenableProvider 是 ChangeNotifierProvider 父类，它类似于 ChangeNotifierProvider，但适用于任何 Listenable。
 
 Listenable 是 Flutter 库中的类。

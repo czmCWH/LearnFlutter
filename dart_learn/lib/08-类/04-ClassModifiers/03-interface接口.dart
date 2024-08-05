@@ -7,12 +7,19 @@
  *    当类的一个实例方法调用该类的另一实例方法时，它将始终调用来自同一库的已知方法实现。
  *    其他库不能重写接口类自己的方法以后可能以意外方式调用的方法。这减少了脆弱的 base class 的问题。
  * 
- * 
  */
 
 interface class Vehicle {
   void moveForward(int meters) {
     print('我是 interface class 接口类中的方法');
+  }
+}
+
+// class 使用 implements 子句声明一个或多个 interface，然后提供接口所需的 API 来实现它们。
+class MockVehicle implements Vehicle {
+  @override
+  void moveForward(int meters) {
+    // ...
   }
 }
 
@@ -25,13 +32,7 @@ class Car extends Vehicle {
   // ...
 }
 
-// Can be implemented.
-class MockVehicle implements Vehicle {
-  @override
-  void moveForward(int meters) {
-    // ...
-  }
-}
+
 
 
 
@@ -39,7 +40,7 @@ class MockVehicle implements Vehicle {
  * 
  * 2、Implicit interfaces 隐式接口
  * 
- * 每个类都隐式地定义了一个接口，该接口包含该类及其实现的任何接口的所有实例成员。
+ * 每个类都隐式地定义了一个 interface(接口)，该 interface 包含该类及其实现的任何接口的所有实例成员。
  * 如果你想创建一个支持 类B的API 而不继承 类B 的实现的 类A，那么 类A 应该实现 类B 的接口。
  * 
  * 类通过在 implements子句 中声明一个或多个接口，然后提供接口所需的 API 来实现这些接口。语法如下:

@@ -1,27 +1,33 @@
 /* https://dart.cn/language/classes
- * 
- * Dart 是一种面向对象的语言，具有类和基于 mixin 的继承。
- * 
- * Dart 类的特点：
- *  每个对象都是一个类的实例，除了Null以外的所有类都继承自object。
- *  基于 Mixin 的继承 意味着尽管每个类（顶级类 Object 除外）都只有一个超类，但类主体可以在多个类层次结构中重复使用。
- *  Extension methods 是一种在不改变类或创建子类的情况下向类添加功能的方法。
- *  Class modifiers 允许您控制库如何对类进行子类型化。
- * 
+
+Dart是一种面向对象的语言，具有 class 和 基于 mixin 的继承。
+
+Dart 类的特点：
+ 每个对象都是一个 class 的实例，除了 Null 以外的所有 class 都继承自 Object。
+ 基于 Mixin 的继承 意味着尽管每个类（顶级类 Object? 除外）都只有一个父类，但类主体可以在多个类层次结构中重复使用。
+ Extension methods 是一种在不改变类 或 创建子类的情况下向类添加功能的方法。
+ Class modifiers 允许您控制库如何对类进行子类型化。
+
+某些构造函数和构造函数的某些部分无法访问 this。这些包括：
+  1、Factory constructor 中；
+  2、初始化列表的右侧；
+  3、父类构造函数的参数；
+
+如果您需要执行一些无法在初始化列表中表示的逻辑，请使用该逻辑创建一个工厂构造函数(或静态方法)，然后将计算值传递给普通构造函数。
+
+构造函数：https://mp.weixin.qq.com/s/dL31ZBu7DYR2mdSqpjUIvQ
+  
  */
 
 void main() {
 
 }
 
-/*
-1、定一个 类
-Dart 的类都继承自 Object。
- */
+/// 1、定义类
 class VarClass {
   
   /* 1、声明实例变量
-   * nullable type 类型声明的未初始化实例变量的值为 null。
+   * nullable type 类型声明的未初始化实例变量的值为 null；使用 ?. 访问来避免空异常。
    * 不可为 null 的实例变量必须在声明时初始化。
    */
   String name = '';
@@ -32,7 +38,7 @@ class VarClass {
   late double? z = this.a;
 
   /* 3、实例变量可以是 final，它们必须只设置一次。
-   * 在声明时，使用构造函数的参数初始化final 变量。
+   * 在声明时，使用构造函数的参数初始化 final 变量。
    * 
    * 如果需要在构造函数主体启动后分配最终实例变量的值，可以使用以下方法之一：   
    *    使用工厂构造函数;
@@ -42,9 +48,13 @@ class VarClass {
   final DateTime start = DateTime.now();
 
 
-  //  注意：构造函数不可继承。
+  /*
+   * Dart实现了许多类型的构造函数。除了默认构造函数外，这些函数使用与其类相同的名称。
+   * 
+   * 1、默认构造函数：如果不声明构造函数，Dart 将使用默认构造函数。默认构造函数是没有参数、名称的 生成构造函数。
+   */
 
-  /* 1、Generative constructor 生成构造函数
+   /* 2、Generative constructor 生成构造函数
    * 生成构造函数：与类同名的函数，用来创建类新的实例，并初始化形式参数来实例化任何实例变量。
    * 
    * Initializing formal parameters 初始化形式参数 
@@ -54,9 +64,19 @@ class VarClass {
    * 初始化形式参数 可以初始化 non-nullable 或 final 实例变量。
    * this 表示当前实例。仅在存在名称冲突时使用 this，否则，Dart风格会省略this。
    */
-  VarClass(this.a, this.b, this.idTag);
+  VarClass(this.a, this.b, this.idTag) {
+    print('添加一些初始化逻辑');
+  }
 
-   /* 2、Initializer list(初始化列表)
+  /* 3、Named constructors 命名构造函数
+   * 用来为一个类实现多个构造函数；阐明构造函数的用途；
+   */
+  VarClass.origin()
+    : a = 100,
+      idTag = '命名构造函数';
+
+
+   /* Initializer list(初始化列表)
     * 
     * 可以在构造函数体运行之前初始化实例变量。
     * 初始化声明右侧无权访问 this。
@@ -65,40 +85,31 @@ class VarClass {
   VarClass.fromJSON(Map<String, double> json)
           : a = json['a'],
             b = json['b']!.toInt(),
-            idTag = '通过初始化列表创建对象' {
+            idTag = handleSth(json['id'].toString()) {
     print('$idTag, a = $a, b = $b');
   }
+
+  static String handleSth(String e) => e.toUpperCase();
 
   VarClass.from(double a, int b, String idTag): a = a, b = b, idTag = idTag {
     print('初始化列表');
   }
 
+  // 初始化形式参数也可以是可选的。
+  VarClass.optional(this.idTag, [this.a = 1.23, this.b = 2]);
 
-  /* 3、Named constructors 命名构造函数
-   * 用来为一个类实现多个构造函数，也可以更清晰的表明函数意图。
-   */
-  VarClass.origin()
-    : a = 100,
-      idTag = '命名构造函数';
+  // 使用默认值初始化形式参数的生成构造函数
+  VarClass.idTag({required int b, this.idTag = '哈哈'});
 
-  /* 4、Redirecting constructors 重定向构造函数
+
+  /* 5、Redirecting constructors 重定向构造函数
    *  用于重定向到同一类中的另一个构造函数。
    *  重定向构造函数的主体为空，在冒号之后使用 this 调用构造函数。
    */  
   VarClass.fromA(double a) : this(a, 100, '重定向构造函数');
 
 
-  /* 5、命名工厂构造方法
-   * 语法：
-   *    factory 类名.方法名
-   * 它可以有返回值，而且不需要将类的 final 变量作为参数，是提供一种灵活获取类对象的方式。
-   */
-
-
-  /* 6、工厂构造方法
-   * 
-   */
-
+  
 
   /* 1、实例方法
    * 对象的实例方法可以访问 实例变量 和 this。
@@ -108,8 +119,8 @@ class VarClass {
   }
 
   /* 2、getter 和 setter 方法
-   *    每个实例变量都有一个隐式的 getter，如果为非 final 属性的话还会有一个 setter。 
-   *    可以通过使用 get 和 set 关键字实现 getter 和 setter 来创建其他属性。
+   * 每个实例变量都有一个隐式的 getter，如果为非 final 属性的话还会有一个 setter。 
+   * 可以通过使用 get 和 set 关键字实现 getter 和 setter 来创建其他属性。
    */
   Map<String, String> get introduce {
     return {"name": this.name, "a": (this.a ?? 1.22).toString()};
@@ -182,3 +193,5 @@ void testUseClass() {
    */
 
 }
+
+
