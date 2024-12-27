@@ -31,6 +31,8 @@
 
 * Flutter开发实战详解作者 Shuyu Guo<https://github.com/CarGuo>
 
+* <https://gitee.com/facecat007/frame/tree/master/facecat_flutter/%E6%95%99%E7%A8%8B>
+
 
 ## Flutter 项目
 
