@@ -18,7 +18,7 @@ Dart 拥有 丰富的核心库，为许多日常编程任务提供了必要工�
 
 # 二、安装 Dart
 
-要使用 Dart，可以直接下载 Dart SDK（如下所述），也可以下载 Flutter SDK，其中包含完整的 Dart SDK。
+要使用 Dart，可以直接下载 Dart SDK（如下所述），也可以直接下载 Flutter SDK，其中包含完整的 Dart SDK。
 
 使用 [Homebrew](https://brew.sh/) 安装 Dart：
 

@@ -1,22 +1,19 @@
-import 'package:dart_learn/02-变量.dart' as dart_02;
-import 'package:dart_learn/03-常量.dart' as dart_03;
-import 'package:dart_learn/04-空安全和默认值.dart' as dart_04;
 
-import 'package:dart_learn/05-数据类型/01-基本数据类型.dart' as dart_05;
-import 'package:dart_learn/05-数据类型/02-Records类型.dart' as dart_Records;
-import 'package:dart_learn/05-数据类型/03-集合类型-List.dart' as dart_List;
-import 'package:dart_learn/05-数据类型/04-集合类型-Set.dart' as dart_Set;
-import 'package:dart_learn/05-数据类型/05-集合类型-Map.dart' as dart_Map;
-import 'package:dart_learn/05-数据类型/06-枚举-enum.dart' as dart_Enum;
-import 'package:dart_learn/05-数据类型/07-泛型-Generics.dart' as dart_Generics;
-import 'package:dart_learn/05-数据类型/08-运算符.dart' as dart_Operators;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/01-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.dart' as dart_05;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/type/02-Records%E7%B1%BB%E5%9E%8B.dart' as dart_Records;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/04-List%E5%88%97%E8%A1%A8.dart' as dart_List;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/type/04-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B-Set.dart' as dart_Set;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/05-Map%E5%AD%97%E5%85%B8.dart' as dart_Map;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/type/06-%E6%9E%9A%E4%B8%BE-enum.dart' as dart_Enum;
+import 'package:dart_learn/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/type/07-%E6%B3%9B%E5%9E%8B-Generics.dart' as dart_Generics;
+import 'package:dart_learn/03-%E8%BF%90%E7%AE%97%E7%AC%A6/01-%E8%BF%90%E7%AE%97%E7%AC%A6.dart' as dart_Operators;
 
-import 'package:dart_learn/06-控制流/01-循环语句.dart' as dart_Controls;
-import 'package:dart_learn/06-控制流/02-分支语句.dart' as dart_Branches;
-import 'package:dart_learn/06-控制流/03-模式匹配.dart' as dart_Pattern;
+import 'package:dart_learn/04-%E6%8E%A7%E5%88%B6%E6%B5%81/02-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.dart' as dart_Controls;
+import 'package:dart_learn/04-%E6%8E%A7%E5%88%B6%E6%B5%81/01-%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.dart' as dart_Branches;
+import 'package:dart_learn/04-%E6%8E%A7%E5%88%B6%E6%B5%81/03-%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D.dart' as dart_Pattern;
 
-import 'package:dart_learn/07-函数和异常/01-函数.dart' as dart_func;
-import 'package:dart_learn/07-函数和异常/02-错误处理.dart' as dart_error;
+import 'package:dart_learn/05-%E5%87%BD%E6%95%B0%E5%92%8C%E5%BC%82%E5%B8%B8/01-%E5%87%BD%E6%95%B0.dart' as dart_func;
+import 'package:dart_learn/05-%E5%87%BD%E6%95%B0%E5%92%8C%E5%BC%82%E5%B8%B8/02-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.dart' as dart_error;
 
 import 'package:dart_learn/08-类/01-类的基本使用.dart' as dart_baseCalss;
 import 'package:dart_learn/08-类/03-extends继承.dart' as dart_extends;
@@ -34,19 +31,8 @@ import 'package:dart_learn/10-并发/02-使用Future.dart' as dart_future;
 // `main` 一个特殊且 必须的 顶级函数，即程序的入口函数，`Dart` 应用程序总是会从该函数开始执行。
 void main(List<String> arguments) {
   
-  print("---👇👇👇: 02-变量");
-  dart_02.testPrint(20);
-  dart_02.testVar();
-  dart_02.testExplicitlyVar();
-  dart_02.testObjectVar();
-  dart_02.testDynamicVar();
-  dart_02.testLate();
   
-  print("---👇👇👇: 03-常量");
-  dart_03.testFixVar();
-
-  print("---👇👇👇: 04-空安全和默认值");
-  dart_04.testNull();
+  
   
   print("---👇👇👇: 05-基本数据类型: int、double、String、bool");
   dart_05.testNumbers();

@@ -3,11 +3,11 @@ void main() {
 }
 
 /*
-1、dynamic
+1、dynamic 动态类型
+ dynamic 用来声明动态类型，允许变量运行时自由改变类型。
+  
+ dynamic 定义的变量会关闭编译时类型检查，这意味着 dynamic a = 'a'; a.test()，这样的代码静态类型检查不会报错，但是会导致运行时 crash。
  dynamic 是所有 Dart 对象的基础类型，在大多数情况下，通常不直接使用它。
- 
- dynamic 定义的变量会关闭类型检查，这意味着 dynamic a = 'a'; a.test()，这样的代码静态类型检查不会报错，但是会导致运行时 crash。
-
  */
 void testDynamic() {
   dynamic b = 100;
@@ -19,7 +19,7 @@ void testDynamic() {
 
 /*
 2、var
-var 是定义变量的关键字，系统会自动推断变量类型 runtimeType。
+ var 是声明变量的关键字，系统会根据初始值自动推断变量类型 runtimeType。
  */
 void testVar() {
    var a = 'czm';

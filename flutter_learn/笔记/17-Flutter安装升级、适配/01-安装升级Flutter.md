@@ -10,7 +10,7 @@ Flutter 最新版本介绍 <https://docs.flutter.cn/release/whats-new>、<https:
 
 2、将下载下来的压缩文件解压到指定的位置，如下：
 
-```
+```shell
 $ cd ~/Applications
 $ unzip ~/Desktop/flutter_macos_1.22.5-stable.zip
 ```
@@ -29,7 +29,7 @@ Flutter 有四个发布渠道：
 * `beta`(测试版), 每个月都会选取上个月的最佳开发版本，然后合并到beta版本进行推广测试。
 * `master`(主干)，仓库的最新代码分支，供贡献者使用。
 
-```
+```shell
 // 查看当前 Flutter 通道
 $ flutter channel
 
@@ -38,7 +38,7 @@ $ flutter channel dev
 ```
 ## 更新 Flutter
 
-```
+```shell
 // 更新 当前 Flutter 通道上可用的、最新版本的Flutter SDK、Dart
 $ flutter upgrade 
 

@@ -4,8 +4,16 @@
  * 
  */
 
+void main(List<String> args) {
+  testForLoops();
+
+  testWhileLoops();
+
+  testLoopsSuspend();
+}
+
 void testForLoops() {
-  print('--- for 循环语句：');
+  print('------ 1、for 循环语句：');
 
   // 1、for 基本使用
   var message = StringBuffer('Dart is fun');
@@ -33,17 +41,16 @@ void testForLoops() {
   var set1 = {1, 2, 3};
   for (final st in set1) {
     print('--- set = $st');    // 打印：1、2、3
-  }  
+  }
 }
 
 void testWhileLoops() {
-  print('--- while 循环语句：');
+  print('------ 2、while 循环语句：');
   var w = 3;
   while (w > 0) {
     w--;
     print('--- w = $w');    // 打印：2、1、0
   }
-
 
 
   print('--- do while 循环语句：');
@@ -55,9 +62,12 @@ void testWhileLoops() {
 }
 
 void testLoopsSuspend() {
-  print('--- break 和 continue');
+  print('------ 3、break 和 continue');
 
-  // break：终止整个循环
+  // 如果循环条件一直满足，循环体将一直执行，这样就产生了死循环。
+  // 可以在循环体内使用 break 或者 continue 停止循环。
+
+  // break：终止整个循环，代码循环后面执行
   for (var i = 0; i < 5; i++) {   // 打印：0、1、2
     if (i == 3) {
       break;
