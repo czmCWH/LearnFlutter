@@ -20,6 +20,8 @@
       如果 const 变量位于类级别，请将其标记为 static const（静态常量）。
       使用 const 声明 创建(create) 常量值的构造函数，这种类型的构造函数创建的对象是不可改变的。
  */
+
+// main 一个特殊且 必须的 顶级函数，即程序的入口函数，`Dart` 应用程序总是会从该函数开始执行。
 void main(List<String> args) {
 
   /*

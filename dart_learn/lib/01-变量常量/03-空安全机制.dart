@@ -7,6 +7,7 @@
   Non-nullable type (非可空类型)
  */
 
+// main 一个特殊且 必须的 顶级函数，即程序的入口函数，`Dart` 应用程序总是会从该函数开始执行。
 void main(List<String> args) {
 
   // 1、定义变量类型为 Nullable type(可空类型) `类型?`

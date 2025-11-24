@@ -1,28 +1,30 @@
 /*
- * Set: https://api.dart.cn/stable/3.4.0/dart-core/Set-class.html
- * 
- * Dart`中的 Set 是无序的、且元素不重复集合。Set 称为 集合。
- * 
- * 
+  https://api.dart.cn/stable/3.4.0/dart-core/Set-class.html
+  https://dart.cn/language/collections#sets
+  
+  Dart中的 Set 是无序的、唯一的元素集合。Set 称为 集合。
+  
  */
-void testSet() {
-  // 使用字面量方式创建 Set 集合
+
+void main(List<String> args) {
+
+  // 1、使用字面量方式创建 Set 集合
   var s1 = {'A', 'B', 'C'};
   Set s2 = {1, 2, 3};
   print(s1.runtimeType);
   print(s2.runtimeType);
 
-  // 使用 Set 创建集合
+  // 2、使用类型声明集合
   Set<String> s3 = {'aa', 'bb', 'cc'};
   print(s3.runtimeType);
 
-  // 创建空Set 
+  // 3、创建空Set 
   Set<String> s4 = {};
   Set s5 = <String>{};
   Set s6 = {};
   print('$s4 $s5 $s6');   // 打印：{} {} {}
   
-  var s7 = {};   // 注意：这是创建一个 map，而不是 Set
+  var s7 = {};   // ⚠️：这是创建一个 map，而不是 Set
   print(s7.runtimeType);  // 打印：_Map<dynamic, dynamic>
 }
 

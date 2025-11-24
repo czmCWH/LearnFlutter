@@ -22,9 +22,13 @@ void testForLoops() {
   }
   print('message = ${ message.toString() }');    // 打印：message = Dart is fun!!!!!
   
-  // 2、 for循环内部的闭包会捕获索引的值
+  // 2、⚠️ for循环内部的闭包会捕获索引的值
   var callbacks = [];
   for (var i = 0; i < 2; i++) {
+    // callbacks.add(() {
+    //   print('for 循环的索引i = $i ');
+    // });
+
     callbacks.add(() => print('for 循环的索引i = $i '));
   }
 
@@ -32,7 +36,7 @@ void testForLoops() {
     c();    // 打印：0，1
   }
 
-  // 3、for循环迭代 可迭代类型(List、Set)
+  // 3、for循环迭代 可迭代类型(List、Set)，⚠️ 此处用 final 
   var list1 = ['a', 'b', 'c'];
   for (final item in list1) {
     print('--- item = $item');    // 打印：a、b、c
