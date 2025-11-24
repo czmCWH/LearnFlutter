@@ -1,11 +1,11 @@
 /* 
   <https://dart.cn/language/class-modifiers#interface> 
  
- 1、interface 接口类
+ 1、interface class 接口类
   Dart 3.0 新增 interface 修饰符用于定义接口类。接口类特点如下：
    - 接口类只能被 implements 实现，不能被 extends 继承；
-   - 接口类中可以定义构造方法，可以被实例化；
    - 接口类中的所有属性、方法都必须被重写；
+   - 接口类中可以定义构造方法，可以被实例化；
 
   interface class 在自身库内可以被 extend(继承)，自身定义库之外只能实现。这可以保证：
      当类的一个实例方法调用该类的另一实例方法时，它将始终调用来自同一库的已知方法实现。
@@ -21,8 +21,8 @@
          //...
     }
   
- 3、interface abstract class 抽象接口类
-  interface 和 abstract 修饰符可以组合使用，定义抽象接口类。
+ 3、abstract interface class 抽象接口类
+  interface 和 abstract 修饰符可以组合使用，定义抽象接口类。常用于定义纯接口。
 
  */
 
