@@ -13,7 +13,7 @@
     final
     interface
     sealed
-    mixin
+    mixin，用于在不使用传统继承的情况下，向类中添加新的功能。
  
  只有 base 修饰符可以出现在 mixin 声明之前。这些修饰符不适用于其他声明，如 enum、typedef、extension 或 extension type。
  

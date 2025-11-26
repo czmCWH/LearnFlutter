@@ -2,7 +2,7 @@
  <https://dart.cn/language/mixins>
  <https://dart.ac.cn/language/mixins>
 
-mixin类声明要求 Dart3.0+。 早期版本中的代码通常使用 abstract class 代替。 
+mixin 声明要求 Dart3.0+。 早期版本中的代码通常使用 abstract class 代替。 
 ⚠️ Mixin 是一种定义代码的方式，这些代码可以在多个类层次结构中复用。它们旨在大量提供成员实现。
 
 1、mixins 混入
@@ -13,8 +13,8 @@ mixin类声明要求 Dart3.0+。 早期版本中的代码通常使用 abstract c
     }
 
   - 要使用 mixin，请使用 with 关键字，后跟一个或多个混入名称。使用 mixin 的语法如下：
-    class 类名称 [extends 父类名称] with 名称A {
-
+    class 类名称 [extends 父类名称] with 名称A, 名称B... {
+    
     }
 
   - 另外，在极少数情况下，可能需要同时定义 mixin 和 类，则可以使用 mixin class 来声明。
