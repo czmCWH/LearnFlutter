@@ -31,6 +31,9 @@ export PATH="/Library/flutter/bin:$PATH"    # 格式为 ==> "Flutter包的存放
 
 # 4、让配置文件生效
 $ source ~/.zshrc
+
+# 5、检查 Flutter 是否安装成功
+$ flutter --version
 ```
 
 
