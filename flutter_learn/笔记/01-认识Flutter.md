@@ -1,16 +1,14 @@
 # 一、Flutter 文档
 
-Flutter 中文开发者网站：<https://flutter.cn>
-  * <https://docs.flutter.cn/posts>：Flutter 中文开发文档
-  * <https://docs.flutter.cn/community/tutorials>：Flutter 中文社区教程 👍
+Flutter 官网：<https://flutter.cn> 中文网、<https://flutter.dev/> 英文网
 
-Flutter 英文网站：<https://flutter.dev/>
+Flutter 开发者文档：<https://docs.flutter.cn/posts> 中文、<https://docs.flutter.dev/> 英文
+Flutter 社区教程：<https://docs.flutter.cn/community/tutorials> 👍
+Flutter SDK文档：<https://api.flutter-io.cn/index.html>、<https://api.flutter.dev/index.html>
+Flutter github issues：<https://github.com/flutter/flutter/issues>
 
-Flutter 中文社区：<https://flutterchina.club/> --- 【Flutter实战 * 第二版】
-Flutter 中文网: <https://doc.flutterchina.club/> --- 【Flutter实战 * 第一版】
-
-Flutter SDK文档：<https://api.flutter-io.cn/index.html> or <https://api.flutter.dev/index.html>
-Flutter issues：<https://github.com/flutter/flutter/issues>
+<https://doc.flutterchina.club/> --- 【Flutter实战 * 第一版】
+<https://book.flutterchina.club/> --- 【Flutter实战 * 第二版】
 
 
 # 二、Flutter widgets
