@@ -1,4 +1,6 @@
 # Widget
+<https://docs.flutter.cn/ui/widgets>
+<https://docs.flutter.cn/get-started/fundamentals/widgets>
 
 Flutter widgets 是使用现代框架构建的，它的灵感来自于 React，其中心思想是用 widgets 构建 UI。Flutter 中万物皆 Widget。
 
@@ -19,10 +21,6 @@ Widget 描述了在当前的配置和 state(状态) 下视图所应该呈现的�
 
 使用 Material Design 的 App 称为 Material App，它从 `MaterialApp` widget 开始，许多 Material Design widgets 需要位于 MaterialApp 内部才能正确显示，标准 widget 库 中的 widget 也能在 Material 中使用。
 
-> MaterialApp widget 包裹整个应用形成统一的 Material Design 风格。
-> Scaffold widget，骨架组件，实现了基本的 Material Design 视觉布局结构，提供标准、灵活配置的页面骨架。
-
-
 使用 `Materials library` 时，需要在 `pubspec.yaml` 文件中配置如下：
 ```yml
 flutter:
@@ -32,12 +30,39 @@ flutter:
 基础(标准) Widget，<https://docs.flutter.cn/ui/widgets>、<https://api.flutter-io.cn/flutter/widgets>
 Material 库，<https://api.flutter-io.cn/flutter/material/>
 
+## 构建一个 Material 应用
+
+> MaterialApp，便捷组件， 包裹整个应用形成统一的 Material Design 风格。
+> Scaffold，骨架组件，实现了基本的 Material Design 视觉布局结构，提供标准、灵活配置的页面骨架。
+
+<https://docs.flutter.cn/ui/layout>
+
+
+```dart
+void main() {
+
+  // debug 模式时，显示每个组件的大小
+  debugPaintSizeEnabled = false;
+  // 查看 GestureDetector 触摸框的大小。需要 import 'package:flutter/rendering.dart';
+  debugPaintPointersEnabled = false;
+  // 在 debug 模式下，每次调用手势识别器回调时都会记录一条消息。需要 import 'package:flutter/gestures.dart'; 
+  debugPrintRecognizerCallbacksTrace = true;
+
+  // runApp()函数接受给定的 Widget，并将其作为Widget树的根。
+  runApp(const MainApp());
+}
+ 
+```
+
 ```dart
 import 'package:flutter/material.dart';
 
 class MainApp extends StatelessWidget {
+
+  // Widget 构造器
   const MainApp({super.key});
 
+  // build() 方法中实例化和返回一个 widget 会让它显示出来
   @override
   Widget build(BuildContext context) {
     
@@ -84,18 +109,3 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-```dart
-void main() {
-
-  // debug 模式时，显示每个组件的大小
-  debugPaintSizeEnabled = false;
-  // 查看 GestureDetector 触摸框的大小。需要 import 'package:flutter/rendering.dart';
-  debugPaintPointersEnabled = false;
-  // 在 debug 模式下，每次调用手势识别器回调时都会记录一条消息。需要 import 'package:flutter/gestures.dart'; 
-  debugPrintRecognizerCallbacksTrace = true;
-
-  // runApp()函数接受给定的 Widget，并将其作为Widget树的根。
-  runApp(const MainApp());
-}
- 
-```
