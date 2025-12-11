@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+ * 定义一个无状态组件，纯展示型组件，没有用户交互操作。
+ */
 class MyStatelessWidget extends StatelessWidget {
   
   // 定义一个常量构造函数，即初始化参数相同时，创建的对象相同。
@@ -7,10 +10,11 @@ class MyStatelessWidget extends StatelessWidget {
   const MyStatelessWidget({Key? key, required this.textColor, this.tipStr})
       : super(key: key);
 
-  // 定义常量
+  // 定义常量，用于接收父 Widget 传递的配置属性
   final Color textColor;
   final String? tipStr;
 
+  // 必须实现 build，无状态 Widget 通过自身的 build 方法构建UI界面
   @override
   Widget build(BuildContext context) {
     return Container(
