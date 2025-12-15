@@ -16,11 +16,39 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,   
       home: Scaffold(
         appBar: AppBar(title: const Text(appTitle)),
-        body: Container(
-          child: const Center(
-            child: Text('Hello World!'),
-          ),
-        ),
+        body: Column(
+          children: [
+            Container(
+              color: Colors.red,
+              width: 200,
+              height: 100,
+              child: Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+              ),
+            ),
+            SizedBox(
+              width: 200,
+              height: 100,
+              child: Container(
+                color: Colors.red,
+              ),
+            ),
+            Container(
+              color: Colors.red,
+              width: 200,
+              height: 100,
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: Container(
+                  color: Colors.blue,
+                ),
+              )
+            ),
+          ],
+        )
       ),
       
     );

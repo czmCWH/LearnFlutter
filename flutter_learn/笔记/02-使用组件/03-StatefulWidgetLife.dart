@@ -106,7 +106,7 @@ class _MyStatefulScaffold extends State<StatefulWidgetLife> {
   }
 
   // 👉 7、释放资源，永久移除
-  // 当 State 对象从 Widget 树中永久移除时
+  // 当 State 对象从 Widget 树中永久移除时调用；仅执行一次
   @override
   void dispose() {
     debugPrint('--- 在此处 dispose 释放资源');

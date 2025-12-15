@@ -1,13 +1,19 @@
 /*
-https://www.jianshu.com/p/52bcc632d018
+<https://api.flutter-io.cn/flutter/widgets/Container-class.html>
+<https://www.jianshu.com/p/52bcc632d018>
 
 ---- 容器
 
 👉 1、Container
-Container 是一个便利的 Widget，它结合了常见的绘图、定位 和 大小。
+
+Container 是一个便捷 Widget，它由多个负责布局、绘制、定位和调整大小的 Widget 构成。主要功能如下：
+
+1. 尺寸控制
+  - width / height，指定容器的明确的宽高，（单位：逻辑像素）。width/height 将作为约束。
+  - 
 
 container 先用 padding 包围子项，然后在填充范围内应用额外的 constraints (将宽度和高度作为约束，如果两者都非空)。
-然后，container 被 margin 所描述的额外空白包围。
+然后，cneontair 被 margin 所描述的额外空白包围。
 
 在绘制过程中，container 首先应用给定的 transform，然后绘制 decoration 以填充填充范围，然后绘制子项，
 最后绘制 foregroundDecoration，同样填充填充范围。

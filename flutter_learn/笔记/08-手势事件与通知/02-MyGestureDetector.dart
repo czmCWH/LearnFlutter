@@ -1,18 +1,30 @@
 /*
 <https://docs.flutter.cn/ui/interactivity/gestures>
-
----- 识别内置手势
+<https://docs.flutter.cn/cookbook/gestures/handling-taps>
+<https://api.flutter-io.cn/flutter/widgets/GestureDetector-class.html>
 
 👉 1、GestureDetector
-GestureDetector 是一个检测手势的 Widget。
-GestureDetector 直接可以接收一个子 widget。来获取该 Widget 上发生的触摸手势。
+GestureDetector 是一个检测手势的 Widget，比如：触摸、点击、滑动等。
 
-* 如果 GestureDetector 有子项，那么它的大小行为将遵从这个子项。如果没有子项，则它会增大以适应父项。
-* 默认情况下，带有不可见子项的 GestureDetector 会忽略触摸；这种行为可以用 behavior 来控制。
-* 当2个 GestureDetector 嵌套时，内部的 GestureDetector 被点击时，只会调用内部 GestureDetector 的 onTap 被调用，而父级的 onTap 不会被调用。
-* 可以在 main 函数中，首先 import 'package:flutter/rendering.dart'; 设置 debugPaintPointersEnabled = true; 用于查看 GestureDetector 的触摸框大小。
+特点：
+  - 如果其 child 接收一个 Widget，那么它从该 Widget 上获取发生的触摸手势。
+  - 如果其 child 没有值，则它会继承父元素的大小，来获取父元素上发生的触摸手势。
+  - 默认情况下，带有不可见子项的 GestureDetector 会忽略触摸，可以用其 behavior 属性来控制。
+  - 当2个 GestureDetector 嵌套时，内部的 GestureDetector 被点击时，只会调用内部 GestureDetector 的 onTap 被调用，而父级的 onTap 不会被调用。
 
-👉 2、手势消歧
+调试：
+  在 main 函数中，首先 import 'package:flutter/rendering.dart'; 设置 debugPaintPointersEnabled = true; 即可查看 GestureDetector 的触摸框大小。
+
+
+👉 2、其它可被点击组件
+* 专用按钮组件：
+  - ElevatedButton、TextButton、CupertinoButton、OutlinedButton、FloatingActionButton
+
+* 点按涟漪效果 (Material Design) 组件：
+ - InkWell
+
+* 其它交互组件
+  - IconButton、Switch、Checkbox
 
 */
 
@@ -61,7 +73,6 @@ class _MyGestureDetector extends State<MyGestureDetector> {
       body: Center(
       child: Column(
         children: [
-
           // 1、检测点击手势的方法
           GestureDetector(
             child: Container(
@@ -93,7 +104,18 @@ class _MyGestureDetector extends State<MyGestureDetector> {
             ),
           ),
         
-          
+          // 3、GestureDetector没有 child 时，点击范围和父组件相同
+          Container(
+            width: double.infinity,
+            height: 50,
+            padding: const EdgeInsets.all(10.0),
+            color: Colors.orange,
+            child: GestureDetector(
+              onTap: () => {
+                debugPrint('---- GestureDetector没有 child 时，点击范围和父组件相同')
+              },
+            )
+          ),
 
         ],
       )

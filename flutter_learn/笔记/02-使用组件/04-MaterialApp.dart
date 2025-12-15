@@ -1,9 +1,9 @@
 /*
-👉 1、MaterialApp Widget
+👉 1、MaterialApp
 
 <https://api.flutter-io.cn/flutter/material/MaterialApp-class.html>
 
-MaterialApp 是一个方便的 Widget，它包装了许多 Material 设计 App 通常需要的小部件。
+MaterialApp 是一个便捷 Widget，它包装了许多 Material 设计 App 通常需要的小部件。
 它在 WidgetsApp 的基础上添加了特定于 material-design 的功能，如 AnimatedTheme 和 GridPaper。
 
 MaterialApp将其 WidgetsApp.textStyle 配置为丑陋的红/黄文本样式，旨在警告开发者他们的应用程序尚未定义默认文本样式。
