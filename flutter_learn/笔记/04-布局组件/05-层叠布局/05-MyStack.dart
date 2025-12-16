@@ -1,5 +1,5 @@
 /*
--------- 层叠布局
+<https://api.flutter-io.cn/flutter/widgets/Stack-class.html>
 
 👉 1、Stack
 Stack 和 Positioned 配合实现绝对定位。Stack 使得子项堆叠，Positioned 用于根据Stack的四个角来确定子组件的位置。

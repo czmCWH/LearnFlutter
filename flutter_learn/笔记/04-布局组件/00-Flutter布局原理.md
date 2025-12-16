@@ -18,7 +18,7 @@ Constraints 约束，实际上就是 4 个浮点类型的集合：最大/最小�
 
 - `宽松约束 (loose)`，最小宽度/高度为 0。
 
-- `无边界约束（unbounded）`，是指最大宽度或最大高度被设置为双精度浮点数 `double.infinity`。
+- `无边界约束（unbounded）`，是指最大宽度或最大高度被设置为双精度浮点数 `double.infinity 正无穷大`。
 
 
 ## Flutter 布局对话
