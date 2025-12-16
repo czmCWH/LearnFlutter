@@ -14,43 +14,47 @@ class MainApp extends StatelessWidget {
       title: appTitle,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,   
-      home: Scaffold(
-        appBar: AppBar(title: const Text(appTitle)),
-        body: Column(
-          children: [
-            Container(
-              color: Colors.red,
-              width: 200,
-              height: 100,
-              child: Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-              ),
-            ),
-            SizedBox(
-              width: 200,
-              height: 100,
-              child: Container(
-                color: Colors.red,
-              ),
-            ),
-            Container(
-              color: Colors.red,
-              width: 200,
-              height: 100,
-              child: SizedBox(
-                width: 50,
-                height: 50,
-                child: Container(
-                  color: Colors.blue,
-                ),
-              )
-            ),
-          ],
-        )
+      home: const MyPadding(),
+    );
+  }
+}
+
+
+class MyPadding extends StatelessWidget {
+  const MyPadding({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Padding 填充组件'),
       ),
-      
+      body:  Padding(
+        //上下左右各添加16像素补白
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          //显式指定对齐方式为左对齐，排除对齐干扰
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Padding(
+              //左边添加8像素补白
+              padding: const EdgeInsets.only(left: 8),
+              child: Container(color: Colors.orange, height: 50),
+            ),
+            Padding(
+              //上下各添加8像素补白
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Container(color: Colors.orange, height: 50),
+            ),
+            Padding(
+              // 分别指定四个方向的补白
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+              child: Container(color: Colors.orange, height: 50),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
