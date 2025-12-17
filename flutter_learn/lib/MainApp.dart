@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('基本组件'),
         ),
-        body: const MyButton(),
+        body: const MyTextField(),
       ),
     );
   }
