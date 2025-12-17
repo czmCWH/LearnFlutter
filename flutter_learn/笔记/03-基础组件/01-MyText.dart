@@ -3,7 +3,9 @@ Text widgets：https://docs.flutter.cn/ui/widgets/text
 使用自定义字体： https://docs.flutter.cn/cookbook/design/fonts#set-styles-and-weights-with-font-files
 TextStyle：https://api.flutter-io.cn/flutter/painting/TextStyle-class.html
 
-FontWeight 字体权重 的约定俗称对应如下：
+⚠️，自定义字体时，修改 pubspec.yaml 后需运行 flutter pub get。
+
+FontWeight 字体粗细 的约定俗称对应如下：
 Thin	w100
 Extra	w200
 Light	w300
@@ -43,30 +45,40 @@ class MyText extends StatelessWidget {
         child: Column(
           children: <Widget>[
             const Text(
-              "北冥有鱼，其名为鲲。鲲之大，不知其几千里也。化而为鸟，其名为鹏。鹏之背，不知其几千里也；怒而飞，其翼若垂天之云。是鸟也，海运则将徙于南冥。南冥者，天池也。",
+              "北国风光，千里冰封，万里雪飘。望长城内外，惟余莽莽；大河上下，顿失滔滔。山舞银蛇，原驰蜡象，欲与天公试比高。须晴日，看红装素裹，分外妖娆。",
               style: TextStyle(
                 color: Colors.yellow, // 字体颜色
-                backgroundColor: Colors.blue, // 文本背景色
+                backgroundColor: Colors.pink, // 文本背景色
                 fontSize: 18, // 字体大小
-                fontStyle: FontStyle.normal,    // 设置字体
+                fontStyle: FontStyle.normal,    // 设置字体样式
+                fontWeight: FontWeight.w500,  // 字体粗细
                 shadows: [  // 设置字体阴影
                   Shadow(color: Colors.red, offset: Offset(3, 5), blurRadius: 6)
                 ],
-                decoration: TextDecoration.overline, // 设置下划线
+                decoration: TextDecoration.underline, // 设置下划线
+                decorationColor: Colors.blue, // 设置下划线颜色
               ),
               textAlign: TextAlign.left, // 对齐方式
               overflow: TextOverflow.ellipsis, // 文本溢出时末尾样式 ellipsis：末尾点点显示
               maxLines: 3, // 最多显示行数
             ),
-            const Text('字体 系统默认',),
-            const Text('字体 PlaywriteMX-Regular', style: TextStyle(fontSize: 20, fontFamily: 'PlaywriteMX'),),
+            
+            const Spacer(),
+
+            const Text('字体 PlaywriteMX 系统默认', style: TextStyle(fontSize: 20),),
             const Text('字体 PlaywriteMX-Thin', style: TextStyle(fontSize: 20, fontFamily: 'PlaywriteMX', fontWeight: FontWeight.w100),),
             const Text('字体 PlaywriteMX-ExtraLight', style: TextStyle(fontSize: 20, fontFamily: 'PlaywriteMX', fontWeight: FontWeight.w200),),
-            const Text('字体 PlaywriteMX-Light', style: TextStyle(fontSize: 20, fontFamily: 'PlaywriteMX', fontStyle: FontStyle.italic),),
+            const Text('字体 PlaywriteMX-Light', style: TextStyle(fontSize: 20, fontFamily: 'PlaywriteMX', fontWeight: FontWeight.w300),),
+            const Text('字体 PlaywriteMX-Regular', style: TextStyle(fontSize: 20, fontFamily: 'PlaywriteMX', fontWeight: FontWeight.w400),),
+            
+            const Spacer(),
+
+            // Text.rich，构建富文本
             const Text.rich(
               TextSpan(
                 style: TextStyle(fontSize: 20),
                 children: <InlineSpan>[
+                  // WidgetSpan 用于嵌入任意 Widget
                   WidgetSpan(
                     child: SizedBox(
                       width: 120,
@@ -78,22 +90,30 @@ class MyText extends StatelessWidget {
                       ),
                     )
                   ),
+                  // TextSpan 用于嵌入文本
                   TextSpan(text: "千里江陵一日还。", style: TextStyle(color: Colors.green)),
                   TextSpan(text: "两岸猿声啼不住，", style: TextStyle(color: Colors.red)),
                   TextSpan(text: "轻舟已过万重山。", style: TextStyle(color: Colors.deepPurple)),
                 ]
               )
             ),
-           RichText(
-            text: const TextSpan(
-              text: "￥",
-              style: TextStyle(fontSize: 16, color: Colors.black),
-              children: <TextSpan>[
-                TextSpan(text: '100', style: TextStyle(fontSize:28, fontWeight: FontWeight.bold)),
-                TextSpan(text: '.00', style: TextStyle(fontSize:18, fontWeight: FontWeight.bold)),
-              ],
+            
+            const Spacer(),
+
+            // RichText，
+            RichText(
+              text: const TextSpan(
+                text: "￥",
+                style: TextStyle(fontSize: 16, color: Colors.black),
+                children: <TextSpan>[
+                  TextSpan(text: '100', style: TextStyle(fontSize:28, fontWeight: FontWeight.bold)),
+                  TextSpan(text: '.00', style: TextStyle(fontSize:18, fontWeight: FontWeight.bold)),
+                ],
+              ),
             ),
-           ),
+
+            const Spacer(),
+            
           ],
       )),
     );

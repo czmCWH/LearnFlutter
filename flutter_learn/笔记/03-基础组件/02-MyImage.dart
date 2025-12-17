@@ -15,7 +15,7 @@ App 有一个 rootBundle，其中包含在构建 App 时随 App 打包的资源�
 2、Image 
 Image 为显示图片指定了多种构造方式：
     * Image.new，用于从 ImageProvider 获取图像。
-    * Image.asset，用于使用 key 从 AssetBundle 获取图像。
+    * Image.asset，用于使用 key 从 AssetBundle 获取图像。需要在 pubspec.yaml 文件中声明图片资源路径。
     * Image.network，用于从 URL 获取图像。
     * Image.file，用于从文件中获取图像。
     * Image.memory，用于从 Uint8List 中获取图像。
@@ -23,8 +23,9 @@ Image 为显示图片指定了多种构造方式：
 Image 支持以下图像格式：JPEG、PNG、GIF、动画 GIF、WebP、动画 WebP、BMP 和 WBMP。
 底层平台可能支持其他格式。Flutter将尝试调用平台API来解码无法识别的格式，如果平台API支持解码图像，Flutter将能够渲染图像。
 
-fit 参数取值为：BoxFit.fitWidth。
-BoxFit.none 的裁减和 alignment 参数相关，默认居中。
+  - fit 属性，控制图片如何适应其显示区域：如：拉伸、裁剪、比例缩放等。
+  - alignment 属性，控制图片在显示区域的对齐方式。
+  - repeat 属性，当图片小于显示区域时，是否平铺、重复显示。
 
 3、FadeInImage
 FadeInImage 适用于任何类型的图像：内存中、本地资产或来自互联网的图片，它的主要作用是在加载图片时首先显示一个占位符效果。
@@ -75,6 +76,7 @@ class MyImage extends StatelessWidget {
                 Image.network("https://docs.flutter.dev/assets/images/dash/dash-fainting.gif", width: 100.0, height: 100,)
               ],
             ),
+
             // 3、占位图方式加载图片
             FadeInImage.assetNetwork(placeholder: 'images/bluePlace.png', image: 'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif', width: 200, height: 200,),
 

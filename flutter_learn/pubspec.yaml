@@ -27,16 +27,22 @@ flutter:
   fonts:
       - family: PlaywriteMX
         fonts:
-          - asset: fonts/PlaywriteMX-Regular.ttf
           - asset: fonts/PlaywriteMX-Thin.ttf
+            weight: 100
           - asset: fonts/PlaywriteMX-ExtraLight.ttf
+            weight: 200
           - asset: fonts/PlaywriteMX-Light.ttf
+            weight: 300
+          - asset: fonts/PlaywriteMX-Regular.ttf
+            weight: 400
   assets:
-    - images/PurpleFlower.jpg
-    - images/WhiteFlower.jpg
-    - images/bluePlace.png
-    - images/phone.png
-    - assets/hiH5/
+    # 直接指定图片开放的目录，这样就不用把该目录下每个图片都一个一个添加
+    - images/
+    # - images/PurpleFlower.jpg
+    # - images/WhiteFlower.jpg
+    # - images/bluePlace.png
+    # - images/phone.png
+    # - assets/hiH5/
 
 
   uses-material-design: true

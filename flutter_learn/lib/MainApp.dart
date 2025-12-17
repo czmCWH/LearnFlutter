@@ -16,12 +16,11 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,   
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('布局组件'),
+          title: const Text('基本组件'),
         ),
-        body: const MyIndexedStack(),
+        body: const MyButton(),
       ),
     );
   }
 }
-
 

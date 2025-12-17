@@ -1,23 +1,47 @@
 /*
 
 Material2 Butttons：https://docs.flutter.cn/ui/widgets/material2#Buttons
+<https://api.flutter.dev/flutter/material/TextButton-class.html>
 
-1、ElevatedButton 
+
+1、TextButton
+  - 没有可见边框。
+  - 其样式可以通过 Theme 的 ThemeData.textButtonTheme 属性进行全局覆盖。
+  - 一般在 toolbar、dialogs 或嵌入其它容器中使用。
+
+用途：用于最低优先级的操作。
+
+
+2、ElevatedButton
 ElevatedButton 是一个凸起的材质矩形按钮。应避免在 dialogs、cards 等已经升高的内容上使用它。
+  - 样式都可以用 Theme 的 ThemeData.elevatedButtonTheme 属性覆盖。
 
-2、TextButton
-TextButton 一般在 toolbar、dialogs 或嵌入其它容器中使用，使用它的 `padding` 以便其显而易见。
-TextButton 没有可见的边界，因此必须依赖其相对于其他内容的位置来确定上下文。
+用途：用于主要操作、强调。
 
-3、OutlinedButton
+
+3、FilledButton
+FilledButton 具有最强的视觉冲击力，应该用于完成流程的重要最终操作。
+
+用途：重要最终操作，例如保存、立即加入或确认。
+
+
+4、OutlinedButton
 OutlinedButton 本质上是一个带有轮廓边框的 TextButton。
+用途：次要操作。
 
-4、IconButton
+
+5、IconButton
 IconButton 不能设置背景颜色、title标题。因为 IconButton 通常仅显示在父窗口小部件的背景之上。
+
+6、总结
+  - 如上按钮除了 IconButton，都继承自 ButtonStyleButton。
+  - ButtonStyleButton 设置样式都是以 (TextButton、 ElevatedButton、 ...).styleFrom 来创建
+  - ButtonStyleButton 
 
  */
 
 import 'package:flutter/material.dart';
+
 
 class MyButton extends StatelessWidget {
   
@@ -25,99 +49,199 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Button 的使用'),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                print("点击，on pressed");
-              },
-              onLongPress: () {
-                print("长按，on long press");
-              },
-              style: ButtonStyle(
-                textStyle: MaterialStateProperty.all(const TextStyle(backgroundColor: Colors.purple, fontSize: 15, )),  // 文字的背景颜色和大小
-                backgroundColor: MaterialStateProperty.all(Colors.amberAccent),   // 按钮背景颜色
-                foregroundColor: MaterialStateProperty.all(Colors.green),   // 文字的颜色
-                overlayColor: MaterialStateProperty.all(Colors.red),    // 点击时水波纹的颜色
-                // padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(20, 5, 10, 5)),  // 设置按钮child的内边距
-                minimumSize: MaterialStateProperty.all(Size(50, 30)), // 按钮的最小尺寸
-                alignment: Alignment.topLeft,   // 设置按钮child的对齐方式
-              ),
-              child: const Text('ElevatedButton'),
-            ),
-
-            ElevatedButton.icon(
-              onPressed: () {
-
-              },
-              icon: const Icon(Icons.search, color: Colors.yellow, size: 20,),
-              label: const Text('搜索'),
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.green, // 设置text、Icon 的颜色，text以次为主，icon以自身为主
-                backgroundColor: Colors.orange, // 背景颜色
-                textStyle: const TextStyle(color: Colors.black, fontSize: 20,),
-                minimumSize: Size(90, 50),
-              ),
-            ),
-
-            TextButton(
-              onPressed: () {},
-              child: const Text('文本按钮'),
-              style: TextButton.styleFrom(
-              padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
-              textStyle: const TextStyle(fontSize: 18),
-                backgroundColor: Colors.yellow,   // 背景颜色
-              ),
-            ),
-
-
-            OutlinedButton(
-              onPressed: () {
-                debugPrint('测试打印');
-              },
-              child: const Text('边框按钮'),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.black,    // 文本颜色
-                backgroundColor: Colors.amberAccent,    // 按钮背景颜色
-                side: const BorderSide(   // 设置边框的样式
-                  color: Colors.cyanAccent,
-                  width: 2,
-                  style: BorderStyle.solid,
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              const Spacer(),
+              // 👉 1、TextButton 设置背景色，默认带圆角、文本居中
+              TextButton(
+                onPressed: () {
+                  debugPrint('--- 点击了 TextButton');
+                }, 
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  fixedSize: const Size(100, 50),  // 固定尺寸
                 ),
-                shape: const RoundedRectangleBorder(      // 设置边框形状
-                  borderRadius: BorderRadius.horizontal(left: Radius.circular(10), right: Radius.circular(20)),
+                child: const Text('TextButton', style: TextStyle(color: Colors.white),)
+              ),
+              const Spacer(),
+
+              // 👉 2、TextButton 的样式设置
+              TextButton(
+                onPressed: () {
+                  debugPrint('--- 点击了 TextButton');
+                }, 
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.yellow,    // 文本颜色
+                  backgroundColor: Colors.lightBlue,  // 背景颜色
+                  shape: RoundedRectangleBorder(      // 按钮形状
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: const EdgeInsets.fromLTRB(15, 10, 15, 10), // 内部间距
+                  minimumSize:  const Size(100, 50),   // 最小尺寸
                 ),
-                textStyle: const TextStyle(fontSize: 15),
-                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                child: const Text('TextButton')
               ),
-            ),
+              const Spacer(),
 
-            OutlinedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.favorite, size: 30,),
-              label: const Text('爱心'),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.red,
-                backgroundColor: Colors.grey,
-                
+              // 👉 3、禁用 TextButton 时，把 onPressed 设置为 null 即可。
+              const TextButton(
+                onPressed: null, 
+                child: Text('TextButton')
               ),
-            ),
+              const Spacer(),
+            ],
+          ),
+          const SizedBox(width: double.infinity, height: 50,),
 
-            IconButton(
-              onPressed: () {
-              },
-              icon: const Icon(Icons.android),
-              iconSize: 30,       // 需要通过 IconButton.iconSize设置Icon的大小，而不是Icon自身
-              color: Colors.red,
-            ),
+          // 👉 4、TextButton.icon 创建文本 + icon 的文本按钮
+          Row(
+            children: [
+              const Spacer(),
+              // 图标在左边（默认）
+              TextButton.icon(
+                icon: const Icon(Icons.check),
+                label: const Text('确认'),
+                onPressed: () {},
+                iconAlignment: IconAlignment.start,
+              ),
+              const Spacer(),
+              // 图标在右边
+              TextButton.icon(
+                icon: const Icon(Icons.check),
+                label: const Text('确认'),
+                onPressed: () {},
+                iconAlignment: IconAlignment.end,
+              ),
+              const Spacer(),
+            ],
+          ),
+          const SizedBox(width: double.infinity, height: 50,),
 
-          ],
-        ),
+          // 👉 5、ElevatedButton 的使用与 TextButton 基本类似
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 10,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+
+                },
+                // ElevatedButton.styleFrom 用于配置 ElevatedButton 的样式
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.blue,
+                  backgroundColor: Colors.amber,
+                  padding: const EdgeInsets.all(20),
+                  // 按钮形状
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  // 阴影深度控制
+                  elevation: 2.0,  // 基础阴影，值为 0 时无阴影                         
+                ),
+                child: const Text('ElevatedButton')
+              ),
+              ElevatedButton. icon(
+                onPressed: () {
+
+                },
+                icon: const Icon(Icons.add),
+                label: const Text('添加项目'),
+                iconAlignment: IconAlignment.start,  // 图标在左边
+              ),
+            ],
+          ),
+
+          // 👉 6、FilledButton 填充按钮
+          const SizedBox(height: 50,),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 10,
+            children: [
+              FilledButton(onPressed: () {}, child: const Text('Enabled')),
+              const FilledButton(onPressed: null, child: Text('Disabled')),
+            ],
+          ),
+          const SizedBox(height: 50,),
+          // FilledButton.tonal 构造器
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 10,
+            children: [
+              FilledButton.tonal(onPressed: () {}, child: const Text('Enabled')),
+              const FilledButton.tonal(onPressed: null, child: Text('Disabled')),
+            ],
+          ),
+          const SizedBox(height: 50,),
+          // FilledButton.icon 构造器
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 10,
+            children: [
+              FilledButton.icon(
+                onPressed: () {
+                  debugPrint('添加操作');
+                },
+                icon: const Icon(Icons.add),
+                label: const Text('添加'),
+                iconAlignment: IconAlignment.start,
+              ),
+              FilledButton.icon(
+                onPressed: () {},
+                style: FilledButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors. white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                icon: const Icon(Icons.delete),
+                label: const Text('删除'),
+              ),
+            ],
+          ),
+          
+          const SizedBox(height: 50,),
+          // 👉 6、OutlinedButton 边框按钮
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 20,
+            children: [
+              OutlinedButton(
+                child: const Text("normal"),
+                onPressed: () {},
+              ),
+              OutlinedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite, size: 30,),
+                label: const Text('爱心'),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.red,
+                  
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 50,),
+
+          // 👉 6、IconButton 是一个可点击的Icon
+          IconButton(
+            onPressed: () {
+            },
+            icon: const Icon(Icons.android),
+            iconSize: 30,       // 需要通过 IconButton.iconSize设置Icon的大小，而不是Icon自身
+            color: Colors.red,
+          ),
+        ],
       ),
     );
   }
