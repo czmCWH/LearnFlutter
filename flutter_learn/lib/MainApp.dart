@@ -16,24 +16,12 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,   
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('流式布局'),
+          title: const Text('布局组件'),
         ),
-        body: const MyStack(),
+        body: const MyIndexedStack(),
       ),
     );
   }
 }
 
 
-class MyStack extends StatelessWidget {
-  const MyStack({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        
-      ],
-    )
-  }
-}

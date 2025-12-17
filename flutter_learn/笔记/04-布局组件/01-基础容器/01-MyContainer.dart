@@ -14,6 +14,9 @@ container 先用 padding 包围子项，然后对填充的范围应用额外的�
 
 Container 尺寸优先级： width/heigh > constraints > 父组件约束 > 自适应子组件大小
 
+
+BoxDecoration 类提供了多种绘制长方体的方法。如：边框、圆角、阴影、渐变、图片填充等。
+
  */
 import 'package:flutter/material.dart';
 
