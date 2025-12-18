@@ -19,11 +19,9 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('基本组件'),
         ),
-        body: const MyRefreshList(),
+        body: const MyPageView(),
       ),
     );
   }
 }
-
-
 

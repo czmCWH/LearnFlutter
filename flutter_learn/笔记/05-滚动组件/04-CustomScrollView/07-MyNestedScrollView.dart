@@ -1,11 +1,11 @@
 /*
-<https://api.flutter-io.cn/flutter/widgets/NestedScrollView-class.html>
+<https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html>
 <https://ducafecat.com/blog/flutter-sliver-nested-scroll-view>
 
 ---- 嵌套滚动 Widgets
 
 👉 1、NestedScrollView
-NestedScrollView 是一个滚动视图，它可以嵌套其他滚动视图，它们的滚动位置是相互关联的。
+NestedScrollView 是一个滚动视图，用于处理 嵌套滚动，协调父滚动视图和子滚动视图的滚动行为。
 
 问题：
   在普通的 ScrollView中，有一组 slivers(即滚动组件)。如果其中一个 slivers 承载着一个以相反方向滚动的 TabBarView。
@@ -13,7 +13,6 @@ NestedScrollView 是一个滚动视图，它可以嵌套其他滚动视图，它
 解决：
   NestedScrollView 通过为外部 ScrollView 和内部 ScrollView（TabBarView 内部的 ScrollView）提供自定义 ScrollController 来解决此问题，
   将它们连接在一起，以便在用户看来，它们是一个连贯的滚动视图。
-
 
 
 */
