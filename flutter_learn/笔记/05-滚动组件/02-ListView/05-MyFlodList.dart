@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// 可折叠展开滚动列表
-class ExpansionTitlePage extends StatelessWidget {
+/// 折叠列表
+class MyFlodList extends StatelessWidget {
+  MyFlodList({super.key});
 
   final cityNames = {
     '北京': ['东城区', '西城区', '朝阳区', '丰台区', '石景山区', '海淀区', '顺义区'],
@@ -12,18 +13,10 @@ class ExpansionTitlePage extends StatelessWidget {
     '苏州': ['姑苏区', '吴中区', '相城区', '高新区', '虎丘区', '工业园区', '吴江区']
   };
 
-  ExpansionTitlePage({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '展开折叠列表',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('ExpansionTile ListView 展开折叠', style: TextStyle(color: Colors.black),),),
-        body: ListView(
-          children: _buildList(),
-        ),
-      ),
+    return ListView(
+      children: _buildList(),
     );
   }
 
@@ -55,5 +48,4 @@ class ExpansionTitlePage extends StatelessWidget {
       ),
     );
   }
-
-} 
+}
