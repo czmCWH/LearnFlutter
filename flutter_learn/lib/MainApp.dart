@@ -12,15 +12,14 @@ class MainApp extends StatelessWidget {
 
     // 一个 Material App 从 MaterialApp 小部件开始
     return MaterialApp(
-      // title：窗口标题，显示在浏览器上小字。
-      title: appTitle,
+      title: appTitle,  // title：窗口标题，显示在浏览器上小字。
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,   
       home: Scaffold(
         appBar: AppBar(
           title: const Text('基本组件'),
         ),
-        body: const MyPage(),
+        body: const Text(""),
       ),
     );
   }

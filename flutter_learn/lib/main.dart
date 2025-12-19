@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'MainApp.dart';
+import '../笔记/07-导航和路由/New/02-Page/MyApp.dart';
 
 void main() {
 
@@ -13,6 +14,6 @@ void main() {
   debugPrintRecognizerCallbacksTrace = true;
 
   // runApp()函数接受给定的 Widget，并将其作为Widget树的根。
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
  
