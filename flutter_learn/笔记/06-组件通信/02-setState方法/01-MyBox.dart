@@ -6,7 +6,7 @@
     1、子组件定义 final 类型属性，用于接收父组件数据；使用 final 是因为保证从父级获取数据不被随意更改。
     2、子组件在构造函数中接收数据；
     3、父组件中构造子组件时传递数据给子组件；
-    4、有状态组件对外的类接收属性；对内的类通过 widget 对象获取对应属性；
+    4、⚠️ 有状态组件对外的类接收属性，在对内的类中通过 widget 对象获取对应属性；
 
  */
 
@@ -75,7 +75,7 @@ class _MyChildStatefulStateState extends State<MyChildStatefulState> {
       mainAxisSpacing: 10,
       crossAxisSpacing:  20,
       crossAxisCount: 2,
-      // 在内层类中通过 widget.属性名 访问数据
+      // ⚠️ 在内层类中通过 widget.属性名 访问数据
       children: List. generate(widget.list.length, (int index) {
         return Container(
           color: Colors. blue,
