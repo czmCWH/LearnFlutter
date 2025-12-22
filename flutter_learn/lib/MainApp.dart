@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'MyValueNotifier.dart';
 
 
 class MainApp extends StatelessWidget {
@@ -19,7 +19,7 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('基本组件'),
         ),
-        body: const Text(""),
+        body: const MyValueNotifier(),
       ),
     );
   }

@@ -4,8 +4,6 @@ RouteObserver：<https://api.flutter-io.cn/flutter/widgets/RouteObserver-class.h
 
 ---- 观察者模式监听路由跳转
 
-NavigatorObserver 
-
  */
 import 'package:flutter/material.dart';
 

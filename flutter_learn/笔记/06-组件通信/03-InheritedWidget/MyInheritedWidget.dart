@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 /*
- <https://api.flutter-io.cn/flutter/widgets/InheritedWidget-class.html>
+ <https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html>
+ <https://ducafecat.com/blog/flutter-inherited-widget>
 
 InheritedWidget 本身是 immutable（不可变）的，要更新数据必须重建整个 InheritedWidget。
 
@@ -12,7 +13,7 @@ InheritedWidget 本身是 immutable（不可变）的，要更新数据必须重
 
  ⚠️，InheritedWidget 不能向上或跨树传递数据。
 
- InheritedModel 是 InheritedWidget 的子类。
+ InheritedModel 是 InheritedWidget 的子类。它在 InheritedWidget 基础上，增加了对“部分更新”（partial updates）的支持。
  */
 
 class MyInheritedWidget extends InheritedWidget {
