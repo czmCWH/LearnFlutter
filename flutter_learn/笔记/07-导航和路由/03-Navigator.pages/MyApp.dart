@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'MyPageScreen.dart';
 
 
-// --- 使用 Navigator.pages 实现声明式导航栈管理
+// --- 基于 Navigator.pages 实现 Navigator + Page 路由状态管理
 
 final _navigatorKey = GlobalKey<NavigatorState>();
 
