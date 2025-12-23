@@ -3,8 +3,11 @@
 
  1、ChangeNotifier
   一个可以被继承或混合的类，它使用 VoidCallback 提供变更通知 API。
-  适用于复杂的状态管理和业务逻辑处理。
   
+  ChangeNotifier 是 Flutter SDK 中的一个类（位于 foundation.dart），它提供了一种简单的观察者模式： 
+    当调用 notifyListeners() 时，所有监听该对象的监听器都会被通知。
+
+  ChangeNotifier 适用于复杂的状态管理和业务逻辑处理。
  */
 import 'package:flutter/material.dart';
 import 'dart:math';

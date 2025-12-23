@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'MyValueNotifier.dart';
-
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -19,7 +17,7 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('基本组件'),
         ),
-        body: const MyValueNotifier(),
+        body: const Text(""),
       ),
     );
   }
