@@ -1,9 +1,8 @@
 /*
-<https://docs.flutter.cn/ui/interactivity/gestures>
-<https://docs.flutter.cn/cookbook/gestures/handling-taps>
+点击、拖动和其他手势，<https://docs.flutter.cn/ui/interactivity/gestures>
 <https://api.flutter-io.cn/flutter/widgets/GestureDetector-class.html>
 
-👉 1、GestureDetector
+👉 1、GestureDetector Widget
 GestureDetector 是一个检测手势的 Widget，比如：触摸、点击、滑动等。
 
 特点：
