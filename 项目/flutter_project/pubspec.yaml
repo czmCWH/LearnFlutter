@@ -7,7 +7,7 @@ environment:
   sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
-  carousel_slider: ^4.2.1   # 轮播组件
+  carousel_slider: ^5.1.1   # 轮播组件
   flutter:
     sdk: flutter
   flutter_hi_cache: ^0.0.1  # preference 本地存储
@@ -15,8 +15,8 @@ dependencies:
   http: ^1.2.2              # 网络请求
   transparent_image: ^2.0.1   # 处理图片
   underline_indicator: ^0.0.4   # 处理 TabBar 下划线
-  url_launcher: ^6.3.0      # 访问网页URL
-  webview_flutter: ^4.8.0   # 加载h5
+  url_launcher: ^6.3.2      # 访问网页URL
+  webview_flutter: ^4.13.0   # 加载h5
 
 dev_dependencies:
   flutter_test:

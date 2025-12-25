@@ -16,29 +16,25 @@ class BannerWidget extends StatefulWidget {
 
 class _BannerWidgetState extends State<BannerWidget> {
   int _current = 0;
-  final CarouselController _controller = CarouselController();
+  final CarouselSliderController _controller = CarouselSliderController();
   
   @override
   Widget build(BuildContext context) {
-
-   
     final double width = MediaQuery.of(context).size.width;
-
     return Stack(
       children: [
         CarouselSlider(
           items: widget.bannerList.map((item) => _tabImage(item, width)).toList(), 
-          carouselController: _controller, 
           options: CarouselOptions(
             height: 160.px,
             autoPlay: true,
             viewportFraction: 1.0,
             onPageChanged: (index, reason) {
               setState(() {
-                _current = index;
               });
             }
           ),
+          carouselController: _controller, 
         ),
         Positioned(
           left: 0,
