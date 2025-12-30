@@ -59,6 +59,9 @@ void main(List<String> args) {
   // 6、字符串截取
   String rangStr = '你好世界！';
   print('从索引1开始到索引3的字符: ${rangStr.substring(1, 3)}');    // 打印：好世
-  print('获取指定字符串位置: ${rangStr.indexOf('世界')}');     // 打印：2
+  int index = rangStr.indexOf('世界');
+  print('获取指定字符串位置: $index、${rangStr.substring(index, index + '世界'.length)}');     // 打印：2、世界
+
+  
 
 }

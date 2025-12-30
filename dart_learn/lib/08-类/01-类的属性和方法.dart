@@ -115,6 +115,11 @@ class Student {
     所有实例变量都生成一个隐式getter方法。
     非 final 实例变量 和 未初始化的 late final 实例变量 也会生成一个隐式的 setter 方法。
     可以通过使用 get 和 set 关键字实现 getter 和 setter 来创建其他属性。
+  
+  getter 方法用于定义一个计算属性，属性值由其他字段动态计算得出，无需存储。
+  setter 方法用于对属性赋值时添加校验，防止非法状态。
+  getter 和 setter 方法，可用于封装私有字段，隐藏内部实现，提供受控访问。
+
  */
 class Rectangle {
   double left, top, width, height;

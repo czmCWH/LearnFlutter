@@ -10,6 +10,8 @@ void main(List<String> args) {
   
   Singleton sg = Singleton.getInstance();
 
+  var db1 = Database();
+  
 }
 
 
@@ -22,10 +24,24 @@ class Singleton {
 
   // 该实例只能通过静态方法
   static Singleton getInstance() {
-    if (_instance == null) {
-      _instance = Singleton._internal();
-    }
+    _instance ??= Singleton._internal();
     return _instance!;
   }
+}
 
+// 通过工厂构造函数实现单例
+class Database {
+  static final Database _instance = Database._internal();
+
+  // 私有命名构造函数
+  Database._internal();
+
+  // 工厂构造函数：始终返回同一个实例
+  factory Database() {
+    return _instance;
+  }
+
+  void query(String sql) {
+    print('Executing: $sql');
+  }
 }

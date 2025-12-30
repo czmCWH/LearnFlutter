@@ -1,12 +1,11 @@
 void main(List<String> args) {
   /*
-    Dart 中的数字类型：int、num、double。 
+    Dart 中的数字类型：num、int、double。 
      int，整数，整数值不大于64位，具体取值范围 依赖于不同的平台。
      double，小数。
-     num，可整数可小数。
+     num，可整数可小数，它是 int 和 double 的父类。
 
-    int 和 double 都是 num 的子类型。
-    var 声明变量时，如果没有小数点，则为 int，否则为 double。
+    使用 var 声明变量时，如果没有小数点，则为 int，否则为 double。
     如果 num 及其子类型没有您要查找的内容，则 dart:math 库可能有。即，import 'dart:math';
    */
 

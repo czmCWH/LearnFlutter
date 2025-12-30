@@ -30,6 +30,8 @@ https://ducafecat.com/blog/3-tips-for-improving-your-flutter-code-quality
  
  */
 
+import 'dart:convert';
+
 void main(List<String> args) {
 
 //  Person p = Person('张三', 18, '男', 1.75);
@@ -185,7 +187,11 @@ class Point {
    语法：
       factory 类名.方法名
    
-   Factory constructors 中不能访问 this。
+   Factory constructors 特点：
+     - 工厂构造函数中不能访问 this，因为对象尚未确定。
+     - 必须返回一个该类（或子类）的实例
+     - 可以有任意逻辑（if/switch/async 等）
+
  */
 class FactoryHuman {
   String name;
@@ -193,10 +199,37 @@ class FactoryHuman {
 
   FactoryHuman(this.name, this.height);
 
+  // 工厂构造函数：从 JSON Map 构建 User
   factory FactoryHuman.fromJson(Map<String, Object> json) {
     String n1 = json["name"]?.toString() ?? '';
     double h1 = double.parse(json["height"]?.toString() ?? '');
     return FactoryHuman(n1, h1);
   }
+}
 
+
+abstract class Animal {
+  void speak();
+
+  // 工厂根据类型返回具体子类
+  factory Animal(String type) {
+    switch (type.toLowerCase()) {
+      case 'dog':
+        return Dog();
+      case 'cat':
+        return Cat();
+      default:
+        throw ArgumentError('Unknown animal: $type');
+    }
+  }
+}
+
+class Dog implements Animal {
+  @override
+  void speak() => print('Woof!');
+}
+
+class Cat implements Animal {
+  @override
+  void speak() => print('Meow!');
 }

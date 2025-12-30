@@ -1,5 +1,5 @@
 # 一、查看Flutter版本
-Flutter SDK 列表 <https://docs.flutter.cn/install/archive>
+Flutter SDK 列表 <https://docs.flutter.cn/install/archive>，里面列出了 Flutter 版本 与 Dart 版本对应关系。
 Flutter 最新版本介绍 <https://docs.flutter.cn/release/whats-new>、<https://docs.flutter.dev/release/whats-new>
 
 

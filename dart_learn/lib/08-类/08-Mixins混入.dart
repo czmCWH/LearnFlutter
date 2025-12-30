@@ -12,7 +12,7 @@ mixin 声明要求 Dart3.0+。 早期版本中的代码通常使用 abstract cla
       // 成员方法...
     }
 
-  - 要使用 mixin，请使用 with 关键字，后跟一个或多个混入名称。使用 mixin 的语法如下：
+  - 要使用 mixin，请使用 with 关键字，后跟一个或多个混入名称， 并且 with 用在 extends 之后。使用 mixin 的语法如下：
     class 类名称 [extends 父类名称] with 名称A, 名称B... {
     
     }
