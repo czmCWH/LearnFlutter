@@ -8,7 +8,7 @@ class MyWidget extends StatefulWidget {
   
 
 
-  const MyWidget({super.key, this.onPressed, this.onChange});
+  const MyWidget({super.key, this.onPressed, this.onChange, required this.delItem});
 
   @override
   State<MyWidget> createState() => _MyWidgetState();
