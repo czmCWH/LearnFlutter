@@ -4,9 +4,11 @@ class MyWidget extends StatefulWidget {
 
   final Function(int index) delItem;
   final VoidCallback? onPressed;
+  final ValueChanged<String>? onChange;
+  
 
 
-  const MyWidget({super.key, this.onPressed});
+  const MyWidget({super.key, this.onPressed, this.onChange});
 
   @override
   State<MyWidget> createState() => _MyWidgetState();
