@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'dart:convert';
-import './log.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:flutter/rendering.dart';
 
 /*
   封装网络请求工具类：
@@ -14,7 +15,7 @@ import './log.dart';
 
   测试接口：
     https://api.devio.org/uapi/test/test?requestPrams=12
-
+    
  */
 
 // Dio 网络请求工具类
@@ -33,7 +34,7 @@ class DioUtils {
 
     // Flutter 链式语法
     _dio.options
-      ..baseUrl = "https://geek.itheima.net/v1_0/"    // ⚠️，基础地址最后需要跟上 /
+      ..baseUrl = "https://api.devio.org/uapi/ft"    // ⚠️，基础地址最后需要跟上 /
       ..connectTimeout = const Duration(seconds: 10)
       ..sendTimeout = const Duration(seconds: 10)
       ..receiveTimeout = const Duration(seconds: 10);
@@ -54,7 +55,7 @@ class DioUtils {
         //   // };
         //   options.headers["Authorization"] = "Bearer ${tokenManager.getToken()}";
         // }
-
+         options.headers["Authorization"] = "Bearer 12312313123113";
         // 放行请求
         handler.next(options);
 
@@ -106,7 +107,7 @@ class DioUtils {
           errorMsg = responseBody["msg"];
         } 
 
-        log("http Code:$statusCode, response Code:${responseBody["code"]}, msg = $errorMsg");
+        log("[http Code:$statusCode], [response Code:${responseBody["code"]}], msg = $errorMsg");
 
         // 处理 http 请求异常
         handler.reject(
@@ -126,7 +127,12 @@ class DioUtils {
   // 定义 get 请求
   Future<dynamic> get(String url, {Map<String, dynamic>? params}) {
     // _handleResponse 处理后返回的数据为真正的数据 
-    return _handleResponse(_dio.get(url, queryParameters: params));
+    Options options = Options(
+                        headers: {
+                          'course-flag': 'ft', 
+                        }
+                      );
+    return _handleResponse(_dio.get(url, queryParameters: params, options: options));
   }
 
   // 定义 post 请求 
@@ -231,5 +237,13 @@ class CurlInterceptor extends Interceptor {
     log('\n========== CURL COMMAND ==========');
     log(curl.toString());
     log('==================================\n');
+  }
+}
+
+
+
+void log(String? msg, {int? wrapWidth}) {
+  if (kDebugMode) {
+    debugPrint(msg, wrapWidth: wrapWidth);
   }
 }
