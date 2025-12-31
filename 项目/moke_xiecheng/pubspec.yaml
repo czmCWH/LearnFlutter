@@ -15,7 +15,7 @@ dependencies:
   http: ^1.2.2              # 网络请求
   transparent_image: ^2.0.1   # 处理图片
   underline_indicator: ^0.0.4   # 处理 TabBar 下划线
-  url_launcher: ^6.3.2      # 访问网页URL
+  url_launcher: ^6.3.2      # 跳转到浏览器，访问网页URL
   webview_flutter: ^4.13.0   # 加载h5
 
 dev_dependencies:

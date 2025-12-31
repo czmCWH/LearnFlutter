@@ -86,6 +86,7 @@ class _MyScaffold extends State<MyScaffold> with SingleTickerProviderStateMixin 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,    // 防止键盘弹起影响布局
       appBar: AppBar(
         title: const Text('导航栏'),  // 导航栏标题
         leading: Builder(builder: (context) {
@@ -125,7 +126,7 @@ class _MyScaffold extends State<MyScaffold> with SingleTickerProviderStateMixin 
 
       body: PageView( 
         controller: _pageController,
-        physics: const NeverScrollableScrollPhysics(), //禁止滑动
+        physics: const NeverScrollableScrollPhysics(),  // 禁止 PageView 左右滑动手势
         children: myTabs.map((e) {
           return Container(
               alignment: Alignment.center,

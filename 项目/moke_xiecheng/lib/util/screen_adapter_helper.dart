@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/*
+ --- 屏幕适配
+  Flutter 尺寸单位采用的是逻辑像素，类似于iOS中的点pt；Android的 dp。
+
+ */
+
 /// 扩展 int 类型，方便屏幕适配
 extension IntFit on int {
   /// eg: 100.px
@@ -24,7 +30,7 @@ class ScreenHelper {
   static late double ratio;
 
   /// 根据设计稿的宽度初始化
-  /// baseWidth 是设计稿的宽度
+  /// baseWidth：设计稿的宽度
   static init(BuildContext context, {double baseWidth = 375}) {
     _mediaQueryData = MediaQuery.of(context);
     screenWidth = _mediaQueryData.size.width;

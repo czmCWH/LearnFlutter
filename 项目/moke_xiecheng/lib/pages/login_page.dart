@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
   // 创建背景
   _background() {
     return [
+      // Positioned.fill 的 left\right\top\bottom 都为0，会填充满整个组件。
       Positioned.fill(    // 让子项填充满父项
         child: Image.asset('images/login-bg1.jpg', fit: BoxFit.cover,),   // 设置背景图
       ),
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
   
-  // 输入框内容检查，控制登录按钮是否可点击
+  // 2个输入框内容检查，控制登录按钮是否可点击
   _checkInput() {
     bool enable;
     if (isNotEmpty(userName) && isNotEmpty(password)) {
@@ -102,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
   
 
   _login(context) async {
-    // 账号：cboy56，密码：123
+    // 👉 账号：cboy56，密码：123
     debugPrint('-- 点击登录按钮');
     try {
       var result = await LoginDao.login(userName: userName!, password: password!);
@@ -115,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
 
   /// 点击注册
   _jumpRegister() async {
-    // 使用 url_launcher 插件打开网页地址
+    // 使用 url_launcher 插件在浏览器中打开网页地址
     Uri uri = Uri.parse('https://api.devio.org/uapi/swagger-ui.html#/Account/registrationUsingPOST');
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       throw '无法打开链接 $uri';

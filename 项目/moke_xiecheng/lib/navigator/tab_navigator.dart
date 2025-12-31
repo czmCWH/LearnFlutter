@@ -25,7 +25,7 @@ class _TabNavigatorState extends State<TabNavigator> {
   @override
   Widget build(BuildContext context) {
 
-    // 更新导航器的 context，仅退出登录时使用
+    // ⚠️，更新导航器的 context，仅退出登录时使用，因为退出登录按钮在首页执行，其它页面 context 会改变
     NavigatorUtil.updateContext(context);
 
     return Scaffold(
