@@ -31,9 +31,7 @@ ListView 有4种构造器：
 
 controller 属性，控制滚动偏移量，接收一个 ScrollController 对象。
 
-默认情况下，ListView将自动填充列表的可滚动末端，以避免 MediaQuery 的填充所指示的部分障碍。若要避免这种行为，请使用 padding zero 属性进行覆盖。
-
-👉 2、RefreshIndicator 下拉刷新/上拉加载
+默认情况下，ListView 会自动在列表的滚动边缘添加内边距，以避免 MediaQuery 的 padding 属性指示出现部分遮挡。要避免此行为，请将 padding 属性设置为零
 
  */
 

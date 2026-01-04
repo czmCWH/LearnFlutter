@@ -17,6 +17,17 @@ Container 尺寸优先级： width/heigh > constraints > 父组件约束 > 自�
 
 BoxDecoration 类提供了多种绘制长方体的方法。如：边框、圆角、阴影、渐变、图片填充等。
 
+// 设置边框：
+Container(
+  decoration: BoxDecoration(
+    border: Border(
+      left: line,
+      bottom: first ? line : BorderSide.none,
+    ),
+  ),
+  child: _wrapGesture(context, content, item),
+);
+
  */
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 首页 - 首次加载数据时 loading widget
 class LoadingContainer extends StatelessWidget {
 
   final Widget child;

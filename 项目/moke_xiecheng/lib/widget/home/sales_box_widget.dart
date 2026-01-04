@@ -106,7 +106,7 @@ class SalesBoxWidget extends StatelessWidget {
     double itemW = MediaQuery.of(context).size.width/2 - 10;
 
     return GestureDetector(
-      onDoubleTap: () {
+      onTap: () {
         // 跳转到h5
         NavigatorUtil.jumpH5(url: model.url, statusBarColor: model.statusBarColor, title: model.title, hideAppBar: model.hideAppBar);
       },

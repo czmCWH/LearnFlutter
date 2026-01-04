@@ -131,7 +131,7 @@ class TravelItemWidget extends StatelessWidget {
                   child: Icon(Icons.location_on, color: Colors.white, size: 12,),
                 ),
                 LimitedBox(
-                  maxHeight: 130,
+                  maxWidth: 130,
                   child: Text(_poiNmae(), maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white, fontSize: 12),),
                 )
               ],

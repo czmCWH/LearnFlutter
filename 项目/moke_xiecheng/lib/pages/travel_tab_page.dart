@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moke_xiecheng/api/travel_api.dart';
 import 'package:moke_xiecheng/model/travel_tab_model.dart';
-import 'package:moke_xiecheng/widget/loading_container.dart';
+import 'package:moke_xiecheng/widget/home/loading_container.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:moke_xiecheng/widget/travel_item_widget.dart';
 
@@ -23,6 +23,7 @@ class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveCl
 
   final ScrollController _scrollController = ScrollController();
 
+  // 第三方插件瀑布流
   get _gridView => MasonryGridView.count(
     controller: _scrollController,
     crossAxisCount: 2, 
@@ -79,7 +80,7 @@ class _TravelTabPageState extends State<TravelTabPage> with AutomaticKeepAliveCl
     try {
       TravelTabModel? model = await TravelApi.getTravels(widget.groupChanneCode, pageIndex, 10);
       List<TravelItem> items = _filterItems(model?.list);
-      if (loadMore && items.isEmpty) {
+      if (loadMore && items.isEmpty) {  // 如果数据没有了，需要减1
         pageIndex--;
       }
       setState(() {

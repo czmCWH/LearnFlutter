@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moke_xiecheng/model/search_model.dart';
 import 'package:moke_xiecheng/util/navigator_util.dart';
 
-// 图片类型
+// 搜索结果文本中需要嵌入的图片名称
 const types = [
   'channelgroup',
   'channelgs',
@@ -50,14 +50,15 @@ class SearchItemWidget extends StatelessWidget {
 
   );
 
+  // 动态图标
   get _iconContainer => Container(
     margin: const EdgeInsets.all(1),
     child: Image(width: 26, height: 26, image: AssetImage(_typeImage(searchItem.type)),),
     
   );
 
+  // 关键字富文本
   get _title {
-    // 设置富文本
     List<TextSpan> spans = [];
     spans.addAll(
       _keywordTextSpans(searchItem.word, searchModel.keyword ?? '')
@@ -101,7 +102,8 @@ class SearchItemWidget extends StatelessWidget {
     }
     return 'images/type_$path.png';
   }
-
+  
+  // 给关键字添加富文本
   List<TextSpan> _keywordTextSpans(String? word, String keyword) {
     List<TextSpan> spans = [];
     if (word == null || word.isEmpty) return spans;

@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:moke_xiecheng/model/search_model.dart';
 import 'package:moke_xiecheng/util/navigator_util.dart';
 import 'package:moke_xiecheng/util/view_util.dart';
-import 'package:moke_xiecheng/widget/search_bar_widget.dart';
+import 'package:moke_xiecheng/widget/home/search_bar_widget.dart';
 import 'package:moke_xiecheng/api/search_api.dart';
 import 'package:moke_xiecheng/widget/search_item_widget.dart';
 
 /// 搜索页面
 class SearchPage extends StatefulWidget {
+  // 是否隐藏左侧返回按钮
   final bool hideLeft;
   final String? keyword;
   final String? hint;
@@ -96,8 +97,7 @@ class _SearchPageState extends State<SearchPage> {
       var result = await SearchApi.fetch(value);
       if (result == null) return;
       if (result.keyword == value) {  
-        // 当输入框内容和搜索内容一致时，才渲染数据
-
+        // 当输入框内容和搜索内容一致时，才渲染数据，避免输入框变化太快结果不对应
         
       }
     } catch (e) {

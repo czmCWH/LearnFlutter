@@ -5,15 +5,23 @@ import 'package:moke_xiecheng/model/home_model.dart';
 import 'package:moke_xiecheng/pages/searchPage.dart';
 import 'package:moke_xiecheng/util/navigator_util.dart';
 import 'package:moke_xiecheng/util/view_util.dart';
-import 'package:moke_xiecheng/widget/banner_widget.dart';
-import 'package:moke_xiecheng/widget/grid_nav_widget.dart';
-import 'package:moke_xiecheng/widget/loading_container.dart';
+import 'package:moke_xiecheng/widget/home/banner_widget.dart';
+import 'package:moke_xiecheng/widget/home/grid_nav_widget.dart';
+import 'package:moke_xiecheng/widget/home/loading_container.dart';
 import 'package:moke_xiecheng/widget/local_nav_widget.dart';
-import 'package:moke_xiecheng/widget/sales_box_widget.dart';
-import 'package:moke_xiecheng/widget/sub_nav_widget.dart';
-import 'package:moke_xiecheng/widget/search_bar_widget.dart';
+import 'package:moke_xiecheng/widget/home/sales_box_widget.dart';
+import 'package:moke_xiecheng/widget/home/sub_nav_widget.dart';
+import 'package:moke_xiecheng/widget/home/search_bar_widget.dart';
 
 const searchBarDefaultText = '网红打卡地 景点 酒店 美食';
+
+/*
+ 功能点：
+  1、导航栏随滚动透明显示；
+  2、轮播图；
+  3、页面初始化loading、下拉loading；
+ 
+ */
 
 class HomePage extends StatefulWidget {
 
@@ -85,6 +93,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             ),
           ),
         ),
+        // 底部分割线
         Container(
           height: appBarAlpha > 0.2 ? 0.5 : 0,
           decoration: const BoxDecoration(
@@ -113,7 +122,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
       color: Colors.blue,
       onRefresh: _handleRefresh,
       child: NotificationListener( // 添加滚动监听
-      onNotification: (scrollNotification) {
+        onNotification: (scrollNotification) {
           // 只监听最外层 Widget 的滚动
           if (scrollNotification is ScrollUpdateNotification && scrollNotification.depth == 0) {
             _onScroll(scrollNotification.metrics.pixels);
@@ -143,7 +152,10 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
       body: LoadingContainer(
         isLoading: _loading,
         child: Stack(
-          children: [_contentView, _appBar,],
+          children: [
+            _contentView, 
+            _appBar,
+          ],
         ),
       ),
     );

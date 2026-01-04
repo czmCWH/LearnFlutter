@@ -22,6 +22,7 @@ class MainApp extends StatelessWidget {
       home: FutureBuilder(    // 👉 FutureBuilder 用于项目的初始化！
         future: _doInit(), 
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          
           // 初始化屏幕适配工具
           ScreenHelper.init(context);
           

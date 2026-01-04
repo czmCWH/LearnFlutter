@@ -137,6 +137,7 @@ class _MyScaffold extends State<MyScaffold> with SingleTickerProviderStateMixin 
 
       drawer: const _MyDrawer(),  // 抽屉
       bottomNavigationBar: BottomNavigationBar( // 底部导航条
+        type: BottomNavigationBarType.fixed,  
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: '首页'),
           BottomNavigationBarItem(icon: Icon(Icons.business), label: '商品'),

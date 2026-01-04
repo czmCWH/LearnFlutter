@@ -38,7 +38,7 @@ class MyFlodList extends StatelessWidget {
   }
 
   Widget _buildSubArea(String subArea) {
-    return FractionallySizedBox(    // 用于填充整个父布局
+    return FractionallySizedBox(    // 可设置某个方向上填充整个父布局
       widthFactor: 1,   // 宽度填充整个父布局
       child: Container(
         height: 50,

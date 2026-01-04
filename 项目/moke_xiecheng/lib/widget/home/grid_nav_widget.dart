@@ -12,7 +12,7 @@ class GridNavWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
-      child: PhysicalModel(   // 用于裁切圆角
+      child: PhysicalModel(   // PhysicalModel 裁剪子 Widget，设置阴影效果。
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(6),
         clipBehavior: Clip.antiAlias,
@@ -23,7 +23,7 @@ class GridNavWidget extends StatelessWidget {
     );
   }
 
-  // 从三往下添加3个导航条
+  // 从上往下添加3个导航条
   List<Widget> _gridNavItems(BuildContext context) {
     List<Widget> items = [];
     items.add(_gridNavItem(context, gridNavModel.hotel!, true));
@@ -35,9 +35,9 @@ class GridNavWidget extends StatelessWidget {
   // 创建导航条，first：true是第一个导航条
   Widget _gridNavItem(BuildContext context, Hotel gridNavItem, bool first) {
     List<Widget> items = [];
-    // 左边大 item
+    // 左侧大 item
     items.add(_mainItem(context, gridNavItem.mainItem!));
-    // 右边上下成对item
+    // 添加右侧上下结构的2个item
     items.add(_doubleItem(context, gridNavItem.item1!, gridNavItem.item2!));
     items.add(_doubleItem(context, gridNavItem.item3!, gridNavItem.item4!));
     // 从左到右小item
@@ -109,7 +109,7 @@ class GridNavWidget extends StatelessWidget {
     );
     // 分割线
     BorderSide line = const BorderSide(width: 0.8, color: Colors.white);
-
+    // 设置带有边框的盒子
     return Container(
       decoration: BoxDecoration(
         border: Border(

@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+/*
+  1、RefreshIndicator 下拉刷新组件
+
+
+
+ */
+
 // 下拉刷新、上拉加载列表
 class MyRefreshList extends StatefulWidget {
   const MyRefreshList({super.key});
@@ -51,18 +58,30 @@ class _MyRefreshListState extends State<MyRefreshList> {
   Future<void> _scrollViewScroll() async {
     // 当滑动到底部时，开始加载更多
     if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
-      await Future.delayed(const Duration(microseconds: 200), () {
-        setState(() {
-          List<String> list = List<String>.from(cityNames);
-          list.addAll(cityNames);
-          cityNames = list;
-        });
-      });
+      _loadMore();
     }
+  }
+
+  void _loadMore() async {
+    // await Future.delayed(const Duration(microseconds: 200), () {
+    //   setState(() {
+    //     List<String> list = List<String>.from(cityNames);
+    //     list.addAll(cityNames);
+    //     cityNames = list;
+    //   });
+    // });
+
+    await Future.delayed(const Duration(microseconds: 200));
+    setState(() {
+      List<String> list = List<String>.from(cityNames);
+      list.addAll(cityNames);
+      cityNames = list;
+    });
   }
 
   // 下拉刷新
   Future<void> _handleRefresh() async {
+    // 延迟2秒后，执行代码块
     await Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         cityNames = cityNames.reversed.toList();

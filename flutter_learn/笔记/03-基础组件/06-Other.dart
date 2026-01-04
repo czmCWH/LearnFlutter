@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+/*
+ 1、BorderSide 分割线
+
+ 2、
+ 
+  
+ */
+
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 

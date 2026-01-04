@@ -6,7 +6,7 @@ import 'package:moke_xiecheng/pages/travel_tab_page.dart';
 import 'package:underline_indicator/underline_indicator.dart';
 
 
-/// 旅拍页面
+/// 旅拍页面 - 分段控制器 + 瀑布流
 class TravelPage extends StatefulWidget {
   const TravelPage({super.key});
 
@@ -24,9 +24,9 @@ class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
   get _tabBar => TabBar(
     controller: _controller,
     isScrollable: true,
-    labelColor: Colors.black,   // tab 的颜色
+    labelColor: Colors.black,   // tab 的文本颜色
     indicatorSize: TabBarIndicatorSize.tab, // 指示器为 tab 的长度
-    tabAlignment: TabAlignment.start,   // 从左边对其
+    tabAlignment: TabAlignment.start,   // 从左边到右排列
     indicator: const UnderlineIndicator(    // 使用插件处理下划线
       strokeCap: StrokeCap.round, 
       borderSide: BorderSide(color: Color(0xff2fcfbb), width: 3),

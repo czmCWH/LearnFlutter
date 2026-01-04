@@ -118,7 +118,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       ),
       // 输入框
       Expanded(child: _inputBox),
-      // 登出
+      // 右侧登出按钮
       _wrapTap(
         widget.rightButtonClick, 
         Padding(padding: const EdgeInsets.fromLTRB(10, 5, 10, 5), child: Text('登出', style: TextStyle(color: _homeFontColor, fontSize: 16),),)
@@ -134,7 +134,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     onChanged: _onChanged,
     autofocus: true,
     cursorColor: Colors.blue,   // 光标的颜色
-    cursorHeight: 20,
+    cursorHeight: 20, // 光标高度
     style: const TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w300),
     // 输入框样式
     decoration: InputDecoration(
