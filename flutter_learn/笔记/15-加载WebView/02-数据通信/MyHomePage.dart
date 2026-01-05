@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'base/js2Flutter_by_url.dart';
-import 'base/js2Flutter_by_channel.dart';
-import 'base/flutter2js_by_url.dart';
-import 'base/flutter2js_by_runjs.dart';
-import 'jump/flutter_h5_jump_asset.dart';
-import 'jump/flutter_h5_jump_file.dart';
-import 'login/flutter_h5_sync_by_cookie.dart';
-import 'login/flutter_h5_sync_by_channel.dart';
+import 'js2Flutter_by_url.dart';
+import 'js2Flutter_by_channel.dart';
+import 'flutter2js_by_url.dart';
+import 'flutter2js_by_runjs.dart';
+import '../03-Flutter加载h5的其它方式/flutter_h5_jump_asset.dart';
+import '../03-Flutter加载h5的其它方式/flutter_h5_jump_file.dart';
+import '../03-Flutter与h5登录状态同步/flutter_h5_sync_by_cookie.dart';
+import '../03-Flutter与h5登录状态同步/flutter_h5_sync_by_channel.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});

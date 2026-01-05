@@ -1,5 +1,10 @@
 # 一、Flutter 与 H5 通信
 
+Flutter 加载h5 是通过 webview_flutter 插件实现的：
+```shell
+$ flutter pub add webview_flutter 
+```
+
 ## 1、JS 向 Flutter 传递数据
 
   * 通过 URL 方式：
@@ -39,10 +44,9 @@
 # 三、Flutter 同步登录状态到h5防止二次登录
 同步的几种方式：
 1、通过 cookie 的方式：将登录后获取的 token、userId 等信息存储到 webView 的cookie 中；
-2、通过桥接的方式：Flutter 提供一个供 H5 获取登录信息的 channel，h5通过这个channe来获取登录信息；
-
-1.Flutter 提供一个供H5获取登录信息的channel，H5 通过这个 channel 来告诉 Flutter要获取登录信息;
-2.然后 Flutter 调用 JS 的函数来将登录信息传递到 H5;
+2、通过桥接的方式：
+  - Flutter 提供一个供 H5 获取登录信息的 channel，H5 通过这个 channel 来告诉 Flutter要获取登录信息;
+  - 然后 Flutter 调用 JS 的函数来将登录信息传递到 H5;
 
 
 # 博客

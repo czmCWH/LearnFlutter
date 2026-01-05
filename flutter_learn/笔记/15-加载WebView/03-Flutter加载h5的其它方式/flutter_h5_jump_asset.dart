@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-/// 通过 loadFlutterAsset 的方式加载 H5
+/*
+  1、Flutter 通过 loadFlutterAsset 的方式加载h5：用于加载 Flutter 项目目录中的静态 HTML 文件。 
+ */
+
 class FlutterH5AssetJump extends StatefulWidget {
   const FlutterH5AssetJump({super.key});
 

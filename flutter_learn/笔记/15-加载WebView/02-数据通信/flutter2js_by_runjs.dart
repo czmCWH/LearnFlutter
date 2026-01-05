@@ -22,6 +22,7 @@ const String h5Flutter2JsByrunJavaScript = '''
 </html>
 ''';
 
+// 👉 2、Flutter 通过执行js向h5传递数据
 
 class Flutter2jsByRunjs extends StatefulWidget {
   const Flutter2jsByRunjs({super.key});
@@ -34,6 +35,7 @@ class _Flutter2jsByRunjsState extends State<Flutter2jsByRunjs> {
 
   late WebViewController controller;
 
+  // 点击加载h5
   get _loadBtn => FilledButton(
     onPressed: () {
      controller.loadHtmlString(h5Flutter2JsByrunJavaScript);
@@ -41,10 +43,11 @@ class _Flutter2jsByRunjsState extends State<Flutter2jsByRunjs> {
     child: const Text('加载H5', style: TextStyle(color: Colors.white),)
   );
 
+  /// Flutter 向 h5 传递数据
   get _fireData => FilledButton(
     onPressed: () async {
       var name = 'Flutter 的参数';
-      // 注意：执行 runJavaScript 时，必须在 H5 加载完毕，否则会报错：Failed evaluating JavaScript；
+      // ⚠️注意：执行 runJavaScript 时，必须在 H5 加载完毕，否则会报错：Failed evaluating JavaScript；
       //      如果传递的参数是动态的，则需要对参数加单引号；
       controller.runJavaScript("hiCallJs('$name')");
 
@@ -72,11 +75,7 @@ class _Flutter2jsByRunjsState extends State<Flutter2jsByRunjs> {
           _fireData,
         ],
       ),
-      body: Stack(
-        children: [
-          WebViewWidget(controller: controller),
-        ],
-      ),
+      body: WebViewWidget(controller: controller),
     );
   }
 }

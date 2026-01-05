@@ -8,7 +8,7 @@ import 'package:moke_xiecheng/widget/hi_webView.dart';
 class NavigatorUtil {
   
   /// 用于在获取不到 context 的地方，因此需要在主页中赋值（如：TabNavigator）
-  /// 注意：如果 TabNavigator 被销毁了，则会报错
+  /// 注意：如果 TabNavigator 被销毁了（即跳转到了登录页面时），则会报错
   static BuildContext? _context;
 
   static updateContext(BuildContext context) {
@@ -53,7 +53,7 @@ class NavigatorUtil {
     if (Navigator.canPop(context)) {
       Navigator.pop(context);
     } else {
-      // 让 App 回到手机桌面：导航堆栈中没有可以 pop 的页面，如：点击了 android 的物理返回键，
+      // ⚠️：让 App 回到手机桌面：导航堆栈中没有可以 pop 的页面，如：点击了 android 的物理返回键，
       SystemNavigator.pop();
     }
   }
@@ -68,6 +68,7 @@ class NavigatorUtil {
       safeContext = _context;
     } else {
       debugPrint('---- h5 跳转失败, 因为 context 为 null');
+      return;
     }
     Navigator.push(safeContext!, MaterialPageRoute(builder: (context) {
       return HiWebView(

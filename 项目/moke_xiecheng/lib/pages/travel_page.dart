@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:moke_xiecheng/model/travel_tab_model.dart';
 import 'package:moke_xiecheng/model/travel_category_model.dart';
@@ -71,7 +72,7 @@ class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     // 获取刘海屏 Top 安全边距
     double top = MediaQuery.of(context).padding.top;
-
+    kIsWeb
     return Scaffold(
       body: Column(
         children: [

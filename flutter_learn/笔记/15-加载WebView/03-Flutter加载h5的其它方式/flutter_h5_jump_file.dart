@@ -18,7 +18,11 @@ const String h5String = '''
 </html>
 ''';
 
-/// 通过 loadFile 的方式加载 H5
+/*
+  2、Flutter 通过 loadFile 的方式加载 H5，用于加载手机里离线保存的h5文件。
+   ⚠️ path_provider 插件用于处理文件存储
+ */
+
 class FlutterH5JumpFile extends StatefulWidget {
   const FlutterH5JumpFile({super.key});
 
@@ -63,6 +67,7 @@ class _FlutterH5JumpFileState extends State<FlutterH5JumpFile> {
     await controller.loadFile(path);
   }
 
+  // 保存h5文件到手机磁盘
   _prepareFile() async {
     final tmpDir = (await getTemporaryDirectory()).path;
     // 1、创建文件

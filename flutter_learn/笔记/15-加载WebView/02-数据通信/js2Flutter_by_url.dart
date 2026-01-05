@@ -22,7 +22,8 @@ const String h5Js2FlutterByUrl = '''
 </html>
 ''';
 
-/// 1、JS 向 Flutter 传递数据，通过 URL 方式
+/// 👉 1、JS 向 Flutter 传递数据，通过 URL 方式
+
 class Js2flutterByUrl extends StatefulWidget {
   const Js2flutterByUrl({super.key});
 
@@ -46,7 +47,7 @@ class _Js2flutterByUrlState extends State<Js2flutterByUrl> {
   void initState() {
     super.initState();
     controller = WebViewController()
-    ..setJavaScriptMode(JavaScriptMode.unrestricted)    // 开启可JS执行
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)    // 开启JS执行
     ..setNavigationDelegate(NavigationDelegate(
       onNavigationRequest: (NavigationRequest request) {  // 监听 H5 中 URL 加载
         // 约定一个 H5 和 Flutter 通信协议：hi://webview
@@ -57,10 +58,11 @@ class _Js2flutterByUrlState extends State<Js2flutterByUrl> {
           var name = uri.queryParameters['name'];
           debugPrint('--- name = $name');
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('name: $name')));
+          // 不放行url，不跳转
           return NavigationDecision.prevent;
         }
         debugPrint('--- 不满足通信协议, 放行加载URL');
-         return NavigationDecision.navigate;
+        return NavigationDecision.navigate;
       },
     ));
 

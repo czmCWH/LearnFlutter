@@ -37,13 +37,13 @@ flutter:
           - asset: fonts/PlaywriteMX-Regular.ttf
             weight: 400
   assets:
-    # 直接指定图片开放的目录，这样就不用把该目录下每个图片都一个一个添加
+    # 直接指定图片开放的目录（⚠️，目录名后面需要加/），这样就不用把该目录下每个图片都一个一个添加
     - images/
     # - images/PurpleFlower.jpg
     # - images/WhiteFlower.jpg
     # - images/bluePlace.png
     # - images/phone.png
-    # - assets/hiH5/
+    - assets/hiH5/
 
 
   uses-material-design: true

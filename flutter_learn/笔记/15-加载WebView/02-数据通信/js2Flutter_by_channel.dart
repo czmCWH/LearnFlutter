@@ -23,7 +23,9 @@ const String h5S2FlutterByChannel = '''
 ''';
 
 
-/// JS 向 Flutter 传递数据，通过 javaScriptChannel 的方式
+/// 👉 2、JS 向 Flutter 传递数据，通过 javaScriptChannel 的方式
+
+
 class Js2flutterByChannel extends StatefulWidget {
   const Js2flutterByChannel({super.key});
 

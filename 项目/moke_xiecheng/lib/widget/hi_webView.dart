@@ -80,12 +80,13 @@ class _HiWebViewState extends State<HiWebView> {
     ..setBackgroundColor(const Color(0x00000000))  // 设置背景颜色
     ..setNavigationDelegate(NavigationDelegate(   // 设置代理，监听加载进度
       onProgress: (int progress) {  
+        // 页面加载进度
         debugPrint('--- progress = $progress');
       },
-      onPageStarted: (String url) {
+      onPageStarted: (String url) {   // 页面开始加载
         debugPrint('--- started = $url');
       },
-      onPageFinished:  (String url) {
+      onPageFinished:  (String url) {   // 页面加载完成
         // 页面加载完成之后才能执行js
         debugPrint('--- Finished = $url');
         _handleBackForbid();
@@ -100,11 +101,11 @@ class _HiWebViewState extends State<HiWebView> {
           NavigatorUtil.pop(context);
           return NavigationDecision.prevent;
         }
-        debugPrint('跳转到 $request');
+        debugPrint('允许跳转到 $request');
         return NavigationDecision.navigate;
       },
     ))
-    ..loadRequest(Uri.parse(url!));
+    ..loadRequest(Uri.parse(url!));   // 开始加载网页
 
   }
 
