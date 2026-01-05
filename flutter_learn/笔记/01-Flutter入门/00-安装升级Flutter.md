@@ -54,7 +54,7 @@ $ flutter channel
 # 切换至 dev 
 $ flutter channel dev
 ```
-## 更新 Flutter
+## 更新 Flutter SDK
 
 ```shell
 # 更新 当前 Flutter 通道上可用的、最新版本的Flutter SDK、Dart
