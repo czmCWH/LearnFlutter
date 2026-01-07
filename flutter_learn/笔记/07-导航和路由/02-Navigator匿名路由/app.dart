@@ -14,6 +14,14 @@ import 'main_page.dart';
       - iOS模态弹窗；
       - 自定义弹窗；
       - 跨页面层级参数传递；？？？
+    
+    3、Popup routes 弹出式路由的几种实现方式 见 <https://api.flutter.dev/flutter/widgets/Navigator-class.html> Popup routes
+      - showDialog、showMenu 和 showModalBottomSheet 函数；
+      - MaterialPageRoute.fullscreenDialog 底部弹出覆盖整个屏幕；
+      - PageRouteBuilder 自定义转场动画;
+      - 自定义 PopupRoute<T>；
+      - PopupMenuButton 和 DropdownButton 弹窗菜单按钮；
+
  */
 
 

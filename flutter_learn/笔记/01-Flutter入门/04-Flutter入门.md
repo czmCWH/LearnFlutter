@@ -12,4 +12,8 @@ Widget 描述了在当前的配置和 state(状态) 下视图所应该呈现的�
 当 widget 的状态发生变化时，widget 会重新构建其描述，框架会对比前后描述变化的不同，以确定底层渲染树从一种状态过渡到另一种状态所需的最小更改。(类似于`React/Vue`中虚拟`DOM`的`diff`算法）。
 
 
-# 三、Widget 三棵树
+# 三、Flutter 三棵树
+Flutter 三棵树是指：Widget、Element、 RenderObject 三棵树
+
+  - Widget 只保存组件配置信息，框架层内置了一个 createElement() 可以创建与之对应的 Element 实例。
+  

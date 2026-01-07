@@ -87,7 +87,7 @@ class App extends StatelessWidget {
               settings: settings,
               pageBuilder: (context, animation, secondaryAnimation) => const FourPage(),
               // 模态路由核心：不占满屏幕，带背景遮罩
-              opaque: false, // 关键：设置为false，让背景可见
+              opaque: false, // 设置为false，让背景可见 👈 关键！
               barrierColor: Colors.black.withOpacity(0.5), // 背景遮罩颜色
               barrierDismissible: true, // 点击背景关闭
               transitionsBuilder: (context, animation, secondaryAnimation, child) {
