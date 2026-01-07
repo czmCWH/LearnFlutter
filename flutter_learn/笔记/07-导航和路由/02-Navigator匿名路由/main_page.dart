@@ -1,24 +1,11 @@
 import 'bottom_dialog.dart';
 import 'center_dialog.dart';
+import 'four_page.dart';
 import 'one_page.dart';
 import 'three_page.dart';
 import 'two_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-/*
-  --- Navigator 组件 - 匿名路由
-    1、使用步骤：
-      1、Navigator.push，跳转新页面，需创建一个 MaterialPageRoute 实例传递。
-      2、Navigator.pop，返回上一个页面。
-      3、参数传递，与父子组件传递一致，即：页面定义 final 参数，通过构造函数接收。
-   
-    2、实现功能：
-      - 页面跳转传参；
-      - 页面转场动画；
-      - iOS模态弹窗；
-      - 自定义弹窗；
- */
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -34,7 +21,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("匿名路由示例"),),
+      appBar: AppBar(title: const Text("匿名路由示例"),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +31,7 @@ class _MainPageState extends State<MainPage> {
             Text("其它页面传参数：$_pageBackParam"),
             ElevatedButton(
               onPressed: _pushOne, 
-              child: Text("页面跳转参数传递"),
+              child: const Text("传递数据到新页面-新页面final参数"),
             ),
 
             ElevatedButton(
@@ -58,7 +45,7 @@ class _MainPageState extends State<MainPage> {
                 showCupertinoModalPopup(
                   context: context, 
                   builder: (context) {
-                    return ThreePage();
+                    return const ThreePage();
                   }
                 );
               },
@@ -74,13 +61,18 @@ class _MainPageState extends State<MainPage> {
               onPressed: () => _showBottomSheet(context),
               child: const Text('底部弹窗'),
             ),
+
+            ElevatedButton(
+              onPressed: _pushFour, 
+              child: const Text("传递数据到新页面-RouteSettings 传递参数"),
+            ),
           ],
         ),
       ),
     );
   }
 
-  // 1、页面跳转参数传递
+  // 👉 1、页面跳转参数传递
   void _pushOne() async {
     final result = await Navigator.push(
       context,
@@ -96,7 +88,7 @@ class _MainPageState extends State<MainPage> {
     }
   }
 
-  // 2、自定义转场动画跳转
+  // 👉 2、自定义转场动画跳转
   void _pushWithAnimation(BuildContext context) {
     Navigator.push(
       context,
@@ -165,7 +157,7 @@ class _MainPageState extends State<MainPage> {
   }
 
 
-   // 中间弹窗
+   // 👉 3、中间弹窗
   void _showCenterDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -183,7 +175,7 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  // 底部弹窗
+  // 👉 4、底部弹窗
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -204,4 +196,14 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
+  // 👉 5、RouteSettings  传递参数
+  void _pushFour() {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (context) => const FourPage(),
+        settings: const RouteSettings(arguments: Todo("首页参数", "参数通过 RouteSettings 传递")),
+      ),
+    );
+  }
 }
