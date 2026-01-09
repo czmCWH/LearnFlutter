@@ -72,7 +72,6 @@ class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     // 获取刘海屏 Top 安全边距
     double top = MediaQuery.of(context).padding.top;
-    kIsWeb
     return Scaffold(
       body: Column(
         children: [

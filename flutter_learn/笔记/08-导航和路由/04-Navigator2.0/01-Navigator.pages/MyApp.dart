@@ -3,6 +3,7 @@ import 'MyPageScreen.dart';
 
 
 // --- 基于 Navigator.pages 实现 Navigator + Page 路由状态管理
+// 代码实 <https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/pages_example.dart>
 
 final _navigatorKey = GlobalKey<NavigatorState>();
 
