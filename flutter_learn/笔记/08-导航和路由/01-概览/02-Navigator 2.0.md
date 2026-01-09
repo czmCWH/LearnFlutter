@@ -76,5 +76,3 @@ Navigator 2.0 使应用程序的屏幕（路由）成为应用程序状态的功
 提示：
 1、开发中定义页面类命名可 `class XxxScreen`，类的文件名建议用 `小写单词+下划线分隔`。不要用 `XxxPage`，与框架中新增的 Page 类区分开来。
 2、目前，Flutter 项目常用工程结构：`Provider + go_router` 或者 `GetX`。
-
-

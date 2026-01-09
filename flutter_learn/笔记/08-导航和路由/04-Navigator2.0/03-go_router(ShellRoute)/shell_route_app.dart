@@ -17,6 +17,8 @@ import 'screen/detail_screen.dart';
    
    ⚠️ ShellRoute 不会保留子页面的状态，因此当 底部导航栏（BottomNavigationBar）切换时路由会被销毁或重建，如果需要保留状态则需使用 StatefulShellRoute
 
+   嵌套路由适用于底部导航栏、抽屉菜单等场景。 
+   
  2、ShellRoute：
 
   ShellRoute 的作用是在现有的 UI 结构（如带有侧边栏或底栏的 Scaffold）中“挖个洞”，将子路由渲染在这个“洞”里。
