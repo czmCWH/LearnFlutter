@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+/// 底部标签栏页面结构
 class ShellRouteScaffold extends StatelessWidget {
 
   const ShellRouteScaffold({required this.child, super.key});

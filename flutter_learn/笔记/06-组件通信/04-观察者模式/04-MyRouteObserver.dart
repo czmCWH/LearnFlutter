@@ -1,5 +1,7 @@
 /*
-观察者模式监听路由跳转：https://docs.flutter.cn/community/tutorials/observer-pattern-in-flutter-n-dart#navigator
+<https://docs.flutter.cn/community/tutorials/observer-pattern-in-flutter-n-dart#navigator>，
+流动的观察者模式 - 观察者模式监听路由跳转
+
 RouteObserver：<https://api.flutter-io.cn/flutter/widgets/RouteObserver-class.html>
 
 ---- 观察者模式监听路由跳转

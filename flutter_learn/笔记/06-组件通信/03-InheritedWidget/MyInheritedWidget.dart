@@ -11,7 +11,7 @@ InheritedWidget 本身是 immutable（不可变）的，要更新数据必须重
   - maybeOf 方法，返回一个可空实例；
   - BuildContext 的 dependOnInheritedWidgetOfExactType<T>() 方法用于获取最近的类型为 T 的 InheritedWidget 实例。
 
- ⚠️，InheritedWidget 不能向上或跨树传递数据。
+ ⚠️，InheritedWidget 不能向上或跨树传递数据，数据流向下单向传递。
 
  InheritedModel 是 InheritedWidget 的子类。它在 InheritedWidget 基础上，增加了对“部分更新”（partial updates）的支持。
  */
