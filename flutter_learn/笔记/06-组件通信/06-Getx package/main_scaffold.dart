@@ -39,10 +39,10 @@ class _MainScaffoldState extends State<MainScaffold> {
   int _tabIndex = 0;
 
   final List<Widget> _pages = [
-    ScreenA(),
-    ScreenB(),
-    ScreenC(),
-    ScreenD(),
+    const ScreenA(),
+    const ScreenB(),
+    const ScreenC(),
+    const ScreenD(),
   ];
 
   @override

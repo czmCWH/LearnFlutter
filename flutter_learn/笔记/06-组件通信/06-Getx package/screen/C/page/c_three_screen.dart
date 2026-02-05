@@ -8,9 +8,9 @@ import '../controller/status.dart';
     - 可自动获取 binding 到 GetPage 上的 GetxController；
     - GetxController 的生命周期；
 
-    * Obx(builder: )，构建响应式UI。自动监听其 builder 中的 .obs 变量，当值发生变化时 rebuild Widget 子树。
-    * GetView<T>，用于简化 GetxController 的访问，它继承自 StatelessWidget；
-    * GetX(builder: )，精准监听的响应式构建器。它继承自 StatefulWidget，显式监听某个特定的 Rx 变量或 Controller。
+    * Obx(builder: )，构建响应式UI。专门监听 Rx 类型变量，当值发生变化时 rebuild Widget 子树。
+    * GetView<T>，用于简化 GetxController 的访问，它继承自 StatelessWidget。
+    * GetX(builder: )，精确监听指定 GetxController 中的 Rx 类型变量。
  */
 
 class CThreeScreen extends GetView<StatusController> {
@@ -52,7 +52,7 @@ class CThreeScreen extends GetView<StatusController> {
               }
             ),
 
-            // 3、GetX(builder:) 精确监听 Controller，是 Obx 的 “前身”，推荐用 Obx 替代！
+            // 3、GetX(builder:) 精确监听 Controller 中的 RX 类型数据
             GetX<StatusController>(
               builder: (controller) {
                 return Text("GetX 状态：${controller.result}");

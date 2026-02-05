@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 /*
-  基于 GetxController 管理多个状态
+  1、基于 GetxController 管理多个状态
  */
 class CounterController extends GetxController {
   // 1、定义响应式数据，可直接通过 Obx 访问

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 /*
-  GetxController 的生命周期
+  2、GetView 中使用 GetxController 的生命周期
  */
 class StatusController extends GetxController {
   // 1、定义响应式数据

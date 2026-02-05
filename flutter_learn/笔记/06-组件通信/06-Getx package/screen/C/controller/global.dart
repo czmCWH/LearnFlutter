@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+/*
+  3、基于 Binding 实现全局 Controller
+ */
 class GlobalController extends GetxController { 
 
   // 便捷访问 Controller，

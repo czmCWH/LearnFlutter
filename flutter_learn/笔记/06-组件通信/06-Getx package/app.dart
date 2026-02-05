@@ -41,7 +41,7 @@ class App extends StatelessWidget {
       unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()), // 匹配 /notfound 路由，用于处理导航到未定义路由（404 错误）的情况
       getPages: AppPages.routes,   // 定义路由页面
       defaultTransition: Transition.rightToLeft,    // 默认路由转场动画
-      routingCallback: (Routing? value) {
+      routingCallback: (Routing? value) { // 拦截路由
         debugPrint("--- routingCallback = ${value?.current}");
       },
       

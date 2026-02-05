@@ -19,30 +19,30 @@ class CTwoDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text("C-Two-Detail 页面"),),
+      appBar: AppBar(title: const Text("C-Two-Detail 页面"),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 20,
           children: [
-            Obx(() => Text("counter = ${_counterController.count}", style: TextStyle(fontSize: 18),),),
+            Obx(() => Text("counter = ${_counterController.count}", style: const TextStyle(fontSize: 18),),),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 20,
               children: [
                 ElevatedButton(
                   onPressed: () => _counterController.dec(), 
-                  child: Text("增加 counter"),
+                  child: const Text("增加 counter"),
                 ),
                 ElevatedButton(
                   onPressed: _counterController.inc, 
-                  child: Text("减少 counter"),
+                  child: const Text("减少 counter"),
                 ),
               ],
             ),
             
             // 分割线
-            Divider(height: 0.5, color: Colors.red,),
+            const Divider(height: 0.5, color: Colors.red,),
 
             Obx(() {
               return Row(
@@ -62,19 +62,19 @@ class CTwoDetailScreen extends StatelessWidget {
                     final value = Random().nextInt(100) + 1;
                     _counterController.addItem("item${value.toString()}");
                   }, 
-                  child: Text("增加 list"),
+                  child: const Text("增加 list"),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     _counterController.removeLast();
                   }, 
-                  child: Text("减少 list"),
+                  child: const Text("减少 list"),
                 ),
               ],
             ),
 
             // 分割线
-            Divider(height: 0.5, color: Colors.red,),
+            const Divider(height: 0.5, color: Colors.red,),
 
             Obx(() {
               return Text(_globalController.text.value, style:  TextStyle(fontSize: 15, color: Colors.blue),);  
@@ -89,7 +89,7 @@ class CTwoDetailScreen extends StatelessWidget {
                 final text = String.fromCharCode(codePoint);
                 _globalController.updateText("随机汉字：$text");
               }, 
-              child: Text("修改全局 GetxController"),
+              child: const Text("修改全局 GetxController"),
             ),
 
           ],

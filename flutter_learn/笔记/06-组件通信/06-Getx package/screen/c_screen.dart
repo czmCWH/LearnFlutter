@@ -44,9 +44,8 @@ import '../routes/app_pages.dart';
 
   👉 5、使用响应式数据的方式：
     - Obx(builder: ) 轻量级、极简的响应式状态监听 Widget。专门监听 Rx 类型变量；
-    - GetBuilder(builder: ) 非响应式状态管理，依赖普通 Dart 变量 + 手动 update() 触发重建。
-    - GetX(builder: )，功能和 Obx 一致，但写法更繁琐，是 Obx 的 “前身”。
-
+    - GetBuilder(builder: ) 非响应式状态管理，依赖 GetxController 中的普通 Dart 变量，通过手动 update() 触发重建。
+    - GetX(builder: )，精确监听指定 GetxController 中的 Rx 类型变量。
  */
 
 class ScreenC extends StatelessWidget {

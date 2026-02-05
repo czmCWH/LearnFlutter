@@ -17,6 +17,7 @@ class AppPages {
       name: Routes.root,    // 路由名称
       page: () => const MainScaffold(),   // 路由构建函数
       maintainState: true,  // 是否保持页面状态， 防止页面重建
+      preventDuplicates: true,  // 防止重复 push
       // participatesInRootNavigator: true,  // 控制页面在导航器层次结构中的行为。为 true，页面将参与根导航器；为 false，页面将参与子导航器
       children: [
         GetPage(

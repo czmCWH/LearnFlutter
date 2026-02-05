@@ -38,16 +38,16 @@ class CTwoScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () => _counterController.decNor(), 
-                  child: Text("增加 norCounter"),
+                  child: const Text("增加 norCounter"),
                 ),
                 ElevatedButton(
                   onPressed: _counterController.incNor, 
-                  child: Text("减少 norCount"),
+                  child: const Text("减少 norCount"),
                 ),
               ],
             ),
 
-            Divider(height: 1, color: Colors.red,),
+            const Divider(height: 1, color: Colors.red,),
 
             // 2、Obx 使用 GetxController 中 响应式数据
 
@@ -60,11 +60,11 @@ class CTwoScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () => _counterController.dec(), 
-                  child: Text("增加 counter"),
+                  child: const Text("增加 counter"),
                 ),
                 ElevatedButton(
                   onPressed: _counterController.inc, 
-                  child: Text("减少 counter"),
+                  child: const Text("减少 counter"),
                 ),
               ],
             ),
@@ -73,7 +73,7 @@ class CTwoScreen extends StatelessWidget {
               onPressed: () {
                 Get.toNamed(Routes.cTwo + Routes.detail);
               }, 
-              child: Text("跳转到 detail")
+              child: const Text("跳转到 detail")
             ),
 
             Obx(() {
