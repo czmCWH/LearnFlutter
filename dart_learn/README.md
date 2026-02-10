@@ -9,4 +9,9 @@ $ dart create -t console dart_learn
 
 $ cd dart_learn
 $ dart run
+
+# 清理项目插件库
+$ flutter clean
+# 安装项目插件库
+$ flutter pub get
 ```
