@@ -37,6 +37,8 @@
 
 ## Flutter 项目
 
+* [HanQiGod/dio_provider_mvvm_demo](https://github.com/HanQiGod/dio_provider_mvvm_demo)，Flutter Dio完整封装+Provider MVVM实 战：从网络层到状态管理的全链路指南！（其中网络请求封装特别好）👍
+
 * [seasonZhu/GetXStudy](https://github.com/seasonZhu/GetXStudy)，使用GetX，重构了Flutter wanandroid客户端。
 
 * [simplezhli/flutter_deer](https://github.com/simplezhli/flutter_deer)，4.8k，Flutter 练习项目(包括集成测试、可访问性测试)。内含完整UI设计图，更贴近真实项目的练习。
