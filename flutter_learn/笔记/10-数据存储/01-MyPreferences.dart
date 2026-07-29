@@ -16,6 +16,9 @@
     
     import 'package:shared_preferences/shared_preferences.dart';
 
+其它：
+  - 敏感信息用 flutter_secure_storage。
+
  */
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

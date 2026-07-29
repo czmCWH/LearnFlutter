@@ -41,7 +41,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return GestureDetector(
       onTap: grow,
       child: Container(
-        // ⚠️，widget 属性用于引用其
+        // ⚠️，widget 通过 widget.属性名访问父级传递的属性
         color: widget.color,
         child: widget.child,
         transform: Matrix4.diagonal3Values(_size, _size, 1.0),

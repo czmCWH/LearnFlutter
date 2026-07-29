@@ -1,6 +1,20 @@
 # 一、Flutter 与其它跨平台对比
 https://juejin.cn/post/7329144189001515048?searchId=2024051110482073DE2668163869A23155
 
+# 创建 Flutter 项目
+<https://docs.flutter.dev/reference/create-new-app>
+<https://docs.flutter.cn/reference/create-new-app>
+
+```shell
+# 创建 Flutter 项目，默认支持：
+# [ios (default), android (default), windows (default),linux (default), macos (default), web (default)]
+# 在终端执行 flutter help create ，执行后，在输出的帮助文档中找到 --platforms 部分，查看支持的 platform。
+$ flutter create my_app
+
+# 仅生成支持 Android 和 iOS 的项目目录
+$ flutter create --platforms=android,ios my_app
+```
+
 # 二、Widget
 <https://docs.flutter.cn/ui/widgets>
 <https://docs.flutter.cn/get-started/fundamentals/widgets>
