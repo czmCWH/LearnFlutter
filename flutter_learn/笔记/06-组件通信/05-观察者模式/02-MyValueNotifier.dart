@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
  <https://api.flutter.dev/flutter/foundation/ValueNotifier-class.html>
 
  1、ValueNotifier<T>
-  ValueNotifier 继承自 ChangeNotifier，它只包含单个值。
+  ⚠️ ValueNotifier 继承自 ChangeNotifier，它只包含单个值。
 
   当 ValueNotifier.value 被替换为与旧值不相等的值（通过相等运算符 == 计算得出）时，此类会通知其监听器 listeners。
   注意，ValueNotifier<List<int>> 在列表内容更改时不会通知其监听器。对于此种情况，可通过继承 ChangeNotifier 来实现实现。
@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
   特点：
     - 响应式；
     - 配合 ValueListenableBuilder 实现自动 rebuild UI；而不需要手动 addListener 再进行 setState 更新 UI。
+    - ValueNotifier 可以让局部轻量级、单个值状态（如：局部开关、按钮状态、滚动透明度）更独立。
+    - ValueNotifier 定义的状态依然在 Widget 树中，因此不适合全局状态管理（如：全局开关、主题色等）。
 
  */
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import './routes/app_pages.dart';
-import './screen/UnknownRoutePage.dart';
-import './screen/C/binding/AllControllerBinding.dart';
-import './screen/D/language.dart';
+import 'routes/app_pages.dart';
+import 'screen/UnknownRoutePage.dart';
+import 'screen/C/binding/AllControllerBinding.dart';
+import 'screen/D/language.dart';
 
 /*
  1、Getx 的使用

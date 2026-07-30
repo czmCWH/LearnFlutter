@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './screen/a_screen.dart';
-import './screen/b_screen.dart';
-import './screen/c_screen.dart';
-import './screen/d_screen.dart';
+import 'screen/a_screen.dart';
+import 'screen/b_screen.dart';
+import 'screen/c_screen.dart';
+import 'screen/d_screen.dart';
 
 class MainScaffold extends StatefulWidget {
   const MainScaffold({super.key});

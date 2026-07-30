@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import "../routes/index.dart";
 import 'A/widgets/index.dart';
-import './A/index.dart';
+import 'A/index.dart';
 /*
  1、Getx 路由跳转
   匿名路由跳转：

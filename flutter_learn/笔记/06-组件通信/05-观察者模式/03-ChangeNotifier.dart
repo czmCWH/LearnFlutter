@@ -8,6 +8,10 @@
     当调用 notifyListeners() 时，所有监听该对象的监听器都会被通知。
 
   ChangeNotifier 适用于复杂的状态管理和业务逻辑处理。
+
+ 2、特点：
+    - ChangeNotifier 比 ValueNotifier 更适合承载一组状态，将状态从 widget 中抽离出来，便于管理。
+
  */
 import 'package:flutter/material.dart';
 import 'dart:math';

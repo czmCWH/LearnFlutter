@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import './CounterModel.dart';
+import 'CounterModel.dart';
 
 
 class HomePage extends StatefulWidget {

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
  <https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html>
  <https://ducafecat.com/blog/flutter-inherited-widget>
 
+👉 1、InheritedWidget
 InheritedWidget 本身是 immutable（不可变）的，要更新数据必须重建整个 InheritedWidget。
 
  实现 InheritedWidget 时需提供 of、maybeOf 静态的便捷方法，供后代获取数据。此静态方法来根据子 Widget 上下文 context 获取 InheritedWidget。
@@ -13,6 +14,13 @@ InheritedWidget 本身是 immutable（不可变）的，要更新数据必须重
 
  ⚠️，InheritedWidget 不能向上或跨树传递数据，数据流向下单向传递。
 
+特点：
+  - 继承自 Widget，但不包含任何子节点；
+  - 包含一个子节点，但不直接管理它；
+  - 提供一个静态方法，供子节点获取 InheritedWidget 实例；
+  - 需要手动管理状态变化通知：提供一个 updateShouldNotify 方法，用于判断是否需要通知子节点更新；
+
+👉 2、InheritedModel
  InheritedModel 是 InheritedWidget 的子类。它在 InheritedWidget 基础上，增加了对“部分更新”（partial updates）的支持。
  */
 
